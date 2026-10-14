@@ -97,6 +97,7 @@ public class Main {
      int magicResistance;
      int actions;
      boolean meleeRange;
+     int attackBonus;
 
      //Fighter only variables
      int armorBonus;
@@ -124,6 +125,17 @@ public class Main {
      String spell4Name = "";
      
      //Ranger only variables
+     int rangedEnchant;
+     char rangedWeapon = '\0';
+     String rangedWeaponName = "";
+     char projectile1;
+     char projectile2;
+     char projectile3;
+     char projectile4;
+     String projectile1Name = "";
+     String projectile2Name = "";
+     String projectile3Name = "";
+     String projectile4Name = "";
 
      //Monster only variables
      double e1MaxHP;
@@ -247,7 +259,7 @@ public class Main {
              dexBonus = -2;
          }
          else{
-             System.out.println("That is not a valid choice, "+name+". Try again.");
+             System.out.println("That is not a valid armor, "+name+". Try again.");
          }
          }
          armorName = Armors.get(armor);
@@ -402,6 +414,27 @@ public class Main {
          System.out.println("As a ranger, your HP is 45. You have a unique ability to dodge attacks; you have a static +1 to Defense, which no other class has. You have a variety of ranged weapons and projectiles to choose from. Rangers also gain a +1 bonus on all Dexterity skill checks. Press Enter to continue.");
          scanner.nextLine();
          System.out.println("As a ranger, you have no armor; your Defense bonus is equal to the starting 13 + your Dexterity score. Choose your ranged weapon now.");
+         System.out.println("A. Crossbow: You gain a +5 bonus to damage with this weapon, but its enchantability is only 1, meaning enchantments on this weapon will not have a very high effect.");
+         System.out.println("B. Longbow: You gain a +3 bonus to damage with this weapon, and its enchantability is 3.");
+         System.out.println("C. Shortbow: You only gain a +1 bonus to damage with this weapon, but its enchantability is 5.");
+         while(rLoop){
+         rangedWeapon = scanner.next().toUpperCase().charAt(0);
+         if(rangedWeapon == 'A'){
+              attackBonus = 5;
+              rangedEnchant = 1;
+         }
+         else if(rangedWeapon == 'B'){
+              attackBonus = 3;
+              rangedEnchant = 3;
+         }
+         else if(rangedWeapon == 'C'){
+              attackBonus = 1;
+              rangedEnchant = 5;
+         }
+         else{
+              System.out.println("That is not a valid ranged weapon choice, "+name+". Try again.");
+         }
+         }
      }
      else{
          System.out.println("That is not a valid class, "+name+". Try again.");
