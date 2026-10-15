@@ -446,7 +446,7 @@ public class Main {
               System.out.println("That is not a valid ranged weapon choice, "+name+". Try again.");
          }
          }
-         rangedWeaponName = 
+         rangedWeaponName = Bows.get(rangedWeapon);
          System.out.println("That "+rangedWeaponName+" is sure to kill your enemies, "+name".");
      }
      else{
