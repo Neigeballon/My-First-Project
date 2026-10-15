@@ -145,8 +145,12 @@ public class Main {
      String spell4Name = "";
      char magicItem;
      String magicItemName = "";
-     boolean askRage = false;
-     boolean doRage = false;
+     boolean askRage = false;//Used for Rod of Rage; before every spell cast, this boolean determines if it asks the user whether they want to rage or not.
+     boolean doRage = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
+     boolean ask1Sacrifice = false;
+     boolean ask2Sacrifice = false;
+     boolean do1Sacrifice = false;
+     boolean do2Sacrifice = false;
      
      //Ranger only variables
      int rangedEnchant;
@@ -425,7 +429,7 @@ public class Main {
          System.out.println("Wonderful, "+name+"! Your first choice, "+spell4Name+", was engraved in your spellbook!");
          System.out.println("Now it is time to choose one of 3 magic items that will imbue your spells with even more power!");
          System.out.println("A. Rod of Rage: When you cast a spell, you can choose to go into a rage. If you do, the spell's effect is multiplied by 1.5, but the enemy's next attack deals 1.5x damage.");
-         System.out.println("B. Staff of Sacrifice: When you cast a spell, you can choose to ");
+         System.out.println("B. Staff of Sacrifice: When you cast a spell, you can choose to lose 3 HP to increase the effect of certain spells: +2 for defense spells, +4 on damage spells, 0 increase on heal spells. If you choose to lose 2 extra HP, then your buff spells and debuff spells gain a +1 increase.");
          System.out.println("C. Wand of Wonder: ");
          while(mLoop){
          magicItem = scanner.next().toUpperCase().charAt(0);
@@ -435,6 +439,8 @@ public class Main {
          }
          else if(magicItem == 'B'){
          mLoop = false;
+         ask1Sacrifice = true;
+         ask2Sacrifice = true;
          }
          else if(magicItem == 'C'){
          mLoop = false;
