@@ -448,6 +448,18 @@ public class Main {
          }
          rangedWeaponName = Bows.get(rangedWeapon);
          System.out.println("That "+rangedWeaponName+" is sure to kill your enemies, "+name".");
+         System.out.println("Now for the fun. It's time to choose some projectiles that will be shooting out of your "+rangedWeaponName+"! You will be able to choose four different projectiles; you can only choose to use one per attack, though. For now, choose your first projectile.");
+         System.out.println("A. ");
+         System.out.println("B. ");
+         System.out.println("C. ");
+         System.out.println("D. ");
+         System.out.println("E. ");
+         System.out.println("F. ");
+         System.out.println("G. ");
+         System.out.println("H. ");
+         System.out.println("I. ");
+         System.out.println("J. ");
+
      }
      else{
          System.out.println("That is not a valid class, "+name+". Try again.");
