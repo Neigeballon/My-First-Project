@@ -56,19 +56,19 @@ public class Main {
      
      //Ranger Projectile Map
      Map<Character, String> Projectiles = Map.ofEntries(
-     Map.entry('A', ""),
-     Map.entry('B', ""),
-     Map.entry('C', ""),
-     Map.entry('D', ""),
-     Map.entry('E', ""),
-     Map.entry('F', ""),
-     Map.entry('G', ""),
-     Map.entry('H', ""),
-     Map.entry('I', ""),
-     Map.entry('J', ""),
-     Map.entry('K', ""),
-     Map.entry('L', ""),
-     Map.entry('M', "")
+     Map.entry('A', "Acid Arrow"),
+     Map.entry('B', "Electric Arrow"),
+     Map.entry('C', "Fire Arrow"),
+     Map.entry('D', "Frost Arrow"),
+     Map.entry('E', "Iron Arrow"),
+     Map.entry('F', "Double Arrow"),
+     Map.entry('G', "Point-Blank Arrow"),
+     Map.entry('H', "Explosive Arrow"),
+     Map.entry('I', "Weakness Arrow"),
+     Map.entry('J', "Slowness Arrow"),
+     Map.entry('K', "Dumbness Arrow"),
+     Map.entry('L', "Shielding Arrow"),
+     Map.entry('M', "Frailizing Arrow")
      );
       
       //Misc variables
@@ -449,17 +449,19 @@ public class Main {
          rangedWeaponName = Bows.get(rangedWeapon);
          System.out.println("That "+rangedWeaponName+" is sure to kill your enemies, "+name".");
          System.out.println("Now for the fun. It's time to choose some projectiles that will be shooting out of your "+rangedWeaponName+"! You will be able to choose four different projectiles; you can only choose to use one per attack, though. For now, choose your first projectile.");
-         System.out.println("A. ");
-         System.out.println("B. ");
-         System.out.println("C. ");
-         System.out.println("D. ");
-         System.out.println("E. ");
-         System.out.println("F. ");
-         System.out.println("G. ");
-         System.out.println("H. ");
-         System.out.println("I. ");
-         System.out.println("J. ");
-
+         System.out.println("A. Acid Arrow: ");
+         System.out.println("B. Electric Arrow: ");
+         System.out.println("C. Fire Arrow: ");
+         System.out.println("D. Frost Arrow: ");
+         System.out.println("E. Iron Arrow: ");
+         System.out.println("F. Double Arrow: ");
+         System.out.println("G. Point-Blank Arrow: ");
+         System.out.println("H. Explosive Arrow: ");
+         System.out.println("I. Weakness Arrow: ");
+         System.out.println("J. Slowness Arrow: ");
+         System.out.println("K. Dumbness Arrow: ");
+         System.out.println("L. Shielding Arrow: ");
+         System.out.println("M. Frailizing Arrow: ");
      }
      else{
          System.out.println("That is not a valid class, "+name+". Try again.");
