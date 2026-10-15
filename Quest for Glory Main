@@ -56,19 +56,19 @@ public class Main {
      
      //Ranger Projectile Map
      Map<Character, String> Projectiles = Map.ofEntries(
-     Map.entry('A', "Acid Arrow"),
-     Map.entry('B', "Electric Arrow"),
-     Map.entry('C', "Fire Arrow"),
-     Map.entry('D', "Frost Arrow"),
-     Map.entry('E', "Iron Arrow"),
-     Map.entry('F', "Double Arrow"),
-     Map.entry('G', "Point-Blank Arrow"),
-     Map.entry('H', "Explosive Arrow"),
-     Map.entry('I', "Weakness Arrow"),
-     Map.entry('J', "Slowness Arrow"),
-     Map.entry('K', "Dumbness Arrow"),
-     Map.entry('L', "Shielding Arrow"),
-     Map.entry('M', "Frailizing Arrow")
+     Map.entry('A', "Acid Arrows"),
+     Map.entry('B', "Electric Arrows"),
+     Map.entry('C', "Fire Arrows"),
+     Map.entry('D', "Frost Arrows"),
+     Map.entry('E', "Iron Arrows"),
+     Map.entry('F', "Double Arrows"),
+     Map.entry('G', "Point-Blank Arrows"),
+     Map.entry('H', "Explosive Arrows"),
+     Map.entry('I', "Weakness Arrows"),
+     Map.entry('J', "Slowness Arrows"),
+     Map.entry('K', "Dumbness Arrows"),
+     Map.entry('L', "Shielding Arrows"),
+     Map.entry('M', "Frailizing Arrows")
      );
       
       //Misc variables
@@ -83,6 +83,10 @@ public class Main {
      boolean s3Loop = true;//Choosing Spell 3
      boolean s4Loop = true;//Choosing Spell 4
      boolean rLoop = true;//Choosing a Ranged Weapon
+     boolean p1Loop = true;//Choosing Projectile 1
+     boolean p2Loop = true;//Choosing Projectile 2
+     boolean p3Loop = true;//Choosing Projectile 3
+     boolean p4Loop = true;//Choosing Projectile 4
      boolean abilityLoop = true;//Allocating Ability points
      boolean strengthLoop = true;//Allocating Strength points
      boolean dexterityLoop = true;//Allocating Dexterity points
@@ -450,19 +454,66 @@ public class Main {
          rangedWeaponName = Bows.get(rangedWeapon);
          System.out.println("That "+rangedWeaponName+" is sure to kill your enemies, "+name".");
          System.out.println("Now for the fun. It's time to choose some projectiles that will be shooting out of your "+rangedWeaponName+"! You will be able to choose four different projectiles; you can only choose to use one per attack, though. For now, choose your first projectile.");
-         System.out.println("A. Acid Arrow: The targeted enemy takes 1-3 acid damage per turn for 2 turns *this effect does not stack*, ");
-         System.out.println("B. Electric Arrow: The targeted enemy loses one action *this effect does not stack* but the shock shocks you, giving you a -3 penalty on defensee *non-stacking*.");
-         System.out.println("C. Fire Arrow: Deal additional damage - this is random, it varies between 1 and 4. ");
-         System.out.println("D. Frost Arrow: The targeted enemy can only make one melee attack for 2 turns *this effect does not stack* but the freezing arrow gives you a -2 penalty on defense for one turn *non-stacking*.");
-         System.out.println("E. Iron Arrow: Gain a +2 bonus on damage for this attack.");
-         System.out.println("F. Double Arrow: When you attack, roll the attack twice and take the better result.");
-         System.out.println("G. Point-Blank Arrow: You can make an attack at melee range with this arrow, but you gain a -2 penalty on defense for one turn. You can only do this attack once per turn.");
-         System.out.println("H. Explosive Arrow: This attack deals splash damage to all other enemies equal to half of the damage dealt to the target enemy. Take damage equal to half of the splash damage.");
-         System.out.println("I. Weakness Arrow: Targeted enemy gains a -1 penalty to their Strength score for one turn *this effect does not stack*.");
-         System.out.println("J. Slowness Arrow: Targeted enemy gains a -1 penalty to their Dexterity score for one turn *this effect does not stack*.");
-         System.out.println("K. Dumbness Arrow: Targeted enemy gains a -1 penalty to their Intelligence score for one turn *this effect does not stack*.");
-         System.out.println("L. Shielding Arrow: You gain a +2 bonus to defense for 1 turn *this effect does not stack*.");
-         System.out.println("M. Frailizing Arrow: The enemy gains a -2 penalty to their defense for the next two times you attack them *this effect does not stack*.");
+         System.out.println("A. Acid Arrows: The targeted enemy takes 1 acid damage every turn *this effect DOES stack*!");
+         System.out.println("B. Electric Arrows: The targeted enemy loses one action *this effect does not stack* but the shock shocks you, giving you a -3 penalty on defensee *non-stacking*.");
+         System.out.println("C. Fire Arrows: Deal additional damage - this is random, it varies between 1 and 4. ");
+         System.out.println("D. Frost Arrows: The targeted enemy can only make one melee attack for 2 turns *this effect does not stack* but the freezing arrow gives you a -2 penalty on defense for one turn *non-stacking*.");
+         System.out.println("E. Iron Arrows: Gain a +2 bonus on damage for this attack.");
+         System.out.println("F. Double Arrows: When you attack, roll the attack twice and take the better result.");
+         System.out.println("G. Point-Blank Arrows: You can make an attack at melee range with this arrow, but you gain a -2 penalty on defense for one turn. You can only do this attack once per turn.");
+         System.out.println("H. Explosive Arrows: This attack deals splash damage to all other enemies equal to half of the damage dealt to the target enemy. Take damage equal to half of the splash damage.");
+         System.out.println("I. Weakness Arrows: Targeted enemy gains a -1 penalty to their Strength score for one turn *this effect does not stack*.");
+         System.out.println("J. Slowness Arrows: Targeted enemy gains a -1 penalty to their Dexterity score for one turn *this effect does not stack*.");
+         System.out.println("K. Dumbness Arrows: Targeted enemy gains a -1 penalty to their Intelligence score for one turn *this effect does not stack*.");
+         System.out.println("L. Shielding Arrows: You gain a +2 bonus to defense for 1 turn *this effect does not stack*.");
+         System.out.println("M. Frailizing Arrows: The enemy gains a -2 penalty to their defense for the next two times you attack them *this effect does not stack*.");
+         while(p1Loop){
+         projectile1 = scanner.next().toUpperCase().charAt(0);
+         if("ABCDEFGHIJKLM".indexOf(projectile1) >= 0){
+         p1Loop = false;
+         projectile1Name = Projectiles.get(projectile1)
+         }
+         else{
+         System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
+         }
+         }
+         System.out.println("Good choice, "+name"! Those "+projectile1Name" were added to your quiver.");
+         System.out.println("Now pick your the second projectile that you want. You shouldn't pick the same projectile twice in a row unless you want to give yourself a challenge!");
+         while(p2Loop){
+         projectile2 = scanner.next().toUpperCase().charAt(0);
+         if("ABCDEFGHIJKLM".indexOf(projectile2) >= 0){
+         p2Loop = false;
+         projectile2Name = Projectiles.get(projectile2)
+         }
+         else{
+         System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
+         }
+         }
+         System.out.println("Wonderful pick, "+name"! Those "+projectile2Name" were stuffed into your belt.");
+         System.out.println("You know the drill. What's your third projectile going to be?");
+         while(p3Loop){
+         projectile3 = scanner.next().toUpperCase().charAt(0);
+         if("ABCDEFGHIJKLM".indexOf(projectile3) >= 0){
+         p3Loop = false;
+         projectile3Name = Projectiles.get(projectile3)
+         }
+         else{
+         System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
+         }
+         }
+         System.out.println("That's a great one, "+name"! Those "+projectile3Name" were just placed into your secret arrow compartment.");
+         System.out.println("Fourth?");
+         while(p4Loop){
+         projectile4 = scanner.next().toUpperCase().charAt(0);
+         if("ABCDEFGHIJKLM".indexOf(projectile4) >= 0){
+         p4Loop = false;
+         projectile4Name = Projectiles.get(projectile4)
+         }
+         else{
+         System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
+         }
+         }
+         System.out.println("Amazing arrow, "+name"! Those "+projectile4Name" were stored safely within your pockets.");
      }
      else{
          System.out.println("That is not a valid class, "+name+". Try again.");
