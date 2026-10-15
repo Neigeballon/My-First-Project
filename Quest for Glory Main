@@ -46,9 +46,16 @@ public class Main {
      Map.entry('L', "Curse of Stupidity"),
      Map.entry('M', "Curse of Babbling")
      );
+
+     //Ranger Ranged Weapon Map
+     Map<Character, String> Bows = MapofEntries(
+     Map.entry('A', "Crossbow"),
+     Map.entry('B', "Longbow"),
+     Map.entry('C', "Shortbow")
+     );
      
      //Ranger Projectile Map
-      Map<Character, String> Projectiles = Map.ofEntries(
+     Map<Character, String> Projectiles = Map.ofEntries(
      Map.entry('A', ""),
      Map.entry('B', ""),
      Map.entry('C', ""),
@@ -67,14 +74,15 @@ public class Main {
       //Misc variables
      boolean cLoop = true;//Choosing a Class
      boolean aLoop = true;//Choosing an Armor
-     boolean s1Loop = true;//Choosing Spell 1
-     boolean s2Loop = true;//Choosing Spell 2
-     boolean s3Loop = true;//Choosing Spell 3
-     boolean s4Loop = true;//Choosing Spell 4
      boolean w1Loop = true;//Choosing Weapon 1
      boolean w2Loop = true;//Choosing Weapon 2
      boolean w3Loop = true;//Choosing Weapon 3
      boolean w4Loop = true;//Choosing Weapon 4
+     boolean s1Loop = true;//Choosing Spell 1
+     boolean s2Loop = true;//Choosing Spell 2
+     boolean s3Loop = true;//Choosing Spell 3
+     boolean s4Loop = true;//Choosing Spell 4
+     boolean rLoop = true;//Choosing a Ranged Weapon
      boolean abilityLoop = true;//Allocating Ability points
      boolean strengthLoop = true;//Allocating Strength points
      boolean dexterityLoop = true;//Allocating Dexterity points
@@ -420,14 +428,17 @@ public class Main {
          while(rLoop){
          rangedWeapon = scanner.next().toUpperCase().charAt(0);
          if(rangedWeapon == 'A'){
+              rLoop = false;
               attackBonus = 5;
               rangedEnchant = 1;
          }
          else if(rangedWeapon == 'B'){
+              rLoop = false;
               attackBonus = 3;
               rangedEnchant = 3;
          }
          else if(rangedWeapon == 'C'){
+              rLoop = false;
               attackBonus = 1;
               rangedEnchant = 5;
          }
@@ -435,6 +446,8 @@ public class Main {
               System.out.println("That is not a valid ranged weapon choice, "+name+". Try again.");
          }
          }
+         rangedWeaponName = 
+         System.out.println("That "+rangedWeaponName+" is sure to kill your enemies, "+name".");
      }
      else{
          System.out.println("That is not a valid class, "+name+". Try again.");
