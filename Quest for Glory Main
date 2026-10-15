@@ -47,6 +47,13 @@ public class Main {
      Map.entry('M', "Curse of Babbling")
      );
 
+     //Wizard Magic Item Map
+     Map<Character, String> Magics = MapofEntries(
+     Map.entry('A', "Rod of Rage"),
+     Map.entry('B', "Staff of Sacrifice"),
+     Map.entry('C', "Wand of Wonder")
+     );
+
      //Ranger Ranged Weapon Map
      Map<Character, String> Bows = MapofEntries(
      Map.entry('A', "Crossbow"),
@@ -82,6 +89,7 @@ public class Main {
      boolean s2Loop = true;//Choosing Spell 2
      boolean s3Loop = true;//Choosing Spell 3
      boolean s4Loop = true;//Choosing Spell 4
+     boolean mLoop = true;//Choosing a Magic Item
      boolean rLoop = true;//Choosing a Ranged Weapon
      boolean p1Loop = true;//Choosing Projectile 1
      boolean p2Loop = true;//Choosing Projectile 2
@@ -135,6 +143,8 @@ public class Main {
      String spell2Name = "";
      String spell3Name = "";
      String spell4Name = "";
+     char magicItem;
+     String magicItemName = "";
      
      //Ranger only variables
      int rangedEnchant;
@@ -411,6 +421,25 @@ public class Main {
          }
          }
          System.out.println("Wonderful, "+name+"! Your first choice, "+spell4Name+", was engraved in your spellbook!");
+         System.out.println("Now it is time to choose one of 3 magic items that will imbue your spells with even more power!");
+         System.out.println("A. Rod of Rage: ");
+         System.out.println("B. Staff of Sacrifice: ");
+         System.out.println("C. Wand of Wonder: ");
+         while(mLoop){
+         magicItem = scanner.next().toUpperCase().charAt(0);
+         if(magicItem == 'A'){
+         mLoop = false;
+         }
+         else if(magicItem == 'B'){
+         mLoop = false;
+         }
+         else if(magicItem == 'C'){
+         mLoop = false;
+         }
+         else{
+         System.out.println("Sorry, "+name+". You can't have that magic item. Try again.");
+         }
+         }
      }
      else if(cClass == 'C'){
          cLoop = false;
