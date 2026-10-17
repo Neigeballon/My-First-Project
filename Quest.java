@@ -3,8 +3,8 @@ import java.util.*;
 
 
 
-public class Main {
-    public static void main(String[] args) {
+public class Quest {
+    public static void quest(String[] args) {
 
      //Fighter Armor Map
      Map<Character, String> Armors = Map.ofEntries(
