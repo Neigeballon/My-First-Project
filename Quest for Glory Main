@@ -102,7 +102,7 @@ public class Main {
      Map.entry('D', projectile4Name)
      );
       
-      //Misc variables
+     //Character Creation Variables
      boolean cLoop = true;//Choosing a Class
      boolean aLoop = true;//Choosing an Armor
      boolean w1Loop = true;//Choosing Weapon 1
@@ -125,9 +125,14 @@ public class Main {
      boolean intelligenceLoop = true;//Allocating Intelligence points
      boolean charismaLoop = true;//Allocating Charisma points
 
+     //Questing Loop Variables
+     boolean f1Loop = true;
+     boolean w1Loop = true;
+     boolean r1Loop = true;
+
      int roll = 0;//Variable for dice rolls
      
-     //All classes variables
+     //All Classes Variables
      char cClass = '\0';
      double maxHP;
      double cHP; //Current HP variable
@@ -141,7 +146,6 @@ public class Main {
      int chaBonus;
      double defense = 13;
      int magicResistance;
-     int actions;
      boolean meleeRange;
      int attackBonus;
 
@@ -679,15 +683,24 @@ public class Main {
      scanner.nextLine();
      scanner.nextLine();
      if(cClass == 'A'){
-     System.out.println("A montstrous Nibbit stands in front of you, in melee range. You get to go first. Choose what weapon you would like to use.");
-     meleeRange = true;
-     System.out.println("A. "+weapon1Name);
-     System.out.println("B. "+weapon2Name);
-     System.out.println("C. "+weapon3Name);
-     System.out.println("D. "+weapon4Name);
-     chosenWeapon = scanner.next().toUpperCase().charAt(0);
-     chosenWeaponName = ChosenWeapon.get(chosenWeapon);
-     WEAPONS.caseWeapon();
+          System.out.println("A montstrous Nibbit stands in front of you, in melee range. You get to go first. Choose what weapon you would like to use.");
+          meleeRange = true;
+          System.out.println("A. "+weapon1Name);
+          System.out.println("B. "+weapon2Name);
+          System.out.println("C. "+weapon3Name);
+          System.out.println("D. "+weapon4Name);
+          while(f1Loop){
+          chosenWeapon = scanner.next().toUpperCase().charAt(0);
+          chosenWeaponName = ChosenWeapon.get(chosenWeapon);
+          if("ABCD".indexOf(chosenWeapon) >= 0){
+               f1Loop = false;
+               System.out.println("You attack the Nibbit with your "+chosenWeaponName+"!");
+               WEAPONS.caseWeapon();
+          }
+          else{
+               System.out.println("You can't attack with that. Try again.");
+          }
+          }
      }
 
 
