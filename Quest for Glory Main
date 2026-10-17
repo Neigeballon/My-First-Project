@@ -148,7 +148,7 @@ public class Main {
      //Fighter only variables
      int armorBonus;
      int armorEnchant;
-     char armor = '\0';
+     char armor = '';
      String armorName = "";
      char weapon1;
      char weapon2;
@@ -158,6 +158,8 @@ public class Main {
      String weapon2Name = "";
      String weapon3Name = "";
      String weapon4Name = "";
+     char chosenWeapon = '';
+     String chosenWeaponName = "";
 
      //Wizard only variables
      int magicDefense;
@@ -179,6 +181,8 @@ public class Main {
      boolean do2Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
      boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
      int doWonder = 0;
+     char chosenSpell = '';
+     String chosenSpellName = "";
      
      //Ranger only variables
      int rangedEnchant;
@@ -192,6 +196,8 @@ public class Main {
      String projectile2Name = "";
      String projectile3Name = "";
      String projectile4Name = "";
+     char chosenProjectile = '';
+     String chosenProjectileName = "";
 
      //Monster only variables
      double e1MaxHP;
@@ -669,6 +675,20 @@ public class Main {
      }
           System.out.println("You have officially allocated your ability points, and now you are ready for your adventure! The Quest For Glory begins NOW!!!");
 
+     System.out.println("Your first encounter is a fight. There's no talking your way out of this one. Press Enter to continue.
+     scanner.nextLine();
+     scanner.nextLine();
+     if(cClass == 'A'){
+     System.out.println("A montstrous Nibbit stands in front of you, in melee range. You get to go first. Choose what weapon you would like to use.");
+     meleeRange = true;
+     System.out.println("A. "+weapon1Name);
+     System.out.println("B. "+weapon2Name);
+     System.out.println("C. "+weapon3Name);
+     System.out.println("D. "+weapon4Name);
+     chosenWeapon = scanner.next().toUpperCase().charAt(0);
+     chosenWeaponName = ChosenWeapon.get(chosenWeapon);
+     WEAPONS.caseWeapon();
+     }
 
 
 
