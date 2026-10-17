@@ -30,6 +30,14 @@ public class Main {
      Map.entry('M', "Warhammer")
      );
 
+     //Fighter Chosen Weapon Map
+     Map<Character, String> ChosenWeapon = MapofEntries(
+     Map.entry('A', weapon1Name),
+     Map.entry('B', weapon2Name),
+     Map.entry('C', weapon3Name),
+     Map.entry('D', weapon4Name)
+     );
+
      //Wizard Spell Map 
      Map<Character, String> Spellbook = Map.ofEntries(
      Map.entry('A', "Mage's Shield"),
@@ -54,6 +62,14 @@ public class Main {
      Map.entry('C', "Wand of Wonder")
      );
 
+     //Wizard Chosen Spell Map
+     Map<Character, String> ChosenSpell = MapofEntries(
+     Map.entry('A', spell1Name),
+     Map.entry('B', spell2Name),
+     Map.entry('C', spell3Name),
+     Map.entry('D', spell4Name)
+     );
+
      //Ranger Ranged Weapon Map
      Map<Character, String> Bows = MapofEntries(
      Map.entry('A', "Crossbow"),
@@ -76,6 +92,14 @@ public class Main {
      Map.entry('K', "Dumbness Arrows"),
      Map.entry('L', "Shielding Arrows"),
      Map.entry('M', "Frailizing Arrows")
+     );
+
+     //Ranger Chosen Projectile Map
+     Map<Character, String> ChosenProjectile = MapofEntries(
+     Map.entry('A', projectile1Name),
+     Map.entry('B', projectile2Name),
+     Map.entry('C', projectile3Name),
+     Map.entry('D', projectile4Name)
      );
       
       //Misc variables
