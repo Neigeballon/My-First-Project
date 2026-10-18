@@ -15,6 +15,6 @@ public class SPELLS{
                 case "Curse of Stupidity" -> CurseofStupidity.execute();
                 case "Curse of Babbling" -> CurseofBabbling.execute();
                 default -> null
-           }
+          }
      }
 }
