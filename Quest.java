@@ -129,8 +129,10 @@ public class Quest {
      boolean f1Loop = true;
      boolean w1Loop = true;
      boolean r1Loop = true;
-
+        
+     //RNG Variables
      int roll = 0;//Variable for dice rolls
+     double attackRoll = 0;//Roll times ability score plus attack bonus
      
      //All Classes Variables
      char cClass = '\0';
