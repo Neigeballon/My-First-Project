@@ -148,7 +148,6 @@ public class Quest {
      int chaBonus;
      double defense = 13;
      int magicResistance;
-     boolean meleeRange;
      int attackBonus;
 
      //Fighter only variables
@@ -686,7 +685,7 @@ public class Quest {
      scanner.nextLine();
      if(cClass == 'A'){
           System.out.println("A montstrous Nibbit stands in front of you, in melee range. You get to go first. Choose what weapon you would like to use.");
-          meleeRange = true;
+          e1meleeRange = true;
           System.out.println("A. "+weapon1Name);
           System.out.println("B. "+weapon2Name);
           System.out.println("C. "+weapon3Name);
