@@ -15,6 +15,6 @@ public class PROJECTILES{
                 case "Shielding Arrows" -> ShieldingArrows.execute();
                 case "Frailizing Arrows" -> FrailizingArrows.execute();
                 default -> null
-           }
+          }
      }
 }
