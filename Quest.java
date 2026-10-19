@@ -1,11 +1,89 @@
 import java.util.*;
 
-
-
-
 public class Quest {
 
-    public static String chosenWeaponName
+    public static int roll;
+    public static double attackRoll;
+    public static double damageDealt;
+    public static double cStrength = 0.0;
+    public static int strBonus;
+    public static double cDexterity = 0.0;
+    public static int dexBonus;
+    public static double cIntelligence = 0.0;
+    public static int intBonus;
+    public static double cCharisma = 0.0;
+    public static int chaBonus;
+    public static int attackBonus;
+    public static double defense = 13;
+    public static int magicResistance;
+    public static int cSquare;
+
+    public static String chosenWeaponName = "";
+
+    public static String chosenSpellName = "";
+    public static String magicItemName = "";
+    public static boolean askRage = false;//Used for Rod of Rage; before every spell cast, this boolean determines if it asks the user whether they want to rage or not.
+    public static boolean doRage = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
+    public static boolean ask1Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice or not.
+    public static boolean do1Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
+    public static boolean ask2Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice again or not.
+    public static boolean do2Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
+    public static boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
+    public static int doWonder = 0;
+
+    public static String chosenProjectileName = "";
+    public static String rangedWeaponName = "";
+
+    public static String chosenEnemyName = "";
+    public static double e1CHP;
+    public static int e1Strength;
+    public static int e1Dexterity;
+    public static int e1Intelligence;
+    public static int e1Charisma;
+    public static int e1Defense;
+    public static int e1MagicResistance;
+    public static int e1Actions;
+    public static int e1Square;
+
+    public static double e2CHP;
+    public static int e2Strength;
+    public static int e2Dexterity;
+    public static int e2Intelligence;
+    public static int e2Charisma;
+    public static int e2Defense;
+    public static int e2MagicResistance;
+    public static int e2Actions;
+    public static int e2Square;
+
+    public static double e3CHP;
+    public static int e3Strength;
+    public static int e3Dexterity;
+    public static int e3Intelligence;
+    public static int e3Charisma;
+    public static int e3Defense;
+    public static int e3MagicResistance;
+    public static int e3Actions;
+    public static int e3Square;
+
+    public static double e4CHP;
+    public static int e4Strength;
+    public static int e4Dexterity;
+    public static int e4Intelligence;
+    public static int e4Charisma;
+    public static int e4Defense;
+    public static int e4MagicResistance;
+    public static int e4Actions;
+    public static int e4Square;
+
+    public static double e5CHP;
+    public static int e5Strength;
+    public static int e5Dexterity;
+    public static int e5Intelligence;
+    public static int e5Charisma;
+    public static int e5Defense;
+    public static int e5MagicResistance;
+    public static int e5Actions;
+    public static int e5Square;
     
     public static void main(String[] args) {
 
@@ -135,29 +213,11 @@ public class Quest {
      boolean dexterityLoop = true;//Allocating Dexterity points
      boolean intelligenceLoop = true;//Allocating Intelligence points
      boolean charismaLoop = true;//Allocating Charisma points
-        
-     //RNG Variables
-     int roll = 0;//Variable for dice rolls
-     double attackRoll = 0;//Roll times ability score plus attack bonus
-     double damageDealt = 0;//Displays how much damage was done to the enemy
-     String chosenEnemyName;
-     
+             
      //All Classes Variables
      char cClass = '\0';
      double maxHP;
      double cHP; //Current HP variable
-     double cStrength = 0.0;
-     int strBonus;
-     double cDexterity = 0.0;
-     int dexBonus;
-     double cIntelligence = 0.0;
-     int intBonus;
-     double cCharisma = 0.0;
-     int chaBonus;
-     double defense = 13;
-     int magicResistance;
-     int attackBonus;
-     int cSquare;//Determines which square you are in
      int actions;//Shows how many actions you have
      char choice;//Used during the quest as a variable based on user input to decide which route to take
      char chosenEnemy;//Used during combat to determine which enemy is being attacked
@@ -188,22 +248,11 @@ public class Quest {
      String spell3Name = "";
      String spell4Name = "";
      char magicItem;
-     String magicItemName = "";
-     boolean askRage = false;//Used for Rod of Rage; before every spell cast, this boolean determines if it asks the user whether they want to rage or not.
-     boolean doRage = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
-     boolean ask1Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice or not.
-     boolean do1Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
-     boolean ask2Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice again or not.
-     boolean do2Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
-     boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
-     int doWonder = 0;
      char chosenSpell = '';
-     String chosenSpellName = "";
      
      //Ranger only variables
      int rangedEnchant;
      char rangedWeapon = '\0';
-     String rangedWeaponName = "";
      char projectile1;
      char projectile2;
      char projectile3;
@@ -213,19 +262,9 @@ public class Quest {
      String projectile3Name = "";
      String projectile4Name = "";
      char chosenProjectile = '';
-     String chosenProjectileName = "";
 
      //Monster only variables
      double e1MaxHP;
-     double e1CHP;
-     int e1Strength;
-     int e1Dexterity;
-     int e1Intelligence;
-     int e1Charisma;
-     int e1Defense;
-     int e1MagicResistance;
-     int e1Actions;
-     int e1Square;
      String e1Name;
 
      double e2MaxHP;
@@ -522,7 +561,7 @@ public class Quest {
          System.out.println("You chose the Ranger class. This is all about ranged attacks and dexterity. You must use agile force to win the Glory!");
          System.out.println("As a ranger, your HP is 45. You have a unique ability to dodge attacks; you have a static +1 to Defense, which no other class has. You have a variety of ranged weapons and projectiles to choose from. Rangers also gain a +1 bonus on all Dexterity skill checks. Press Enter to continue.");
          scanner.nextLine();
-         System.out.println("As a ranger, you have no armor; your Defense bonus is equal to the starting 14 + your Dexterity score. Rangers are very powerful; their ranged weapons and projectiles can deal a lot of damage, but due to the distance they have to cover, they deal -4 damage; don't worry about it though. Choose your ranged weapon now.");
+         System.out.println("As a ranger, you have no armor; your Defense bonus is equal to the starting 14 + your Dexterity score. Rangers are very powerful; their ranged weapons and projectiles can deal a lot of damage, but due to the distance they have to cover, they deal -3 damage; don't worry about it though. Choose your ranged weapon now.");
          System.out.println("A. Crossbow: You gain a +5 bonus to damage with this weapon, but its enchantability is only 1, meaning enchantments on this weapon will not have a very high effect.");
          System.out.println("B. Longbow: You gain a +3 bonus to damage with this weapon, and its enchantability is 3.");
          System.out.println("C. Shortbow: You only gain a +1 bonus to damage with this weapon, but its enchantability is 5.");
