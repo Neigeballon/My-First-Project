@@ -216,6 +216,7 @@ public class Quest {
      int e1MagicResistance;
      int e1Actions;
      int e1Square;
+     String e1Name;
 
      double e2MaxHP;
      double e2CHP;
@@ -227,6 +228,7 @@ public class Quest {
      int e2MagicResistance;
      int e2Actions;
      int e2Square;
+     String e2Name;
 
      double e3MaxHP;
      double e3CHP;
@@ -238,6 +240,7 @@ public class Quest {
      int e3MagicResistance;
      int e3Actions;
      int e3Square;
+     String e3Name;
 
      double e4MaxHP;
      double e4CHP;
@@ -249,6 +252,7 @@ public class Quest {
      int e4MagicResistance;
      int e4Actions;
      int e4Square;
+     String e4Name;
 
      double e5MaxHP;
      double e5CHP;
@@ -260,6 +264,7 @@ public class Quest {
      int e5MagicResistance;
      int e5Actions;
      int e5Square;
+     String e5Name;
      
      Scanner scanner = new Scanner(System.in);
      System.out.println("Hello fellow adventurer! Welcome to the quest of Finding Glory! Enter your character's name.");
