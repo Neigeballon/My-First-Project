@@ -19,6 +19,8 @@ public class Quest {
     public static int cSquare;
     public static int actions;
 
+    public static char choice;//Used during the quest as a variable based on user input to decide which route to take
+
     public static String chosenWeaponName = "";
 
     public static String chosenSpellName = "";
@@ -219,7 +221,6 @@ public class Quest {
      char cClass = '\0';
      double maxHP;
      double cHP; //Current HP variable
-     char choice;//Used during the quest as a variable based on user input to decide which route to take
      char chosenEnemy;//Used during combat to determine which enemy is being attacked
 
      //Fighter only variables
