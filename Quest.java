@@ -131,6 +131,7 @@ public class Quest {
      //RNG Variables
      int roll = 0;//Variable for dice rolls
      double attackRoll = 0;//Roll times ability score plus attack bonus
+     double damageDealt = 0;//Displays how much damage was done to the enemy
      
      //All Classes Variables
      char cClass = '\0';
@@ -150,6 +151,7 @@ public class Quest {
      int cSquare;//Determines which square you are in
      int actions;//Shows how many actions you have
      char choice;//Used during the quest as a variable based on user input to decide which route to take
+     char chosenEnemy;//Used during combat to determine which enemy is being attacked
 
      //Fighter only variables
      int armorBonus;
