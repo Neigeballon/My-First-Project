@@ -24,22 +24,27 @@ e2CHP = 50;
 e3CHP = 50;
 e4CHP = 50;
 e5CHP = 50;
+//Decide the enemies' ability scores and magic resistance here
 while(true){
 choice = null;
 while(actions > 0){
 choice = null;
 System.out.println("What would you like to do?");
 System.out.println("A. Move.");
-System.out.println("B. Attack "+e1Name+", who has "+e1CHP+" HP and is in square #"+e1Square+".");
-System.out.println("C. Attack "+e2Name+", who has "+e2CHP+" HP and is in square #"+e2Square+".");
-System.out.println("D. Attack "+e3Name+", who has "+e3CHP+" HP and is in square #"+e3Square+".");
-System.out.println("E. Attack "+e4Name+", who has "+e4CHP+" HP and is in square #"+e4Square+".");
-System.out.println("F. Attack "+e5Name+", who has "+e5CHP+" HP and is in square #"+e5Square+".");
+System.out.println("B. Attempt to attack "+e1Name+", who has "+e1CHP+" HP and is in square #"+e1Square+".");
+System.out.println("C. Attempt to attack "+e2Name+", who has "+e2CHP+" HP and is in square #"+e2Square+".");
+System.out.println("D. Attempt to attack "+e3Name+", who has "+e3CHP+" HP and is in square #"+e3Square+".");
+System.out.println("E. Attempt to attack "+e4Name+", who has "+e4CHP+" HP and is in square #"+e4Square+".");
+System.out.println("F. Attempt to attack "+e5Name+", who has "+e5CHP+" HP and is in square #"+e5Square+".");
 choice = scanner.next().toUpperCase().charAt(0);
 if(choice == 'A'){
      Move.execute();
 }
 else if("BCDEF".indexOf(choice) >= 0)
-     chosenEnemy = 
+     WEAPONS.execute();
+}
+else{
+     System.out.println("Sorry, "+name+". You can't do that. Try again.");
+}
 }
 }
