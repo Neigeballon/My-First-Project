@@ -348,8 +348,8 @@ public class Quest {
          armorName = Armors.get(armor);
          System.out.println("That "+armorName+" is going to protect you really well, "+name+"!");  
          System.out.println("Now that you've chosen your armor, the last thing to choose during this charaacter creation phase before ability points is to choose 4 weapons to wield. For now, just choose one."); 
-         System.out.println("A. Battleaxe: Add your strength score to the end result of an attack, but take a -2 penalty on defense for this turn.");
-         System.out.println("B. 2 Daggers: Gain a +2 bonus on defense for this turn, but deal -3 damage.");
+         System.out.println("A. Battleaxe: Add your strength score to the end result of an attack, but take a -2 penalty on defense for this turn *this effect stacks*.");
+         System.out.println("B. 2 Daggers: Gain a +2 bonus on defense for this turn, but deal -3 damage."); 
          System.out.println("C. Flail: Increase your strength score by one for this attack, but the enemy becomes angry and gains a +1 to whatever ability they use to attack for their next attack.");
          System.out.println("D. Halberd: Target all enemies in melee range with your attack, but all enemies hit gain an extra attack against you.");
          System.out.println("E. 2 Handaxes: Target 2 enemies in melee range with your attack, but the damage done to each of them is cut in half.");
