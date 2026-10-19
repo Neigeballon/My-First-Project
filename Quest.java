@@ -709,7 +709,7 @@ public class Quest {
           System.out.println("B. Move.");
           choice = scanner.next().toUpperCase().charAt(0);
           if(choice == 'A'){
-               actions = 1;
+               actions--;
                System.out.println("What weapon would you like to use to attack?");
                System.out.println("A. "+weapon1Name);
                System.out.println("B. "+weapon2Name);
@@ -728,23 +728,8 @@ public class Quest {
                }
           }
           else if(choice == 'B'){
-               actions = 1;
-               System.out.println("Which square would you like to move to? Type in the number Remember, you are in square "+cSquare+". It would be a waste of an action to move into the same square you are already in.");
-               System.out.println("A. #1.");
-               System.out.println("B. #2.");
-               System.out.println("C. #3.");
-               System.out.println("D. #4.");
-               choice = null;
-               while(f1bLoop){
-               choice = scanner.next().toUpperCase().charAt(0);
-               switch(choice){
-                   case 'A' -> cSquare = 1;
-                   case 'B' -> cSquare = 2;
-                   case 'C' -> cSquare = 3;
-                   case 'D' -> cSquare = 4;
-                   default -> System.out.println("That is not a valid option, "+name+". Try again.");
-               }
-               }            
+               actions--;
+               Move.execute();
           }
           }
           }
