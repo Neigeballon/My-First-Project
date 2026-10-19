@@ -93,6 +93,7 @@ choice = null;
 //If then logic for enemy 5 attack pattern goes here
 //Add option for reactions here
 }
+WEAPONS.reset();
 }
 choice = null;
 chosenWeapon = null;
