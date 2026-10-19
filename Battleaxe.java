@@ -5,6 +5,7 @@ import Quest.damageDealt;
 import Quest.cStrength;
 import Quest.strBonus;
 import Quest.attackBonus;
+import Quest.defense;
 import Quest.choice;
 import Quest.cSquare;
 import Quest.e1Square;
