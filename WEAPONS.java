@@ -1,5 +1,5 @@
 public class WEAPONS{
-     public static void caseWeapon(){
+     public static void execute(){
           switch(chosenWeaponName){
                 case "Battleaxe" -> Battleaxe.execute();
                 case "2 Daggers" -> Daggers.execute();
