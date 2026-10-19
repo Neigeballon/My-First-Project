@@ -126,9 +126,8 @@ public class Quest {
      boolean charismaLoop = true;//Allocating Charisma points
 
      //Questing Loop Variables
-     boolean f1Loop = true;
-     boolean w1Loop = true;
-     boolean r1Loop = true;
+     boolean f1aLoop = true;
+     boolean f1bLoop = true;
         
      //RNG Variables
      int roll = 0;//Variable for dice rolls
@@ -702,11 +701,13 @@ public class Quest {
           e1Charisma = 0;
           e1Defense = 17;
           e1MagicResistance = 2;
-          while(f1Loop){}
+          while(e1CHP > 0){
+          //If there were multiple enemies just use && for the different enemies' current HP
+          //If the enemy goes first, place their actions here instead of after the while(actions > 0) loop!!!
+          while(actions > 0){
           System.out.println("A. Attack.");
           System.out.println("B. Move.");
           choice = scanner.next().toUpperCase().charAt(0);
-          //If this was an encounter where the enemy or the player could inflict penalties on the amount of actions they have, include an if(actions > 0) then statement.
           if(choice == 'A'){
                actions = 1;
                System.out.println("What weapon would you like to use to attack?");
@@ -722,7 +723,7 @@ public class Quest {
                     WEAPONS.caseWeapon();
                }
                else{
-                    System.out.println("You can't attack with that. Try again.");
+                    System.out.println("You can't attack with that, "+name+". Try again.");
                }
                }
           }
@@ -733,12 +734,19 @@ public class Quest {
                System.out.println("B. #2.");
                System.out.println("C. #3.");
                System.out.println("D. #4.");
+               choice = null;
                while(f1bLoop){
                choice = scanner.next().toUpperCase().charAt(0);
                switch(choice){
-                    case
+                   case 'A' -> cSquare = 1;
+                   case 'B' -> cSquare = 2;
+                   case 'C' -> cSquare = 3;
+                   case 'D' -> cSquare = 4;
+                   default -> System.out.println("That is not a valid option, "+name+". Try again.");
                }
                }            
+          }
+          }
           }
      }
 
