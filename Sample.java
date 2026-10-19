@@ -46,7 +46,17 @@ else if("BCDEF".indexOf(choice) >= 0)
      System.out.println("B. "+weapon2Name);
      System.out.println("C. "+weapon3Name);
      System.out.println("D. "+weapon4Name);
-     WEAPONS.execute();
+     while(true){
+     chosenWeapon = scanner.next().toUpperCase().charAt(0);
+     if("ABCD".indexOf(chosenWeapon) >= 0){
+           chosenWeaponName = ChosenWeapon.get(chosenWeapon);
+           WEAPONS.execute();
+           break;
+     }
+     else{
+           System.out.println("That is not one of your weapons, "+name+". Try again.");
+     }
+     }
 }
 else{
      System.out.println("Sorry, "+name+". You can't do that. Try again.");
