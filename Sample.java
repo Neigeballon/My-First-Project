@@ -29,8 +29,8 @@ while(true){
 choice = null;
 while(actions > 0){
 choice = null;
-System.out.println("What would you like to do?");
-System.out.println("A. Move.");
+System.out.println("What would you like to do? If the target for your attack is not valid, you will be asked to try again. If you have the spear, you can attack an enemy not in your square.");
+System.out.println("A. Move."); 
 System.out.println("B. Attempt to attack "+e1Name+", who has "+e1CHP+" HP and is in square #"+e1Square+".");
 System.out.println("C. Attempt to attack "+e2Name+", who has "+e2CHP+" HP and is in square #"+e2Square+".");
 System.out.println("D. Attempt to attack "+e3Name+", who has "+e3CHP+" HP and is in square #"+e3Square+".");
@@ -41,6 +41,11 @@ if(choice == 'A'){
      Move.execute();
 }
 else if("BCDEF".indexOf(choice) >= 0)
+     System.out.println("What weapon would you like to use to attack them?");
+     System.out.println("A. "+weapon1Name);
+     System.out.println("B. "+weapon2Name);
+     System.out.println("C. "+weapon3Name);
+     System.out.println("D. "+weapon4Name);
      WEAPONS.execute();
 }
 else{
