@@ -1,6 +1,7 @@
 public class Battleaxe{
      public static void execute(){
           if(choice == 'B' && cSquare == e1Square){
+                actions--;
                 System.out.println("You attack "+chosenEnemyName+" with your battleaxe!");    
                 roll = ThreadLocalRandom.current().nextInt(1, 7);
                 System.out.println("You rolled a "+roll+"!");
@@ -17,6 +18,7 @@ public class Battleaxe{
                 }
           }
           else if(choice == 'C' && cSquare == e2Square){
+                actions--;
                 System.out.println("You attack "+chosenEnemyName+" with your battleaxe!");    
                 roll = ThreadLocalRandom.current().nextInt(1, 7);
                 System.out.println("You rolled a "+roll+"!");
@@ -33,6 +35,7 @@ public class Battleaxe{
                 } 
           }
           else if(choice == 'D' && cSquare == e3Square){
+                actions--;
                 System.out.println("You attack "+chosenEnemyName+" with your battleaxe!");    
                 roll = ThreadLocalRandom.current().nextInt(1, 7);
                 System.out.println("You rolled a "+roll+"!");
@@ -49,6 +52,7 @@ public class Battleaxe{
                 }
           }
           else if(choice == 'E' && cSquare == e4Square){
+                actions--;
                 System.out.println("You attack "+chosenEnemyName+" with your battleaxe!");    
                 roll = ThreadLocalRandom.current().nextInt(1, 7);
                 System.out.println("You rolled a "+roll+"!");
@@ -65,6 +69,7 @@ public class Battleaxe{
                 }
           }
           else if(choice == 'F' && cSquare == e5Square){
+                actions--;
                 System.out.println("You attack "+chosenEnemyName+" with your battleaxe!");    
                 roll = ThreadLocalRandom.current().nextInt(1, 7);
                 System.out.println("You rolled a "+roll+"!");
@@ -81,7 +86,7 @@ public class Battleaxe{
                 }
           }
           else{
-                
+                System.out.println("Sorry, "+name+". You acutally can't target "+chosenEnemyName+" with your battleaxe because it is not in your square. You are in square #"+cSquare+". Choose your action again *it was not wasted*.");
           }
      }
 }
