@@ -41,6 +41,7 @@ System.out.println("E. Attempt to attack "+e4Name+", who has "+e4CHP+" HP and is
 System.out.println("F. Attempt to attack "+e5Name+", who has "+e5CHP+" HP and is in square #"+e5Square+".");
 choice = scanner.next().toUpperCase().charAt(0);
 if(choice == 'A'){
+     actions--;
      Move.execute();
 }
 else if("BCDEF".indexOf(choice) >= 0){
