@@ -1,9 +1,9 @@
-System.out.println("There are five enemies before you. There is Jack, Rack, Pack, Vack, and Zack.");
-enemy1Name = "Jack";
-enemy2Name = "Rack";
-enemy3Name = "Pack";
-enemy4Name = "Vack";
-enemy5Name = "Zack";
+System.out.println("There are five enemies before you. There is Jack, Rack, Pack, Vack, and Zack. If at any time, a creature's HP equals or drops below zero, then they are dead and SHOULD NOT BE ATTACKED.");
+e1Name = "Jack";
+e2Name = "Rack";
+e3Name = "Pack";
+e4Name = "Vack";
+e5Name = "Zack";
 e1Square = 1;
 e2Square = 1;
 e3Square = 3;
@@ -28,7 +28,11 @@ e5CHP = 50;
 while(true){
 while(actions > 0){
 System.out.println("What would you like to do?");
-System.out.println("A. Move");
-System.out.println("B. Attack the 
+System.out.println("A. Move.");
+System.out.println("B. Attack "+e1Name+", who has "+e1CHP+" HP and is in square #"+e1Square+".");
+System.out.println("C. Attack "+e2Name+", who has "+e2CHP+" HP and is in square #"+e2Square+".");
+System.out.println("D. Attack "+e3Name+", who has "+e3CHP+" HP and is in square #"+e3Square+".");
+System.out.println("E. Attack "+e4Name+", who has "+e4CHP+" HP and is in square #"+e4Square+".");
+System.out.println("F. Attack "+e5Name+", who has "+e5CHP+" HP and is in square #"+e5Square+".");
 }
 }
