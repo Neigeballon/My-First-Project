@@ -8,7 +8,7 @@ public class Battleaxe{
                 attackRoll = roll*cStrength+strBonus+attackBonus;
                 System.out.println("Your total attack roll is "+attackRoll+"!");
                 damageDealt = attackRoll-e1Defense;
-                System.out.println("With your deadly battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
+                System.out.println("With your barbaric battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
                 e1CHP = e1CHP-damageDealt;
                 if(e1CHP =< 0){
                       System.out.println(chosenEnemyName+" is dead! Great job killing it. It is still in square #"+e1Square+".");
@@ -25,7 +25,7 @@ public class Battleaxe{
                 attackRoll = roll*cStrength+strBonus+attackBonus;
                 System.out.println("Your total attack roll is "+attackRoll+"!");
                 damageDealt = attackRoll-e2Defense;
-                System.out.println("With your deadly battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
+                System.out.println("With your barbaric battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
                 e2CHP = e2CHP-damageDealt;
                 if(e1CHP =< 0){
                       System.out.println(chosenEnemyName+" is dead! Great job killing it. It is still in square #"+e2Square+".");
@@ -42,7 +42,7 @@ public class Battleaxe{
                 attackRoll = roll*cStrength+strBonus+attackBonus;
                 System.out.println("Your total attack roll is "+attackRoll+"!");
                 damageDealt = attackRoll-e3Defense;
-                System.out.println("With your deadly battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
+                System.out.println("With your barbaric battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
                 e3CHP = e3CHP-damageDealt;
                 if(e1CHP =< 0){
                       System.out.println(chosenEnemyName+" is dead! Great job killing it. It is still in square #"+e3Square+".");
@@ -59,7 +59,7 @@ public class Battleaxe{
                 attackRoll = roll*cStrength+strBonus+attackBonus;
                 System.out.println("Your total attack roll is "+attackRoll+"!");
                 damageDealt = attackRoll-e4Defense;
-                System.out.println("With your deadly battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
+                System.out.println("With your barbaric battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
                 e4CHP = e4CHP-damageDealt;
                 if(e1CHP =< 0){
                       System.out.println(chosenEnemyName+" is dead! Great job killing it. It is still in square #"+e4Square+".");
@@ -76,7 +76,7 @@ public class Battleaxe{
                 attackRoll = roll*cStrength+strBonus+attackBonus;
                 System.out.println("Your total attack roll is "+attackRoll+"!");
                 damageDealt = attackRoll-e5Defense;
-                System.out.println("With your deadly battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
+                System.out.println("With your barbaric battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
                 e5CHP = e5HP-damageDealt;
                 if(e1CHP =< 0){
                       System.out.println(chosenEnemyName+" is dead! Great job killing it. It is still in square #"+e5Square+".");
