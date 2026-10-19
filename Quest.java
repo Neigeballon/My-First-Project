@@ -17,6 +17,7 @@ public class Quest {
     public static double defense = 13;
     public static int magicResistance;
     public static int cSquare;
+    public static int actions;
 
     public static String chosenWeaponName = "";
 
@@ -218,7 +219,6 @@ public class Quest {
      char cClass = '\0';
      double maxHP;
      double cHP; //Current HP variable
-     int actions;//Shows how many actions you have
      char choice;//Used during the quest as a variable based on user input to decide which route to take
      char chosenEnemy;//Used during combat to determine which enemy is being attacked
 
@@ -268,51 +268,15 @@ public class Quest {
      String e1Name;
 
      double e2MaxHP;
-     double e2CHP;
-     int e2Strength;
-     int e2Dexterity;
-     int e2Intelligence;
-     int e2Charisma;
-     int e2Defense;
-     int e2MagicResistance;
-     int e2Actions;
-     int e2Square;
      String e2Name;
 
      double e3MaxHP;
-     double e3CHP;
-     int e3Strength;
-     int e3Dexterity;
-     int e3Intelligence;
-     int e3Charisma;
-     int e3Defense;
-     int e3MagicResistance;
-     int e3Actions;
-     int e3Square;
      String e3Name;
 
      double e4MaxHP;
-     double e4CHP;
-     int e4Strength;
-     int e4Dexterity;
-     int e4Intelligence;
-     int e4Charisma;
-     int e4Defense;
-     int e4MagicResistance;
-     int e4Actions;
-     int e4Square;
      String e4Name;
 
      double e5MaxHP;
-     double e5CHP;
-     int e5Strength;
-     int e5Dexterity;
-     int e5Intelligence;
-     int e5Charisma;
-     int e5Defense;
-     int e5MagicResistance;
-     int e5Actions;
-     int e5Square;
      String e5Name;
      
      Scanner scanner = new Scanner(System.in);
