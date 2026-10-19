@@ -67,6 +67,7 @@ else{
      System.out.println("Sorry, "+name+". You can't do that. Try again.");
 }
 }
+//Enemy actions cannot cause self harm to a point of dying - use an if then to take this into account
 while(e1Actions > 0 && e1CHP > 0){
 choice = null;
 //If then logic for enemy 1 attack pattern goes here
@@ -93,3 +94,7 @@ choice = null;
 //Add option for reactions here
 }
 }
+choice = null;
+chosenWeapon = null;
+chosenWeaponName = null;
+chosenEnemyName = null;
