@@ -4,6 +4,9 @@ import java.util.*;
 
 
 public class Quest {
+
+    public static String chosenWeaponName
+    
     public static void main(String[] args) {
 
      //Fighter Armor Map
@@ -173,8 +176,7 @@ public class Quest {
      String weapon3Name = "";
      String weapon4Name = "";
      char chosenWeapon = '';
-     String chosenWeaponName = "";
-
+     
      //Wizard only variables
      int magicDefense;
      char spell1;
