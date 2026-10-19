@@ -25,7 +25,7 @@ e3CHP = 50;
 e4CHP = 50;
 e5CHP = 50;
 //Decide the enemies' ability scores and magic resistance here
-while(true){
+while(e1CHP > 0 || e2CHP > 0 || e3CHP > 0 || e4CHP > 0 || e5CHP > 0){
 choice = null;
 while(actions > 0){
 choice = null;
@@ -61,5 +61,20 @@ else if("BCDEF".indexOf(choice) >= 0)
 else{
      System.out.println("Sorry, "+name+". You can't do that. Try again.");
 }
+}
+while(e1Actions > 0 && e1CHP > 0){
+//If then logic for enemy 1 attack pattern goes here
+}
+while(e1Actions > 0 && e1CHP > 0){
+//If then logic for enemy 1 attack pattern goes here
+}
+while(e1Actions > 0 && e1CHP > 0){
+//If then logic for enemy 1 attack pattern goes here
+}
+while(e1Actions > 0 && e1CHP > 0){
+//If then logic for enemy 1 attack pattern goes here
+}
+while(e1Actions > 0 && e1CHP > 0){
+//If then logic for enemy 1 attack pattern goes here
 }
 }
