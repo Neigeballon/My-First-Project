@@ -101,6 +101,14 @@ public class Quest {
      Map.entry('C', projectile3Name),
      Map.entry('D', projectile4Name)
      );
+
+     Map<Character, String> ChosenEnemyName = MapofEntries(
+     Map.entry('B', e1Name),
+     Map.entry('C', e2Name),
+     Map.entry('D', e3Name),
+     Map.entry('E', e4Name),
+     Map.entry('F', e5Name)
+     );
       
      //Character Creation Variables
      boolean cLoop = true;//Choosing a Class
@@ -132,6 +140,7 @@ public class Quest {
      int roll = 0;//Variable for dice rolls
      double attackRoll = 0;//Roll times ability score plus attack bonus
      double damageDealt = 0;//Displays how much damage was done to the enemy
+     String chosenEnemyName;
      
      //All Classes Variables
      char cClass = '\0';
