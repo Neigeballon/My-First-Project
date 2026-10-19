@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class Quest {
-    public static void quest(String[] args) {
+    public static void main(String[] args) {
 
      //Fighter Armor Map
      Map<Character, String> Armors = Map.ofEntries(
