@@ -5,7 +5,7 @@ public class Battleaxe{
                 System.out.println("You attack "+chosenEnemyName+" with your battleaxe!");    
                 roll = ThreadLocalRandom.current().nextInt(1, 7);
                 System.out.println("You rolled a "+roll+"!");
-                attackRoll = roll*cStrength+strBonus+attackBonus;
+                attackRoll = roll*cStrength+strBonus+attackBonus+cStrength;
                 System.out.println("Your total attack roll is "+attackRoll+"!");
                 damageDealt = attackRoll-e1Defense;
                 System.out.println("With your barbaric battleaxe, you dealt "+damageDealt+" to "+chosenEnemyName+"!");
