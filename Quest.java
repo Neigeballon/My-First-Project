@@ -132,9 +132,6 @@ public class Quest {
      boolean dexterityLoop = true;//Allocating Dexterity points
      boolean intelligenceLoop = true;//Allocating Intelligence points
      boolean charismaLoop = true;//Allocating Charisma points
-
-     //Questing Loop Variables
-     boolean f1aLoop = true;
         
      //RNG Variables
      int roll = 0;//Variable for dice rolls
