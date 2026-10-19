@@ -735,7 +735,9 @@ public class Quest {
                System.out.println("D. #4.");
                while(f1bLoop){
                choice = scanner.next().toUpperCase().charAt(0);
-               if(choice == 
+               switch(choice){
+                    case
+               }
                }            
           }
      }
