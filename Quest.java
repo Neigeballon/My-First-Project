@@ -127,7 +127,6 @@ public class Quest {
 
      //Questing Loop Variables
      boolean f1aLoop = true;
-     boolean f1bLoop = true;
         
      //RNG Variables
      int roll = 0;//Variable for dice rolls
@@ -346,7 +345,7 @@ public class Quest {
          System.out.println("H. Rapier: The target enemy takes a -1 penalty to their Dexterity score for one turn, but you take a -1 penalty on damage and defense for this turn.");
          System.out.println("I. Scimitar: The target enemy takes a -1 penalty to their Intelligence score for one turn, but you take a -1 penalty on damage and defense for this turn.");
          System.out.println("J. Scythe: With this weapon, you have a 1 in 5 chance of dealing double damage, but if it does not, then you gain a -3 penalty on damage.");
-         System.out.println("K. Spear: You can make a melee attack at ranged range with this weapon, except you gain a -2 penalty on defense for one turn. You can only attack with the spear once per turn.");
+         System.out.println("K. Spear: You can make an attack against an enemy that is not in your square with this weapon, except you gain a -2 penalty on defense for one turn. You can only attack with the spear once per turn.");
          System.out.println("L. Trident: Your attack with this weapon is made 3 times, and the best result is taken. For the next attack made against you during this combat, the attacking enemy rolls their attack twice and takes the best result.");
          System.out.println("M. Warhammer: Deal splash damage equal to one half of the damage dealt to the target enemy to all other enemies in melee range. Deal one half of the splash damage dealt to yourself.");
          while(w1Loop){
@@ -542,7 +541,7 @@ public class Quest {
          System.out.println("D. Frost Arrows: The targeted enemy can only make one melee attack for 2 turns *this effect does not stack* but the freezing arrow gives you a -2 penalty on defense for one turn *non-stacking*.");
          System.out.println("E. Iron Arrows: Gain a +2 bonus on damage for this attack.");
          System.out.println("F. Double Arrows: When you attack, roll the attack twice and take the better result.");
-         System.out.println("G. Point-Blank Arrows: You can make an attack at melee range with this arrow, but you gain a -2 penalty on defense for one turn. You can only do this attack once per turn.");
+         System.out.println("G. Point-Blank Arrows: You can make an attack against an enemy that is in your square with this arrow, but you gain a -2 penalty on defense for one turn. You can only do this attack once per turn.");
          System.out.println("H. Explosive Arrows: This attack deals splash damage to all other enemies equal to half of the damage dealt to the target enemy. Take damage equal to half of the splash damage.");
          System.out.println("I. Weakness Arrows: Targeted enemy gains a -1 penalty to their Strength score for one turn *this effect does not stack*.");
          System.out.println("J. Slowness Arrows: Targeted enemy gains a -1 penalty to their Dexterity score for one turn *this effect does not stack*.");
@@ -705,31 +704,61 @@ public class Quest {
           //If there were multiple enemies just use && for the different enemies' current HP
           //If the enemy goes first, place their actions here instead of after the while(actions > 0) loop!!!
           while(actions > 0){
-          System.out.println("A. Attack.");
-          System.out.println("B. Move.");
-          choice = scanner.next().toUpperCase().charAt(0);
-          if(choice == 'A'){
-               actions--;
-               System.out.println("What weapon would you like to use to attack?");
-               System.out.println("A. "+weapon1Name);
-               System.out.println("B. "+weapon2Name);
-               System.out.println("C. "+weapon3Name);
-               System.out.println("D. "+weapon4Name);
-               while(f1aLoop){
-               chosenWeapon = scanner.next().toUpperCase().charAt(0);
-               if("ABCD".indexOf(chosenWeapon) >= 0){
-                    chosenWeaponName = ChosenWeapon.get(chosenWeapon);
-                    System.out.println("You attack the Nibbit with your "+chosenWeaponName+"!");
-                    WEAPONS.caseWeapon();
+          choice = null;
+          if(cSquare == e1Square){//If there were multiple enemies just use || to check if (cSquare == e1Square || cSquare == e2Square)
+               System.out.println("A. Attack.");
+               System.out.println("B. Move.");
+               choice = scanner.next().toUpperCase().charAt(0);
+               if(choice == 'A'){
+                    actions--;
+                    System.out.println("What weapon would you like to use to attack?");
+                    System.out.println("A. "+weapon1Name);
+                    System.out.println("B. "+weapon2Name);
+                    System.out.println("C. "+weapon3Name);
+                    System.out.println("D. "+weapon4Name);
+                    while(f1aLoop){
+                    chosenWeapon = scanner.next().toUpperCase().charAt(0);
+                    if("ABCD".indexOf(chosenWeapon) >= 0){
+                         chosenWeaponName = ChosenWeapon.get(chosenWeapon);
+                         System.out.println("You attack the Nibbit with your "+chosenWeaponName+"!");
+                         WEAPONS.caseWeapon();
+                    }
+                    else{
+                         System.out.println("You can't attack with that, "+name+". Try again.");
+                    }
+                    }
                }
-               else{
-                    System.out.println("You can't attack with that, "+name+". Try again.");
-               }
+               else if(choice == 'B'){
+                    actions--;
+                    Move.execute();
                }
           }
-          else if(choice == 'B'){
-               actions--;
-               Move.execute();
+          else{
+               if(weapon1Name.equals("Spear") || weapon2Name.equals("Spear") || weapon3Name.equals("Spear") || weapon4Name.equals("Spear")){
+                    System.out.println("Since your are not in the same square with any creature, but you have the spear as one of your weapons, your two choices are:");
+                    System.out.println("A. Spear the Nibbit.");
+                    System.out.println("B. Move.");
+                    while(true){
+                    choice = scanner.next().toUpperCase().charAt(0);
+                    if(choice == 'A'){
+                         actions--;
+                         Spear.execute();
+                         break;
+                    }  
+                    else if(choice == 'B'){
+                         actions--;
+                         Move.execute();
+                         break;
+                    }
+                    else{
+                         System.out.println("That is not a valid choice, "+name+". Try again.");
+                    }
+                    }
+               }
+               else{
+                    System.out.println("Since you are not in the same square as any other creature, your only availible action is to move. Press Enter to move.");
+                    Move.execute();
+               }
           }
           }
           }
