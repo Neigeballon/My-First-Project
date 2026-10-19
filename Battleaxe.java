@@ -1,3 +1,28 @@
+import Quest.actions;
+import Quest.roll;
+import Quest.attackRoll;
+import Quest.damageDealt;
+import Quest.cStrength;
+import Quest.strBonus;
+import Quest.attackBonus;
+import Quest.choice;
+import Quest.cSquare;
+import Quest.e1Square;
+import Quest.e2Square;
+import Quest.e3Square;
+import Quest.e4Square;
+import Quest.e5Square;
+import Quest.e1CHP;
+import Quest.e2CHP;
+import Quest.e3CHP;
+import Quest.e4CHP;
+import Quest.e5CHP;
+import Quest.e1Defense;
+import Quest.e2Defense;
+import Quest.e3Defense;
+import Quest.e4Defense;
+import Quest.e5Defense;
+
 public class Battleaxe{
      public static void execute(){
           if(choice == 'B' && cSquare == e1Square){
