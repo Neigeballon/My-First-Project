@@ -345,7 +345,7 @@ public class Quest {
          System.out.println("H. Rapier: The target enemy takes a -1 penalty to their Dexterity score for one turn, but you take a -1 penalty on damage and defense for this turn.");
          System.out.println("I. Scimitar: The target enemy takes a -1 penalty to their Intelligence score for one turn, but you take a -1 penalty on damage and defense for this turn.");
          System.out.println("J. Scythe: With this weapon, you have a 1 in 5 chance of dealing double damage, but if it does not, then you gain a -3 penalty on damage.");
-         System.out.println("K. Spear: You can make an attack against an enemy that is not in your square with this weapon, except you gain a -2 penalty on defense for one turn. You can only attack with the spear once per turn.");
+         System.out.println("K. Spear: You can make an attack against an enemy that is not in your square with this weapon, except you gain a -2 penalty on defense for one turn *this effect stacks*.");
          System.out.println("L. Trident: Your attack with this weapon is made 3 times, and the best result is taken. For the next attack made against you during this combat, the attacking enemy rolls their attack twice and takes the best result.");
          System.out.println("M. Warhammer: Deal splash damage equal to one half of the damage dealt to the target enemy to all other enemies in melee range. Deal one half of the splash damage dealt to yourself.");
          while(w1Loop){
@@ -541,7 +541,7 @@ public class Quest {
          System.out.println("D. Frost Arrows: The targeted enemy can only make one melee attack for 2 turns *this effect does not stack* but the freezing arrow gives you a -2 penalty on defense for one turn *non-stacking*.");
          System.out.println("E. Iron Arrows: Gain a +2 bonus on damage for this attack.");
          System.out.println("F. Double Arrows: When you attack, roll the attack twice and take the better result.");
-         System.out.println("G. Point-Blank Arrows: You can make an attack against an enemy that is in your square with this arrow, but you gain a -2 penalty on defense for one turn. You can only do this attack once per turn.");
+         System.out.println("G. Point-Blank Arrows: You can make an attack against an enemy that is in your square with this arrow, but you gain a -2 penalty on defense for one turn *this effect stacks*.");
          System.out.println("H. Explosive Arrows: This attack deals splash damage to all other enemies equal to half of the damage dealt to the target enemy. Take damage equal to half of the splash damage.");
          System.out.println("I. Weakness Arrows: Targeted enemy gains a -1 penalty to their Strength score for one turn *this effect does not stack*.");
          System.out.println("J. Slowness Arrows: Targeted enemy gains a -1 penalty to their Dexterity score for one turn *this effect does not stack*.");
