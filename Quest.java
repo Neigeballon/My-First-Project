@@ -149,6 +149,9 @@ public class Quest {
      double defense = 13;
      int magicResistance;
      int attackBonus;
+     int cSquare;//Determines which square you are in
+     int actions;//Shows how many actions you have
+     char choice;//Used during the quest as a variable based on user input to decide which route to take
 
      //Fighter only variables
      int armorBonus;
@@ -214,7 +217,7 @@ public class Quest {
      int e1Defense;
      int e1MagicResistance;
      int e1Actions;
-     boolean e1MeleeRange;
+     int e1Square;
 
      double e2MaxHP;
      double e2CHP;
@@ -225,7 +228,7 @@ public class Quest {
      int e2Defense;
      int e2MagicResistance;
      int e2Actions;
-     boolean e2MeleeRange;
+     int e2Square;
 
      double e3MaxHP;
      double e3CHP;
@@ -236,7 +239,7 @@ public class Quest {
      int e3Defense;
      int e3MagicResistance;
      int e3Actions;
-     boolean e3MeleeRange;
+     int e3Square;
 
      double e4MaxHP;
      double e4CHP;
@@ -247,7 +250,7 @@ public class Quest {
      int e4Defense;
      int e4MagicResistance;
      int e4Actions;
-     boolean e4MeleeRange;
+     int e4Square;
 
      double e5MaxHP;
      double e5CHP;
@@ -258,7 +261,7 @@ public class Quest {
      int e5Defense;
      int e5MagicResistance;
      int e5Actions;
-     boolean e5MeleeRange;
+     int e5Square;
      
      Scanner scanner = new Scanner(System.in);
      System.out.println("Hello fellow adventurer! Welcome to the quest of Finding Glory! Enter your character's name.");
@@ -273,11 +276,13 @@ public class Quest {
      scanner.nextLine();
      System.out.println("When faced with a dilemma, there may be options to attack or to try to talk your way out of it or something else. If you choose to attack, you will go first in the round. If you fail to talk your way out of something, your new enemy goes first in the round. Press Enter to continue.");
      scanner.nextLine();
-     System.out.println("In each combat round, you and each enemy has a turn. In that turn, they can take 2 actions. In an action, they or you can attack, cast a spell, use a magic item, move into melee range, or move into ranged range. Some special things take no action. Press Enter to continue.");
+     System.out.println("In combat, there are 4 squares that are locations where you and each enemy are. The squares are named 1, 2, 3, and 4. Top right = #1, bottom right = #2, bottom left = #3, top left + #4. Press enter to continue.");
      scanner.nextLine();
-     System.out.println("When attacking, a melee attack can only be made within melee range, and a ranged attack can only be made from a distance. Spell attacks' ranges can vary; for example, a fireball spell can only be made from a distance, otherwise the caster would be incinerated, and thankfully, this game doesn't let that happen - for you or the enemies. Press Enter to continue.");
+     System.out.println("In each combat round, you and each enemy has a turn. In that turn, they can take 2 actions. In an action, they or you can attack, cast a spell, use a magic item, or move to a different square. Some special things take no action. Press Enter to continue.");
      scanner.nextLine();
-     
+     System.out.println("When attacking, a melee attack can only be made if you are in the same square as the enemy. A ranged attack can only be made from a different square than the enemy. Spell attacks' ranges can vary; for example, a fireball spell can only be made from a distance, otherwise the caster would be incinerated, and thankfully, this game doesn't let that happen - for you or the enemies. Press Enter to continue.");
+     scanner.nextLine();
+
      while(cLoop){
      System.out.println("To start, you must choose your class.");
      System.out.println("A. Fighter");
@@ -684,23 +689,54 @@ public class Quest {
      scanner.nextLine();
      scanner.nextLine();
      if(cClass == 'A'){
-          System.out.println("A montstrous Nibbit stands in front of you, in melee range. You get to go first. Choose what weapon you would like to use.");
-          e1meleeRange = true;
-          System.out.println("A. "+weapon1Name);
-          System.out.println("B. "+weapon2Name);
-          System.out.println("C. "+weapon3Name);
-          System.out.println("D. "+weapon4Name);
-          while(f1Loop){
-          chosenWeapon = scanner.next().toUpperCase().charAt(0);
-          chosenWeaponName = ChosenWeapon.get(chosenWeapon);
-          if("ABCD".indexOf(chosenWeapon) >= 0){
-               f1Loop = false;
-               System.out.println("You attack the Nibbit with your "+chosenWeaponName+"!");
-               WEAPONS.caseWeapon();
+          System.out.println("A montstrous Nibbit who will use his claws and teeth to attack stands in front of you. You are both in square 1. You get to go first. Would you like to move to a different square, or attack it?");
+          cSquare = 1;
+          e1Square = 1;
+          actions = 2;
+          e1Actions = 2;
+          e1MaxHP = 40;
+          e1CHP = 40;
+          e1Strength = 3;
+          e1Dexterity = 2;
+          e1Intelligence = 1;
+          e1Charisma = 0;
+          e1Defense = 17;
+          e1MagicResistance = 2;
+          while(f1Loop){}
+          System.out.println("A. Attack.");
+          System.out.println("B. Move.");
+          choice = scanner.next().toUpperCase().charAt(0);
+          //If this was an encounter where the enemy or the player could inflict penalties on the amount of actions they have, include an if(actions > 0) then statement.
+          if(choice == 'A'){
+               actions = 1;
+               System.out.println("What weapon would you like to use to attack?");
+               System.out.println("A. "+weapon1Name);
+               System.out.println("B. "+weapon2Name);
+               System.out.println("C. "+weapon3Name);
+               System.out.println("D. "+weapon4Name);
+               while(f1aLoop){
+               chosenWeapon = scanner.next().toUpperCase().charAt(0);
+               if("ABCD".indexOf(chosenWeapon) >= 0){
+                    chosenWeaponName = ChosenWeapon.get(chosenWeapon);
+                    System.out.println("You attack the Nibbit with your "+chosenWeaponName+"!");
+                    WEAPONS.caseWeapon();
+               }
+               else{
+                    System.out.println("You can't attack with that. Try again.");
+               }
+               }
           }
-          else{
-               System.out.println("You can't attack with that. Try again.");
-          }
+          else if(choice == 'B'){
+               actions = 1;
+               System.out.println("Which square would you like to move to? Type in the number Remember, you are in square "+cSquare+". It would be a waste of an action to move into the same square you are already in.");
+               System.out.println("A. #1.");
+               System.out.println("B. #2.");
+               System.out.println("C. #3.");
+               System.out.println("D. #4.");
+               while(f1bLoop){
+               choice = scanner.next().toUpperCase().charAt(0);
+               if(choice == 
+               }            
           }
      }
 
