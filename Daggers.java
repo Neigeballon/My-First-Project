@@ -1,3 +1,5 @@
+import static Quest.*;
+
 public class Daggers{
      public static void execute(){
           if(choice == 'B' && cSquare == e1Square){
@@ -88,5 +90,8 @@ public class Daggers{
           else{
                 System.out.println("Sorry, "+name+". You acutally can't target "+chosenEnemyName+" with your 2 daggers because it is not in your square. You are in square #"+cSquare+". Choose your action again *it was not wasted*.");
           }
+     }
+     public static void reset(){
+          
      }
 }
