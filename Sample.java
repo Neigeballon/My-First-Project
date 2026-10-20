@@ -1,6 +1,7 @@
 System.out.println("There are five enemies before you. There is Jack, Rack, Pack, Vack, and Zack. If at any time, a creature's HP equals or drops below zero, then they are dead and SHOULD NOT BE ATTACKED.");
 ArrayList<Enemy> enemies = new ArrayList<>();
-enemies.add(new Enemy("Jack", 50, 50, 4, 3, 1, 2, 17, 2, 
+//eName, eMaxHP, eCHP, eStrength, eDexterity, eIntelligence, eCharisma, eDefense, eMagicResistance, eSquare, eActions
+enemies.add(new Enemy("Jack", 50, 50, 4, 3, 1, 2, 17, 2, 1, 2));
 actions = 0;
 e1Name = "Jack";
 e2Name = "Rack";
