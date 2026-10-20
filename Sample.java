@@ -1,4 +1,5 @@
 System.out.println("There are five enemies before you. There is Jack, Rack, Pack, Vack, and Zack. If at any time, a creature's HP equals or drops below zero, then they are dead and SHOULD NOT BE ATTACKED.");
+actions = 0;
 e1Name = "Jack";
 e2Name = "Rack";
 e3Name = "Pack";
@@ -24,9 +25,20 @@ e2CHP = 50;
 e3CHP = 50;
 e4CHP = 50;
 e5CHP = 50;
+e1Actions = 0;
+e2Actions = 0;
+e3Actions = 0;
+e4Actions = 0;
+e5Actions = 0;
 //Decide the enemies' ability scores and magic resistance here
 while(e1CHP > 0 || e2CHP > 0 || e3CHP > 0 || e4CHP > 0 || e5CHP > 0){
 choice = null;
+actions = actions+2;
+e1Actions = e1Actions+2;
+e2Actions = e2Actions+2;
+e3Actions = e3Actions+2;
+e4Actions = e4Actions+2;
+e5Actions = e5Actions+2;
 while(actions > 0){
 choice = null;
 chosenWeapon = null;
