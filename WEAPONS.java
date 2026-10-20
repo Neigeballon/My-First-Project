@@ -1,6 +1,8 @@
+import static Quest.*;
+
 public class WEAPONS{
      public static void execute(){
-          switch(Quest.chosenWeaponName){
+          switch(chosenWeaponName){
                 case "Battleaxe" -> Battleaxe.execute();
                 case "2 Daggers" -> Daggers.execute();
                 case "Flail": -> Flail.execute();
