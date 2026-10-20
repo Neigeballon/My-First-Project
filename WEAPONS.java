@@ -19,4 +19,16 @@ public class WEAPONS{
                 default -> null
           }
      }
+     public static void reset(){
+          Battleaxe.reset();
+          Daggers.reset();
+          Flail.reset();
+          Handaxes.reset();
+          Mace.reset();
+          Rapier.reset();
+          Scimitar.reset();
+          Scythe.reset();
+          Trident.reset();
+          Warhammer.reset();
+     }
 }
