@@ -23,11 +23,7 @@ chosenEnemyName = null;
 charChoice = 'B';
 System.out.println("What would you like to do? If the target for your attack is not valid, you will be asked to try again. If you have the spear, you can attack an enemy not in your square.");
 System.out.println("A. Move."); 
-System.out.println("B. Attempt to attack "+e1Name+", who has "+e1CHP+" HP and is in square #"+e1Square+".");
-System.out.println("C. Attempt to attack "+e2Name+", who has "+e2CHP+" HP and is in square #"+e2Square+".");
-System.out.println("D. Attempt to attack "+e3Name+", who has "+e3CHP+" HP and is in square #"+e3Square+".");
-System.out.println("E. Attempt to attack "+e4Name+", who has "+e4CHP+" HP and is in square #"+e4Square+".");
-System.out.println("F. Attempt to attack "+e5Name+", who has "+e5CHP+" HP and is in square #"+e5Square+".");
+for(Enemy e : enemies
 choice = scanner.next().toUpperCase().charAt(0);
 if(choice == 'A'){
      actions--;
