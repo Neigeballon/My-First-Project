@@ -20,6 +20,7 @@ public class Quest {
     public static int actions;
 
     public static char choice;//Used during the quest as a variable based on user input to decide which route to take
+    public static char charChoice;
 
     public static String chosenWeaponName = "";
 
