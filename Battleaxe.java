@@ -1,28 +1,4 @@
-import Quest.actions;
-import Quest.roll;
-import Quest.attackRoll;
-import Quest.damageDealt;
-import Quest.cStrength;
-import Quest.strBonus;
-import Quest.attackBonus;
-import Quest.defense;
-import Quest.choice;
-import Quest.cSquare;
-import Quest.e1Square;
-import Quest.e2Square;
-import Quest.e3Square;
-import Quest.e4Square;
-import Quest.e5Square;
-import Quest.e1CHP;
-import Quest.e2CHP;
-import Quest.e3CHP;
-import Quest.e4CHP;
-import Quest.e5CHP;
-import Quest.e1Defense;
-import Quest.e2Defense;
-import Quest.e3Defense;
-import Quest.e4Defense;
-import Quest.e5Defense;
+import static Quest*;
 
 public class Battleaxe{
      public static void execute(){
@@ -114,5 +90,8 @@ public class Battleaxe{
           else{
                 System.out.println("Sorry, "+name+". You acutally can't target "+chosenEnemyName+" with your battleaxe because it is not in your square. You are in square #"+cSquare+". Choose your action again *it was not wasted*.");
           }
+     }
+     public static void reset(){
+          
      }
 }
