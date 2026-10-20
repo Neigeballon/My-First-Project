@@ -13,13 +13,14 @@ while(){
 choice = null;
 actions = actions+2;
 for(Enemy e : enemies){
-
+e.eActions = e.eActions+2;
 }
 while(actions > 0){
 choice = null;
 chosenWeapon = null;
 chosenWeaponName = null;
 chosenEnemyName = null;
+charChoice = 'B';
 System.out.println("What would you like to do? If the target for your attack is not valid, you will be asked to try again. If you have the spear, you can attack an enemy not in your square.");
 System.out.println("A. Move."); 
 System.out.println("B. Attempt to attack "+e1Name+", who has "+e1CHP+" HP and is in square #"+e1Square+".");
@@ -56,23 +57,23 @@ else{
 }
 //Enemy actions cannot cause self harm to a point of dying - use an if then to take this into account
 e = enemies.get(0);
-while(e.eActions > 0){
+while(e.CHP > 0 && e.eActions > 0){
 //Enemy 1 logic goes here
 }
 e = enemies.get(1);
-while(e.eActions > 0){
+while(e.CHP > 0 && e.eActions > 0){
 //Enemy 2 logic goes here
 }
 e = enemies.get(2);
-while(e.eActions > 0){
+while(e.CHP > 0 && e.eActions > 0){
 //Enemy 3 logic goes here
 }
 e = enemies.get(3);
-while(e.eActions > 0){
+while(e.CHP > 0 && e.eActions > 0){
 //Enemy 4 logic goes here
 }
 e = enemies.get(4);
-while(e.eActions > 0){
+while(e.CHP > 0 && e.eActions > 0){
 //Enemy 5 logic goes here
 }
 WEAPONS.reset();
