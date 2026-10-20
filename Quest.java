@@ -5,13 +5,13 @@ public class Quest {
     public static int roll;
     public static double attackRoll;
     public static double damageDealt;
-    public static double cStrength = 0.0;
+    public static double cStrength = 0;
     public static int strBonus;
-    public static double cDexterity = 0.0;
+    public static double cDexterity = 0;
     public static int dexBonus;
-    public static double cIntelligence = 0.0;
+    public static double cIntelligence = 0;
     public static int intBonus;
-    public static double cCharisma = 0.0;
+    public static double cCharisma = 0;
     public static int chaBonus;
     public static int attackBonus;
     public static double defense = 13;
@@ -719,69 +719,7 @@ public class Quest {
           e1Charisma = 0;
           e1Defense = 17;
           e1MagicResistance = 2;
-          while(e1CHP > 0){
-          //If there were multiple enemies just use && for the different enemies' current HP
-          //If the enemy goes first, place their actions here instead of after the while(actions > 0) loop!!!
-          while(actions > 0){
-          choice = null;
-          if(cSquare == e1Square){//If there were multiple enemies just use || to check if (cSquare == e1Square || cSquare == e2Square)
-               System.out.println("A. Attack.");
-               System.out.println("B. Move.");
-               choice = scanner.next().toUpperCase().charAt(0);
-               if(choice == 'A'){
-                    actions--;
-                    System.out.println("What weapon would you like to use to attack?");
-                    System.out.println("A. "+weapon1Name);
-                    System.out.println("B. "+weapon2Name);
-                    System.out.println("C. "+weapon3Name);
-                    System.out.println("D. "+weapon4Name);
-                    while(f1aLoop){
-                    chosenWeapon = scanner.next().toUpperCase().charAt(0);
-                    if("ABCD".indexOf(chosenWeapon) >= 0){
-                         chosenWeaponName = ChosenWeapon.get(chosenWeapon);
-                         System.out.println("You attack the Nibbit with your "+chosenWeaponName+"!");
-                         WEAPONS.caseWeapon();
-                    }
-                    else{
-                         System.out.println("You can't attack with that, "+name+". Try again.");
-                    }
-                    }
-               }
-               else if(choice == 'B'){
-                    actions--;
-                    Move.execute();
-               }
-          }
-          else{
-               if(weapon1Name.equals("Spear") || weapon2Name.equals("Spear") || weapon3Name.equals("Spear") || weapon4Name.equals("Spear")){
-                    System.out.println("Since your are not in the same square with any creature, but you have the spear as one of your weapons, your two choices are:");
-                    System.out.println("A. Spear the Nibbit.");
-                    System.out.println("B. Move.");
-                    while(true){
-                    choice = scanner.next().toUpperCase().charAt(0);
-                    if(choice == 'A'){
-                         actions--;
-                         Spear.execute();
-                         break;
-                    }  
-                    else if(choice == 'B'){
-                         actions--;
-                         Move.execute();
-                         break;
-                    }
-                    else{
-                         System.out.println("That is not a valid choice, "+name+". Try again.");
-                    }
-                    }
-               }
-               else{
-                    System.out.println("Since you are not in the same square as any other creature, your only availible action is to move. Press Enter to move.");
-                    Move.execute();
-               }
-          }
-          }
-          }
-     }
+          
 
 
 
