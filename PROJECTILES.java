@@ -1,9 +1,9 @@
 public class PROJECTILES{
-     public static void caseProjectile{
+     public static void execute(){
           switch(chosenProjectileName){
                 case "Acid Arrows" -> AcidArrows.execute();
                 case "Electric Arrows" -> ElectricArrows.execute();
-                case "Fire Arrows": -> FireArrows.execute();
+                case "Fire Arrows" -> FireArrows.execute();
                 case "Frost Arrows" -> FrostArrows.execute();
                 case "Iron Arrows" -> IronArrows.execute();
                 case "Double Arrows" -> DoubleArrows.execute();
