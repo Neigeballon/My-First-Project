@@ -55,18 +55,22 @@ else if(choice >= charSpear && choice < charChoice){
       charWeapon = 'A';
       if(weapon1 !== 'K'){
            System.out.println(charWeapon+". "+weapon1Name);
+           charWeapon1 = charWeapon;
            charWeapon++;
       }
       if(weapon2 !== 'K'){
            System.out.println(charWeapon+". "+weapon2Name);
+           charWeapon2 = charWeapon;
            charWeapon++;
       }
       if(weapon3 !== 'K'){
            System.out.println(charWeapon+". "+weapon3Name);
+           charWeapon3 = charWeapon;
            charWeapon++;
       }
       if(weapon4 !== 'K'){
            System.out.println(charWeapon+". "+weapon4Name);
+           charWeapon4 = charWeapon;
            charWeapon++;
       }
       while(true){
