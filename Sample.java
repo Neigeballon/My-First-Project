@@ -1,11 +1,11 @@
 System.out.println("There are five enemies before you. There is Jack, Rack, Pack, Vack, and Zack. If at any time, a creature's HP equals or drops below zero, then they are dead and SHOULD NOT BE ATTACKED.");
 ArrayList<Enemy> enemies = new ArrayList<>();
 //eName, eMaxHP, eCHP, eStrength, eDexterity, eIntelligence, eCharisma, eDefense, eMagicResistance, eSquare, eActions
-enemies.add(new Enemy("Jack", 50, 50, 4, 3, 1, 2, 16, 2, 1, 0));
-enemies.add(new Enemy("Rack", 45, 45, 2, 4, 4, 5, 17, 2, 1, 0));
-enemies.add(new Enemy("Pack", 39, 39, 5, 5, 3, 4, 20, 2, 3, 0));
-enemies.add(new Enemy("Vack", 56, 56, 1, 1, 5, 1, 18, 2, 2, 0));
-enemies.add(new Enemy("Zack", 40, 40, 3, 2, 2, 3, 19, 2, 4, 0));
+enemies.add(new Enemy("Jack", '', 50, 50, 4, 3, 1, 2, 16, 2, 1, 0));
+enemies.add(new Enemy("Rack", '', 45, 45, 2, 4, 4, 5, 17, 2, 1, 0));
+enemies.add(new Enemy("Pack", '', 39, 39, 5, 5, 3, 4, 20, 2, 3, 0));
+enemies.add(new Enemy("Vack", '', 56, 56, 1, 1, 5, 1, 18, 2, 2, 0));
+enemies.add(new Enemy("Zack", '', 40, 40, 3, 2, 2, 3, 19, 2, 4, 0));
 actions = 0;
 Enemy e = null;
 //Decide the enemies' ability scores and magic resistance here
@@ -24,7 +24,7 @@ choice = null;
 chosenWeapon = null;
 chosenWeaponName = null;
 chosenEnemyName = null;
-charChoice = 'B';
+charSpear = 'B';
 System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square.");
 System.out.println("A. Move."); 
 for(Enemy e : enemies){
