@@ -192,7 +192,7 @@ public class Quest {
      //Fighter only variables
      int armorBonus;
      int armorEnchant;
-     char armor = '';
+     char armor = '\0';
      char weapon1;
      char weapon2;
      char weapon3;
@@ -201,7 +201,7 @@ public class Quest {
      String weapon2Name = "";
      String weapon3Name = "";
      String weapon4Name = "";
-     char chosenWeapon = '';
+     char chosenWeapon = '\0';
      
      //Wizard only variables
      int magicDefense;
@@ -214,7 +214,7 @@ public class Quest {
      String spell3Name = "";
      String spell4Name = "";
      char magicItem;
-     char chosenSpell = '';
+     char chosenSpell = '\0';
      
      //Ranger only variables
      int rangedEnchant;
@@ -227,7 +227,7 @@ public class Quest {
      String projectile2Name = "";
      String projectile3Name = "";
      String projectile4Name = "";
-     char chosenProjectile = '';
+     char chosenProjectile = '\0';
      
      Scanner scanner = new Scanner(System.in);
      System.out.println("Hello fellow adventurer! Welcome to the quest of Finding Glory! Enter your character's name.");
