@@ -14,7 +14,7 @@ public class SPELLS{
                 case "Curse of Slowness" -> CurseofSlowness.execute();
                 case "Curse of Stupidity" -> CurseofStupidity.execute();
                 case "Curse of Babbling" -> CurseofBabbling.execute();
-                default -> null
+                default -> System.out.println("");
           }
      }
 }
