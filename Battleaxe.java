@@ -1,4 +1,4 @@
-import static Quest*;
+import static Quest.*;
 
 public class Battleaxe{
      public static void execute(){
