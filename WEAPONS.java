@@ -5,7 +5,7 @@ public class WEAPONS{
           switch(chosenWeaponName){
                 case "Battleaxe" -> Battleaxe.execute();
                 case "2 Daggers" -> Daggers.execute();
-                case "Flail": -> Flail.execute();
+                case "Flail" -> Flail.execute();
                 case "Halberd" -> Halberd.execute();
                 case "2 Handaxes" -> Handaxes.execute();
                 case "Longsword" -> Longsword.execute();
