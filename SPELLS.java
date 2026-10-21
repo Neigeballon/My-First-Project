@@ -1,9 +1,9 @@
 public class SPELLS{
-     public static void caseSpell{
+     public static void execute(){
            switch(chosenSpellName){
                 case "Mage's Shield" -> MagesShield.execute();
                 case "Minor Healing" -> MinorHealing.execute();
-                case "Lion's Strength": -> LionsStrength.execute();
+                case "Lion's Strength" -> LionsStrength.execute();
                 case "Bobcat's Dexterity" -> BobcatsDexterity.execute();
                 case "Dolphin's Intelligence" -> DolphinsIntelligence.execute();
                 case "Snake's Charisma" -> SnakesCharisma.execute();
