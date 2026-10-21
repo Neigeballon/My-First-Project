@@ -29,6 +29,7 @@ public class Quest {
     public static char charWeapon4;
 
     public static String chosenWeaponName = "";
+    public static String armorName = "";
 
     public static String chosenSpellName = "";
     public static String magicItemName = "";
@@ -43,57 +44,6 @@ public class Quest {
 
     public static String chosenProjectileName = "";
     public static String rangedWeaponName = "";
-
-    public static String chosenEnemyName = "";
-    public static double e1CHP;
-    public static int e1Strength;
-    public static int e1Dexterity;
-    public static int e1Intelligence;
-    public static int e1Charisma;
-    public static int e1Defense;
-    public static int e1MagicResistance;
-    public static int e1Actions;
-    public static int e1Square;
-
-    public static double e2CHP;
-    public static int e2Strength;
-    public static int e2Dexterity;
-    public static int e2Intelligence;
-    public static int e2Charisma;
-    public static int e2Defense;
-    public static int e2MagicResistance;
-    public static int e2Actions;
-    public static int e2Square;
-
-    public static double e3CHP;
-    public static int e3Strength;
-    public static int e3Dexterity;
-    public static int e3Intelligence;
-    public static int e3Charisma;
-    public static int e3Defense;
-    public static int e3MagicResistance;
-    public static int e3Actions;
-    public static int e3Square;
-
-    public static double e4CHP;
-    public static int e4Strength;
-    public static int e4Dexterity;
-    public static int e4Intelligence;
-    public static int e4Charisma;
-    public static int e4Defense;
-    public static int e4MagicResistance;
-    public static int e4Actions;
-    public static int e4Square;
-
-    public static double e5CHP;
-    public static int e5Strength;
-    public static int e5Dexterity;
-    public static int e5Intelligence;
-    public static int e5Charisma;
-    public static int e5Defense;
-    public static int e5MagicResistance;
-    public static int e5Actions;
-    public static int e5Square;
     
     public static void main(String[] args) {
 
@@ -226,15 +176,11 @@ public class Quest {
              
      //All Classes Variables
      char cClass = '\0';
-     double maxHP;
-     double cHP; //Current HP variable
-     char chosenEnemy;//Used during combat to determine which enemy is being attacked
 
      //Fighter only variables
      int armorBonus;
      int armorEnchant;
      char armor = '';
-     String armorName = "";
      char weapon1;
      char weapon2;
      char weapon3;
@@ -270,22 +216,6 @@ public class Quest {
      String projectile3Name = "";
      String projectile4Name = "";
      char chosenProjectile = '';
-
-     //Monster only variables
-     double e1MaxHP;
-     String e1Name;
-
-     double e2MaxHP;
-     String e2Name;
-
-     double e3MaxHP;
-     String e3Name;
-
-     double e4MaxHP;
-     String e4Name;
-
-     double e5MaxHP;
-     String e5Name;
      
      Scanner scanner = new Scanner(System.in);
      System.out.println("Hello fellow adventurer! Welcome to the quest of Finding Glory! Enter your character's name.");
