@@ -639,25 +639,12 @@ public class Quest {
      }
           System.out.println("You have officially allocated your ability points, and now you are ready for your adventure! The Quest For Glory begins NOW!!!");
 
-     System.out.println("Your first encounter is a fight. There's no talking your way out of this one. Press Enter to continue.
+     System.out.println("Your first encounter is a fight. There's no talking your way out of this one. Press Enter to continue.");
      scanner.nextLine();
      scanner.nextLine();
      if(cClass == 'A'){
-          System.out.println("A montstrous Nibbit who will use his claws and teeth to attack stands in front of you. You are both in square 1. You get to go first. Would you like to move to a different square, or attack it?");
-          cSquare = 1;
-          e1Square = 1;
-          actions = 2;
-          e1Actions = 2;
-          e1MaxHP = 40;
-          e1CHP = 40;
-          e1Strength = 3;
-          e1Dexterity = 2;
-          e1Intelligence = 1;
-          e1Charisma = 0;
-          e1Defense = 17;
-          e1MagicResistance = 2;
-          
-
+          System.out.println("A montstrous Nibbit who will use his claws and teeth to attack stands in front of you. You are both in square 1. You get to go first. Would you like to move to a different square, or attack it?");         
+     }
 
 
 
