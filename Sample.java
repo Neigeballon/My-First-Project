@@ -10,7 +10,7 @@ actions = 0;
 Enemy e = null;
 //Decide the enemies' ability scores and magic resistance here
 while(enemies.stream().anyMatch(e -> e.eCHP > 0)){
-choice = null;
+choice = '';
 actions = actions+2;
 System.out.println("You are in square #"+cSquare+".");
 for(Enemy e : enemies){
@@ -20,14 +20,14 @@ if(e.eCHP > 0){
 }
 }
 while(actions > 0){
-choice = null;
-chosenWeapon = null;
-chosenWeaponName = null;
+choice = '';
+chosenWeapon = '';
+chosenWeaponName = "";
 charSpear = 'B';
 System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square.");
 System.out.println("A. Move."); 
 for(Enemy e : enemies){
-if(e.eCHP > 0 && e.eSquare !== cSquare && (weapon1 == 'K' || weapon2 == 'K' || weapon3 == 'K' || weapon4 == 'K')){
+if(e.eCHP > 0 && e.eSquare != cSquare && (weapon1 == 'K' || weapon2 == 'K' || weapon3 == 'K' || weapon4 == 'K')){
      System.out.println(charSpear+". Attack "+e.eName+" with your spear.");
      e.eChar = charSpear;
      charSpear++;
@@ -73,8 +73,9 @@ else if(choice >= charSpear && choice < charChoice){
            charWeapon++;
       }
       while(true){
+      chosenWeapon = '';
       chosenWeapon = scanner.next().toUpperCase().charAt(0);
-      if(chosenWeapon >= 'A' && < charWeapon){
+      if(chosenWeapon >= 'A' && chosenWeapon < charWeapon){
             chosenWeaponName = ChosenWeapon.get(chosenWeapon);
             WEAPONS.execute();
             break;
@@ -91,33 +92,38 @@ else{
 //Enemy actions cannot cause self harm to a point of dying - use an if then to take this into account
 e = enemies.get(0);
 while(e.CHP > 0 && e.eActions > 0){
+choice = '';
 //Enemy 1 logic goes here-take into account flail bonus!
 flail = Math.max(0, flail-1);
 }
 e = enemies.get(1);
 while(e.CHP > 0 && e.eActions > 0){
+choice = ''
 //Enemy 2 logic goes here-take into account flail bonus!
 flail = Math.max(0, flail-1);
 
 }
 e = enemies.get(2);
 while(e.CHP > 0 && e.eActions > 0){
+choice = '';
 //Enemy 3 logic goes here-take into account flail bonus!
 flail = Math.max(0, flail-1);
 }
 e = enemies.get(3);
 while(e.CHP > 0 && e.eActions > 0){
+choice = '';
 //Enemy 4 logic goes here-take into account flail bonus!
 flail = Math.max(0, flail-1);
 }
 e = enemies.get(4);
 while(e.CHP > 0 && e.eActions > 0){
+choice = '';
 //Enemy 5 logic goes here-take into account flail bonus!
 flail = Math.max(0, flail-1);
 }
 WEAPONS.reset();
 }
 WEAPONS.resetCombat();
-choice = null;
-chosenWeapon = null;
-chosenWeaponName = null;
+choice = '';
+chosenWeapon = '';
+chosenWeaponName = "";
