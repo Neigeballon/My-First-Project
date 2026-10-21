@@ -28,7 +28,10 @@ charChoice = 'B';
 System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square.");
 System.out.println("A. Move."); 
 for(Enemy e : enemies){
-if(e.eCHP > 0 && e.eSquare !== cSquare && (
+if(e.eCHP > 0 && e.eSquare !== cSquare && (weapon1 == 'K' || weapon2 == 'K' || weapon3 == 'K' || weapon4 == 'K')){
+     System.out.println(charChoice+". Attack "+e.eName+" with your spear.");
+     charChoice++;
+}
 if(e.eCHP > 0 && e.eSquare == cSquare){
      System.out.println(charChoice+". Attack "+e.eName+".");
      charChoice++;
