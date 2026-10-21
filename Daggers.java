@@ -15,10 +15,10 @@ public class Daggers{
                defense = defense+2;
                daggers++;
                if(e.eCHP <= 0){
-                    System.out.println("Congradulations, "+name+"! You have killed "+e.eName+"! Great job!");
+                    System.out.println("Dazzling display, "+name+"! You have killed "+e.eName+"! Dastardly job!");
                }
                else{
-                    System.out.println(e.eName+" is still alive! Keep battling with that battleaxe of yours, "+name+"!");
+                    System.out.println(e.eName+" is still alive! Keep stabbing with those deadly daggers of yours, "+name+"!");
                }
                break;
           }
