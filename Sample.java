@@ -9,7 +9,7 @@ enemies.add(new Enemy("Zack", '', 40, 40, 3, 2, 2, 3, 19, 2, 4, 0));
 actions = 0;
 Enemy e = null;
 //Decide the enemies' ability scores and magic resistance here
-while(){
+while(){//ADD CONDITION!!!
 choice = null;
 actions = actions+2;
 System.out.println("You are in square #"+cSquare+".");
@@ -52,21 +52,26 @@ else if(choice >= 'B' && choice < charSpear){
 }
 else if(choice >= charSpear && choice < charChoice){
       System.out.println("What weapon would you like to use to attack them?");
+      charWeapon = 'A';
       if(weapon1 !== 'K'){
-           System.out.println("A. "+weapon1Name);
+           System.out.println(charWeapon+". "+weapon1Name);
+           charWeapon++;
       }
       if(weapon2 !== 'K'){
-           System.out.println("B. "+weapon2Name);
+           System.out.println(charWeapon+". "+weapon2Name);
+           charWeapon++;
       }
       if(weapon3 !== 'K'){
-           System.out.println("C. "+weapon3Name);
+           System.out.println(charWeapon+". "+weapon3Name);
+           charWeapon++;
       }
       if(weapon4 !== 'K'){
-           System.out.println("D. "+weapon4Name);
+           System.out.println(charWeapon+". "+weapon4Name);
+           charWeapon++;
       }
       while(true){
       chosenWeapon = scanner.next().toUpperCase().charAt(0);
-      if("BCDEF".indexOf(chosenWeapon) >= 0){
+      if(chosenWeapon >= 'A' && < charWeapon){
             chosenWeaponName = ChosenWeapon.get(chosenWeapon);
             WEAPONS.execute();
             break;
