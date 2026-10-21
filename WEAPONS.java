@@ -15,7 +15,7 @@ public class WEAPONS{
                 case "Scythe" -> Scythe.execute();
                 case "Trident" -> Trident.execute();
                 case "Warhammer" -> Warhammer.execute();
-                default -> null
+                default -> System.out.println("");
           }
      }
      public static void reset(){
