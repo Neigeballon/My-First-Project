@@ -13,7 +13,6 @@ public class WEAPONS{
                 case "Rapier" -> Rapier.execute();
                 case "Scimitar" -> Scimitar.execute();
                 case "Scythe" -> Scythe.execute();
-                case "Spear" -> Spear.execute();
                 case "Trident" -> Trident.execute();
                 case "Warhammer" -> Warhammer.execute();
                 default -> null
@@ -22,12 +21,12 @@ public class WEAPONS{
      public static void reset(){
           Battleaxe.reset();
           Daggers.reset();
-          Flail.reset();
           Handaxes.reset();
           Mace.reset();
           Rapier.reset();
           Scimitar.reset();
           Scythe.reset();
+          Spear.reset();
           Trident.reset();
           Warhammer.reset();
      }
