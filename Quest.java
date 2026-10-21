@@ -84,7 +84,7 @@ public class Quest {
      );
 
      //Fighter Chosen Weapon Map
-     Map<Character, String> ChosenWeapon = MapofEntries(
+     Map<Character, String> ChosenWeapon = Map.ofEntries(
      Map.entry(charWeapon1, weapon1Name),
      Map.entry(charWeapon2, weapon2Name),
      Map.entry(charWeapon3, weapon3Name),
@@ -109,14 +109,14 @@ public class Quest {
      );
 
      //Wizard Magic Item Map
-     Map<Character, String> Magics = MapofEntries(
+     Map<Character, String> Magics = Map.ofEntries(
      Map.entry('A', "Rod of Rage"),
      Map.entry('B', "Staff of Sacrifice"),
      Map.entry('C', "Wand of Wonder")
      );
 
      //Wizard Chosen Spell Map
-     Map<Character, String> ChosenSpell = MapofEntries(
+     Map<Character, String> ChosenSpell = Map.ofEntries(
      Map.entry('A', spell1Name),
      Map.entry('B', spell2Name),
      Map.entry('C', spell3Name),
@@ -124,7 +124,7 @@ public class Quest {
      );
 
      //Ranger Ranged Weapon Map
-     Map<Character, String> Bows = MapofEntries(
+     Map<Character, String> Bows = Map.ofEntries(
      Map.entry('A', "Crossbow"),
      Map.entry('B', "Longbow"),
      Map.entry('C', "Shortbow")
@@ -148,14 +148,14 @@ public class Quest {
      );
 
      //Ranger Chosen Projectile Map
-     Map<Character, String> ChosenProjectile = MapofEntries(
+     Map<Character, String> ChosenProjectile = Map.ofEntries(
      Map.entry('A', projectile1Name),
      Map.entry('B', projectile2Name),
      Map.entry('C', projectile3Name),
      Map.entry('D', projectile4Name)
      );
 
-     Map<Character, String> ChosenEnemyName = MapofEntries(
+     Map<Character, String> ChosenEnemyName = Map.ofEntries(
      Map.entry('B', e1Name),
      Map.entry('C', e2Name),
      Map.entry('D', e3Name),
