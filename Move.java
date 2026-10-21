@@ -1,12 +1,14 @@
+import java.util.*;
+
 public class Move{
      public static void execute(){
-          Scanner scannerMove = new scannerMove(System.in);
+          Scanner scanner = new scanner(System.in);
           System.out.println("Which square would you like to move to? Type in the number Remember, you are in square "+cSquare+". It would be a waste of an action to move into the same square you are already in.");
                System.out.println("A. #1.");
                System.out.println("B. #2.");
                System.out.println("C. #3.");
                System.out.println("D. #4.");
-               choice = '';
+               choice = '\0';
                while(true){
                choice = scannerMove.next().toUpperCase().charAt(0);
                if(choice == 'A'){
