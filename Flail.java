@@ -1,3 +1,5 @@
+import static Quest.*;
+
 public class Flail{
      public class execute(){
           for(Enemy e : enemies){
