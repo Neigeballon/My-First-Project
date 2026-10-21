@@ -1,7 +1,7 @@
 import static Quest.*;
 
 public class Flail{
-     public class execute(){
+     public static void execute(){
           for(Enemy e : enemies){
           if(choice == e.eChar){
                actions--;
