@@ -23,6 +23,10 @@ public class Quest {
     public static char charChoice;
     public static char charSpear;
     public static char charWeapon;
+    public static char charWeapon1;
+    public static char charWeapon2;
+    public static char charWeapon3;
+    public static char charWeapon4;
 
     public static String chosenWeaponName = "";
 
@@ -119,10 +123,10 @@ public class Quest {
 
      //Fighter Chosen Weapon Map
      Map<Character, String> ChosenWeapon = MapofEntries(
-     Map.entry('A', weapon1Name),
-     Map.entry('B', weapon2Name),
-     Map.entry('C', weapon3Name),
-     Map.entry('D', weapon4Name)
+     Map.entry(charWeapon1, weapon1Name),
+     Map.entry(charWeapon2, weapon2Name),
+     Map.entry(charWeapon3, weapon3Name),
+     Map.entry(charWeapon4, weapon4Name)
      );
 
      //Wizard Spell Map 
