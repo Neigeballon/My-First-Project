@@ -21,12 +21,24 @@ public class Quest {
 
     public static char choice;//Used during the quest as a variable based on user input to decide which route to take
     public static char charChoice;
+    
     public static char charSpear;
     public static char charWeapon;
     public static char charWeapon1;
     public static char charWeapon2;
     public static char charWeapon3;
     public static char charWeapon4;
+    public static int battleaxe = 0;
+    public static int daggers = 0;
+    public static int flail = 0;
+    public static int handaxes = 0;
+    public static int mace = 0;
+    public static int rapier = 0;
+    public static int scimitar = 0;
+    public static int scythe = 0;
+    public static int spear = 0;
+    public static int trident = 0;
+    public static int warhammer = 0;
 
     public static String chosenWeaponName = "";
     public static String armorName = "";
