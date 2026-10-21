@@ -12,7 +12,7 @@ public class Battleaxe{
                System.out.println("You did a total of "+damageDealt+" damage!");     
                e.eCHP = e.eCHP-damageDealt;
                defense = defense-2;
-               
+               battleaxe++;
                if(e.eCHP <= 0){
                     System.out.println("Congradulations, "+name+"! You have killed "+e.eName+"! Great job!");
                }
@@ -24,6 +24,7 @@ public class Battleaxe{
           }
      }
      public static void reset(){
-          
+     defense = defense+(2*battleaxe);
+     battleaxe = 0;
      }
 }
