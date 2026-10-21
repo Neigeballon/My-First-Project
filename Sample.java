@@ -29,11 +29,16 @@ System.out.println("What would you like to do? If you have the spear, you can at
 System.out.println("A. Move."); 
 for(Enemy e : enemies){
 if(e.eCHP > 0 && e.eSquare !== cSquare && (weapon1 == 'K' || weapon2 == 'K' || weapon3 == 'K' || weapon4 == 'K')){
-     System.out.println(charChoice+". Attack "+e.eName+" with your spear.");
-     charChoice++;
+     System.out.println(charSpear+". Attack "+e.eName+" with your spear.");
+     e.eChar = charSpear;
+     charSpear++;
 }
+}
+charChoice = charSpear;
+for(Enemy e : enemies){
 if(e.eCHP > 0 && e.eSquare == cSquare){
-     System.out.println(charChoice+". Attack "+e.eName+".");
+     System.out.println(charChoice+". Attack "+e.eName+" with a melee weapon.");
+     e.eChar = charChoice;
      charChoice++;
 }
 }
@@ -42,13 +47,23 @@ if(choice == 'A'){
      actions--;
      Move.execute();
 }
-else if(choice >= 'B' && choice <= charChoice){
-      chosenEnemyName = ChosenEnemyName.get(choice);
+else if(choice >= 'B' && choice < charSpear){
+      Spear.execute();
+}
+else if(choice >= charSpear && choice < charChoice){
       System.out.println("What weapon would you like to use to attack them?");
-      System.out.println("A. "+weapon1Name);
-      System.out.println("B. "+weapon2Name);
-      System.out.println("C. "+weapon3Name);
-      System.out.println("D. "+weapon4Name);
+      if(weapon1 !== 'K'){
+           System.out.println("A. "+weapon1Name);
+      }
+      if(weapon2 !== 'K'){
+           System.out.println("B. "+weapon2Name);
+      }
+      if(weapon3 !== 'K'){
+           System.out.println("C. "+weapon3Name);
+      }
+      if(weapon4 !== 'K'){
+           System.out.println("D. "+weapon4Name);
+      }
       while(true){
       chosenWeapon = scanner.next().toUpperCase().charAt(0);
       if("BCDEF".indexOf(chosenWeapon) >= 0){
@@ -58,6 +73,7 @@ else if(choice >= 'B' && choice <= charChoice){
       }
       else{
             System.out.println("That is not one of your weapons, "+name+". Try again.");
+      }
       }
 }
 else{
