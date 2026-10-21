@@ -31,4 +31,7 @@ public class WEAPONS{
           Trident.reset();
           Warhammer.reset();
      }
+     public static void  resetCombat(){
+          flail = 0;
+     }
 }
