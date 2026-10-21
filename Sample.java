@@ -91,26 +91,33 @@ else{
 //Enemy actions cannot cause self harm to a point of dying - use an if then to take this into account
 e = enemies.get(0);
 while(e.CHP > 0 && e.eActions > 0){
-//Enemy 1 logic goes here
+//Enemy 1 logic goes here-take into account flail bonus!
+flail = Math.max(0, flail-1);
 }
 e = enemies.get(1);
 while(e.CHP > 0 && e.eActions > 0){
-//Enemy 2 logic goes here
+//Enemy 2 logic goes here-take into account flail bonus!
+flail = Math.max(0, flail-1);
+
 }
 e = enemies.get(2);
 while(e.CHP > 0 && e.eActions > 0){
-//Enemy 3 logic goes here
+//Enemy 3 logic goes here-take into account flail bonus!
+flail = Math.max(0, flail-1);
 }
 e = enemies.get(3);
 while(e.CHP > 0 && e.eActions > 0){
-//Enemy 4 logic goes here
+//Enemy 4 logic goes here-take into account flail bonus!
+flail = Math.max(0, flail-1);
 }
 e = enemies.get(4);
 while(e.CHP > 0 && e.eActions > 0){
-//Enemy 5 logic goes here
+//Enemy 5 logic goes here-take into account flail bonus!
+flail = Math.max(0, flail-1);
 }
 WEAPONS.reset();
 }
+WEAPONS.resetCombat();
 choice = null;
 chosenWeapon = null;
 chosenWeaponName = null;
