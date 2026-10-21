@@ -11,6 +11,7 @@ public class Battleaxe{
                damageDealt = Math.max(0, attackRoll-e.eDefense);
                System.out.println("You did a total of "+damageDealt+" damage!");     
                e.eCHP = e.eCHP-damageDealt;
+               defense = defense-2;
                
                if(e.eCHP <= 0){
                     System.out.println("Congradulations, "+name+"! You have killed "+e.eName+"! Great job!");
