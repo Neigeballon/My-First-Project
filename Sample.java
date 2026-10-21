@@ -12,8 +12,12 @@ Enemy e = null;
 while(){
 choice = null;
 actions = actions+2;
+System.out.println("You are in square #"+cSquare+".");
 for(Enemy e : enemies){
-e.eActions = e.eActions+2;
+if(e.eCHP > 0){
+     e.eActions = e.eActions+2;
+     System.out.println(e.eName+" is in square #"+e.eSquare+".");
+}
 }
 while(actions > 0){
 choice = null;
@@ -21,15 +25,21 @@ chosenWeapon = null;
 chosenWeaponName = null;
 chosenEnemyName = null;
 charChoice = 'B';
-System.out.println("What would you like to do? If the target for your attack is not valid, you will be asked to try again. If you have the spear, you can attack an enemy not in your square.");
+System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square.");
 System.out.println("A. Move."); 
-for(Enemy e : enemies
+for(Enemy e : enemies){
+if(e.eCHP > 0 && e.eSquare !== cSquare && (
+if(e.eCHP > 0 && e.eSquare == cSquare){
+     System.out.println(charChoice+". Attack "+e.eName+".");
+     charChoice++;
+}
+}
 choice = scanner.next().toUpperCase().charAt(0);
 if(choice == 'A'){
      actions--;
      Move.execute();
 }
-else if("BCDEF".indexOf(choice) >= 0){
+else if(choice >= 'B' && choice <= charChoice){
       chosenEnemyName = ChosenEnemyName.get(choice);
       System.out.println("What weapon would you like to use to attack them?");
       System.out.println("A. "+weapon1Name);
@@ -38,7 +48,7 @@ else if("BCDEF".indexOf(choice) >= 0){
       System.out.println("D. "+weapon4Name);
       while(true){
       chosenWeapon = scanner.next().toUpperCase().charAt(0);
-      if("ABCD".indexOf(chosenWeapon) >= 0){
+      if("BCDEF".indexOf(chosenWeapon) >= 0){
             chosenWeaponName = ChosenWeapon.get(chosenWeapon);
             WEAPONS.execute();
             break;
