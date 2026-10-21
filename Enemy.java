@@ -1,6 +1,7 @@
 public class Enemy{
      
      public String eName;
+     public char eChar;
      public double eMaxHP;
      public double eCHP;
      public double eStrength;
@@ -12,8 +13,9 @@ public class Enemy{
      public int eSquare;
      public int eActions;
      
-     public Enemy(String eName, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions){
+     public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions){
           this.eName = eName;
+          this.eChar = eChar;
           this.eMaxHP = eMaxHP;
           this.eCHP = eCHP;
           this.eStrength = eStrength;
