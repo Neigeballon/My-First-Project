@@ -14,7 +14,7 @@ public class PROJECTILES{
                 case "Dumbness Arrows" -> DumbnessArrows.execute();
                 case "Shielding Arrows" -> ShieldingArrows.execute();
                 case "Frailizing Arrows" -> FrailizingArrows.execute();
-                default -> null
+                default -> System.out.println("");
           }
      }
 }
