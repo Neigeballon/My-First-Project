@@ -9,7 +9,7 @@ enemies.add(new Enemy("Zack", '', 40, 40, 3, 2, 2, 3, 19, 2, 4, 0));
 actions = 0;
 Enemy e = null;
 //Decide the enemies' ability scores and magic resistance here
-while(){//ADD CONDITION!!!
+while(enemies.stream().anyMatch(e -> e.eCHP > 0)){
 choice = null;
 actions = actions+2;
 System.out.println("You are in square #"+cSquare+".");
@@ -23,7 +23,6 @@ while(actions > 0){
 choice = null;
 chosenWeapon = null;
 chosenWeaponName = null;
-chosenEnemyName = null;
 charSpear = 'B';
 System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square.");
 System.out.println("A. Move."); 
@@ -115,4 +114,3 @@ WEAPONS.reset();
 choice = null;
 chosenWeapon = null;
 chosenWeaponName = null;
-chosenEnemyName = null;
