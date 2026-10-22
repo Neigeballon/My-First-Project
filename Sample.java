@@ -24,7 +24,7 @@ choice = '\0';
 chosenWeapon = '\0';
 chosenWeaponName = "";
 charSpear = 'B';
-System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square.");
+System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square. If you have a halberd, then whichever melee enemy you choose to attack with it will not matter; it will simply target all enemies in the same square as you.");
 System.out.println("A. Move."); 
 for(Enemy e : enemies){
 if(e.eCHP > 0 && e.eSquare != cSquare && (weapon1 == 'K' || weapon2 == 'K' || weapon3 == 'K' || weapon4 == 'K')){
