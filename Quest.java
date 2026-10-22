@@ -30,8 +30,6 @@ public class Quest {
     public static char charWeapon4 = '\0';
     public static int battleaxe = 0;
     public static int daggers = 0;
-    public static int flail = 0;
-    public static int handaxes = 0;
     public static int mace = 0;
     public static int rapier = 0;
     public static int scimitar = 0;
