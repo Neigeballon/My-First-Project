@@ -101,7 +101,6 @@ while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 2 logic goes here-take into account flail bonus!
 flail = Math.max(0, flail-1);
-
 }
 e = enemies.get(2);
 while(e.eCHP > 0 && e.eActions > 0){
