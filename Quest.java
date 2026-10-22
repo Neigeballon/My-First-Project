@@ -59,6 +59,72 @@ public class Quest {
     
     public static void main(String[] args) {
 
+    //Character Creation Variables
+     boolean cLoop = true;//Choosing a Class
+     boolean aLoop = true;//Choosing an Armor
+     boolean w1Loop = true;//Choosing Weapon 1
+     boolean w2Loop = true;//Choosing Weapon 2
+     boolean w3Loop = true;//Choosing Weapon 3
+     boolean w4Loop = true;//Choosing Weapon 4
+     boolean s1Loop = true;//Choosing Spell 1
+     boolean s2Loop = true;//Choosing Spell 2
+     boolean s3Loop = true;//Choosing Spell 3
+     boolean s4Loop = true;//Choosing Spell 4
+     boolean mLoop = true;//Choosing a Magic Item
+     boolean rLoop = true;//Choosing a Ranged Weapon
+     boolean p1Loop = true;//Choosing Projectile 1
+     boolean p2Loop = true;//Choosing Projectile 2
+     boolean p3Loop = true;//Choosing Projectile 3
+     boolean p4Loop = true;//Choosing Projectile 4
+     boolean abilityLoop = true;//Allocating Ability points
+     boolean strengthLoop = true;//Allocating Strength points
+     boolean dexterityLoop = true;//Allocating Dexterity points
+     boolean intelligenceLoop = true;//Allocating Intelligence points
+     boolean charismaLoop = true;//Allocating Charisma points
+             
+     //All Classes Variables
+     char cClass = '\0';
+
+     //Fighter only variables
+     int armorBonus;
+     int armorEnchant;
+     char armor = '\0';
+     char weapon1;
+     char weapon2;
+     char weapon3;
+     char weapon4;
+     String weapon1Name = "";
+     String weapon2Name = "";
+     String weapon3Name = "";
+     String weapon4Name = "";
+     char chosenWeapon = '\0';
+     
+     //Wizard only variables
+     int magicDefense;
+     char spell1;
+     char spell2;
+     char spell3;
+     char spell4;
+     String spell1Name = "";
+     String spell2Name = "";
+     String spell3Name = "";
+     String spell4Name = "";
+     char magicItem;
+     char chosenSpell = '\0';
+     
+     //Ranger only variables
+     int rangedEnchant;
+     char rangedWeapon = '\0';
+     char projectile1;
+     char projectile2;
+     char projectile3;
+     char projectile4;
+     String projectile1Name = "";
+     String projectile2Name = "";
+     String projectile3Name = "";
+     String projectile4Name = "";
+     char chosenProjectile = '\0';
+
      //Fighter Armor Map
      Map<Character, String> Armors = Map.ofEntries(
      Map.entry('A', "Crocodile Leather Armor"),
@@ -154,80 +220,6 @@ public class Quest {
      Map.entry('C', projectile3Name),
      Map.entry('D', projectile4Name)
      );
-
-     Map<Character, String> ChosenEnemyName = Map.ofEntries(
-     Map.entry('B', e1Name),
-     Map.entry('C', e2Name),
-     Map.entry('D', e3Name),
-     Map.entry('E', e4Name),
-     Map.entry('F', e5Name)
-     );
-      
-     //Character Creation Variables
-     boolean cLoop = true;//Choosing a Class
-     boolean aLoop = true;//Choosing an Armor
-     boolean w1Loop = true;//Choosing Weapon 1
-     boolean w2Loop = true;//Choosing Weapon 2
-     boolean w3Loop = true;//Choosing Weapon 3
-     boolean w4Loop = true;//Choosing Weapon 4
-     boolean s1Loop = true;//Choosing Spell 1
-     boolean s2Loop = true;//Choosing Spell 2
-     boolean s3Loop = true;//Choosing Spell 3
-     boolean s4Loop = true;//Choosing Spell 4
-     boolean mLoop = true;//Choosing a Magic Item
-     boolean rLoop = true;//Choosing a Ranged Weapon
-     boolean p1Loop = true;//Choosing Projectile 1
-     boolean p2Loop = true;//Choosing Projectile 2
-     boolean p3Loop = true;//Choosing Projectile 3
-     boolean p4Loop = true;//Choosing Projectile 4
-     boolean abilityLoop = true;//Allocating Ability points
-     boolean strengthLoop = true;//Allocating Strength points
-     boolean dexterityLoop = true;//Allocating Dexterity points
-     boolean intelligenceLoop = true;//Allocating Intelligence points
-     boolean charismaLoop = true;//Allocating Charisma points
-             
-     //All Classes Variables
-     char cClass = '\0';
-
-     //Fighter only variables
-     int armorBonus;
-     int armorEnchant;
-     char armor = '\0';
-     char weapon1;
-     char weapon2;
-     char weapon3;
-     char weapon4;
-     String weapon1Name = "";
-     String weapon2Name = "";
-     String weapon3Name = "";
-     String weapon4Name = "";
-     char chosenWeapon = '\0';
-     
-     //Wizard only variables
-     int magicDefense;
-     char spell1;
-     char spell2;
-     char spell3;
-     char spell4;
-     String spell1Name = "";
-     String spell2Name = "";
-     String spell3Name = "";
-     String spell4Name = "";
-     char magicItem;
-     char chosenSpell = '\0';
-     
-     //Ranger only variables
-     int rangedEnchant;
-     char rangedWeapon = '\0';
-     char projectile1;
-     char projectile2;
-     char projectile3;
-     char projectile4;
-     String projectile1Name = "";
-     String projectile2Name = "";
-     String projectile3Name = "";
-     String projectile4Name = "";
-     char chosenProjectile = '\0';
      
      Scanner scanner = new Scanner(System.in);
      System.out.println("Hello fellow adventurer! Welcome to the quest of Finding Glory! Enter your character's name.");
@@ -501,7 +493,7 @@ public class Quest {
          }
          }
          rangedWeaponName = Bows.get(rangedWeapon);
-         System.out.println("That "+rangedWeaponName+" is sure to kill your enemies, "+name".");
+         System.out.println("That "+rangedWeaponName+" is sure to kill your enemies, "+name+".");
          System.out.println("Now for the fun. It's time to choose some projectiles that will be shooting out of your "+rangedWeaponName+"! You will be able to choose four different projectiles; you can only choose to use one per attack, though. For now, choose your first projectile.");
          System.out.println("A. Acid Arrows: The targeted enemy takes 1 acid damage every turn *this effect DOES stack*!");
          System.out.println("B. Electric Arrows: The targeted enemy loses one action *this effect does not stack* but the shock shocks you, giving you a -3 penalty on defensee *non-stacking*.");
@@ -526,7 +518,7 @@ public class Quest {
          System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
          }
          }
-         System.out.println("Good choice, "+name"! Those "+projectile1Name" were added to your quiver.");
+         System.out.println("Good choice, "+name+"! Those "+projectile1Name+" were added to your quiver.");
          System.out.println("Now pick your the second projectile that you want. You shouldn't pick the same projectile twice in a row unless you want to give yourself a challenge!");
          while(p2Loop){
          projectile2 = scanner.next().toUpperCase().charAt(0);
@@ -538,7 +530,7 @@ public class Quest {
          System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
          }
          }
-         System.out.println("Wonderful pick, "+name"! Those "+projectile2Name" were stuffed into your belt.");
+         System.out.println("Wonderful pick, "+name+"! Those "+projectile2Name+" were stuffed into your belt.");
          System.out.println("You know the drill. What's your third projectile going to be?");
          while(p3Loop){
          projectile3 = scanner.next().toUpperCase().charAt(0);
@@ -550,7 +542,7 @@ public class Quest {
          System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
          }
          }
-         System.out.println("That's a great one, "+name"! Those "+projectile3Name" were just placed into your secret arrow compartment.");
+         System.out.println("That's a great one, "+name+"! Those "+projectile3Name+" were just placed into your secret arrow compartment.");
          System.out.println("Fourth?");
          while(p4Loop){
          projectile4 = scanner.next().toUpperCase().charAt(0);
@@ -562,7 +554,7 @@ public class Quest {
          System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
          }
          }
-         System.out.println("Amazing arrow, "+name"! Those "+projectile4Name" were stored safely within your pockets.");
+         System.out.println("Amazing arrow, "+name+"! Those "+projectile4Name+" were stored safely within your pockets.");
      }
      else{
          System.out.println("That is not a valid class, "+name+". Try again.");
