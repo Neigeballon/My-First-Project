@@ -57,6 +57,5 @@ public class Handaxes{
                }
           }
           }
-          scanner.close();
      }
 }
