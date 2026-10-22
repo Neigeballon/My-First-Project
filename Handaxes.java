@@ -2,11 +2,17 @@ import static Quest.*;
 
 public class Handaxes{
      public static void execute(){
+          char handaxesChoice = '\0';
           Scanner scanner = new Scanner(System.in);
+          System.out.println("Choose another enemy to target with your other handaxe! If there is no other enemy in melee range, just choose the same one again *the damage will be applied twice*.");
+          choiceChar = 'A';
+          for(Enemy e : enemies){
+          if(e.eCHP > 0 && cSquare == e.eSquare){
+               System.out.println(choiceChar+". "+e.eName);
+          }
+          }
           for(Enemy e : enemies){
           if(choice == e.eChar){
-               choice = '\0';
-               choiceChar = 'A';
                actions--;
                roll = ThreadLocalRandom.current().nextInt(1, 7);
                System.out.println("You rolled a "+roll+"!");
