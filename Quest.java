@@ -24,10 +24,10 @@ public class Quest {
     
     public static char charSpear;
     public static char charWeapon;
-    public static char charWeapon1;
-    public static char charWeapon2;
-    public static char charWeapon3;
-    public static char charWeapon4;
+    public static char charWeapon1 = '\0';
+    public static char charWeapon2 = '\0';
+    public static char charWeapon3 = '\0';
+    public static char charWeapon4 = '\0';
     public static int battleaxe = 0;
     public static int daggers = 0;
     public static int flail = 0;
@@ -512,7 +512,7 @@ public class Quest {
          projectile1 = scanner.next().toUpperCase().charAt(0);
          if("ABCDEFGHIJKLM".indexOf(projectile1) >= 0){
          p1Loop = false;
-         projectile1Name = Projectiles.get(projectile1)
+         projectile1Name = Projectiles.get(projectile1);
          }
          else{
          System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
@@ -524,7 +524,7 @@ public class Quest {
          projectile2 = scanner.next().toUpperCase().charAt(0);
          if("ABCDEFGHIJKLM".indexOf(projectile2) >= 0){
          p2Loop = false;
-         projectile2Name = Projectiles.get(projectile2)
+         projectile2Name = Projectiles.get(projectile2);
          }
          else{
          System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
@@ -536,7 +536,7 @@ public class Quest {
          projectile3 = scanner.next().toUpperCase().charAt(0);
          if("ABCDEFGHIJKLM".indexOf(projectile3) >= 0){
          p3Loop = false;
-         projectile3Name = Projectiles.get(projectile3)
+         projectile3Name = Projectiles.get(projectile3);
          }
          else{
          System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
@@ -548,7 +548,7 @@ public class Quest {
          projectile4 = scanner.next().toUpperCase().charAt(0);
          if("ABCDEFGHIJKLM".indexOf(projectile4) >= 0){
          p4Loop = false;
-         projectile4Name = Projectiles.get(projectile4)
+         projectile4Name = Projectiles.get(projectile4);
          }
          else{
          System.out.println("That is not a valid choice for a projectile, "+name+". Try again.");
