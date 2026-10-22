@@ -21,7 +21,6 @@ public class WEAPONS{
      public static void reset(){
           Battleaxe.reset();
           Daggers.reset();
-          Handaxes.reset();
           Mace.reset();
           Rapier.reset();
           Scimitar.reset();
