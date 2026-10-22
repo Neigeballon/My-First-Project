@@ -8,7 +8,7 @@ public class Halberd{
           for(Enemy e : enemies){
           if(cSquare == e.eSquare){
                damageDealt = Math.max(0, attackRoll-e.eDefense);
-               System.out.println("You did a total of "+damageDealt+" damage to"+e.eName+"!");     
+               System.out.println("You did a total of "+damageDealt+" damage to "+e.eName+"!");     
                e.eCHP = e.eCHP-damageDealt;
                e.eActions++;
                if(e.eCHP <= 0){
