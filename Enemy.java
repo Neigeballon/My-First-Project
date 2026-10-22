@@ -14,9 +14,11 @@ public class Enemy{
      public int eActions;
      public char eCharHandaxes;
      public boolean eMace;
+     public boolean eRapier;
+     public boolean eScimitar;
      
-     public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, char eCharHandaxes, boolean eMace){
-          this.eName = eName;
+     public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, char eCharHandaxes, boolean eMace, boolean eRapier, boolean eScimitar){
+          this.eName = eName; 
           this.eChar = eChar;
           this.eMaxHP = eMaxHP;
           this.eCHP = eCHP;
@@ -30,5 +32,7 @@ public class Enemy{
           this.eActions = eActions;
           this.eCharHandaxes = eCharHandaxes;
           this.eMace = eMace;
+          this.eRapier = eRapier;
+          this.eScimitar = eScimitar;
      }
 }
