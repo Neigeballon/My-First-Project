@@ -10,7 +10,7 @@ public class Move{
                System.out.println("D. #4.");
                choice = '\0';
                while(true){
-               choice = scannerMove.next().toUpperCase().charAt(0);
+               choice = scanner.next().toUpperCase().charAt(0);
                if(choice == 'A'){
                     cSquare = 1;
                     System.out.println("Now you are in square #1.");
