@@ -12,6 +12,7 @@ public class Mace{
                e.eCHP = e.eCHP-damageDealt;
                if(e.eStrength > 0){
                     e.eStrength--;
+                    e.eMace = true;
                }
                defense--;
                attackBonus--;
@@ -28,5 +29,11 @@ public class Mace{
      public static void reset(){
           defense++;
           attackBonus++;
+          for(Enemy e : enemies){
+          if(e.eMace){
+               e.eStrength++;
+               e.eMace = false;
+          }
+          }
      }
 }
