@@ -1,3 +1,5 @@
+import static Quest.*;
+
 public class Halberd{
      public static void execute(){
           actions--;
