@@ -34,6 +34,7 @@ public class Move{
                else{
                System.out.println("That is not a valid square to move into, "+name+". Try again.");
                }
-               }            
+               }  
+          scanner.close();
      }
 }
