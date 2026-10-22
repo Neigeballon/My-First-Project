@@ -22,13 +22,12 @@ public class Handaxes{
                else{
                     System.out.println(e.eName+" is still alive! Keep chopping with those holy handaxes of yours, "+name+"!");
                }
-               break;
                System.out.println("Choose another enemy to target with your handaxes!");
                for(Enemy e : enemies){
                e.eChar = '\0';
                if(cSquare == e.eSquare && e.eHandaxes == false){
                     System.out.println(choiceChar+". "+e.eName);
-                    e.eChar == choiceChar;
+                    e.eChar = choiceChar;
                     choiceChar++;
                }
                }
@@ -72,6 +71,7 @@ public class Handaxes{
                     }
                }
           }
+          break;
           }
      }
 }
