@@ -1,6 +1,6 @@
 import static Quest.*;
 
-public class Longsword{
+public class Warhammer{
      public static void execute(){
           for(Enemy e : enemies){
           if(choice == e.eChar){
@@ -21,6 +21,19 @@ public class Longsword{
                break;
           }
           }
-          for(Enemy e : enemies){}
+          for(Enemy e : enemies){
+          if(e.eCHP > 0 && cSquare == e.eSquare && choice != e.eChar){
+               System.out.println("You have dealt a total of "+(damageDealt/2)+" splash damage to "+e.eName+"!");
+               e.eCHP = e.eCHP-damageDealt/2
+               if(e.eCHP <= 0){
+                    System.out.println("Wonderful, "+name+"! You have killed "+e.eName+" because of splash damage! Wonderlust!");
+               }
+               else{
+                    System.out.println(e.eName+" is still alive after being hit by the splash damage! Keep slamming with that wartime warhammer of yours, "+name+"!");
+               }
+          }
+          }
+          System.out.println("You have taken "+(damageDealt/4)+" damage due to the splash damage from your warhammer!");
+          cHP = cHP-damageDealt/4
      }
 }
