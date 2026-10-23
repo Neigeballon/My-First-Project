@@ -14,11 +14,11 @@ public class Enemy{
      public int eActions;
      public int eFlail;
      public char eCharHandaxes;
-     public boolean eMace;
-     public boolean eRapier;
-     public boolean eScimitar;
+     public int eMace;
+     public int eRapier;
+     public int eScimitar;
      
-     public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, int eFlail, char eCharHandaxes, boolean eMace, boolean eRapier, boolean eScimitar){
+     public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, int eFlail, char eCharHandaxes, int eMace, int eRapier, int eScimitar){
           this.eName = eName; 
           this.eChar = eChar;
           this.eMaxHP = eMaxHP;
