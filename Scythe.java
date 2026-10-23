@@ -10,17 +10,11 @@ public class Scythe{
                damageDealt = Math.max(0, attackRoll-e.eDefense);
                System.out.println("You did a total of "+damageDealt+" damage!");     
                e.eCHP = e.eCHP-damageDealt;
-               if(e.eStrength > 0){
-                    e.eStrength--;
-                    e.eMace = true;
-               }
-               defense--;
-               attackBonus--;
                if(e.eCHP <= 0){
-                    System.out.println("Magnificent mashing , "+name+"! You have killed "+e.eName+"! Excellent!");
+                    System.out.println("Scythian reaping, "+name+"! You have killed "+e.eName+"! Spectacular!");
                }
                else{
-                    System.out.println(e.eName+" is still alive! Keep smashing with that marvelous mace of yours, "+name+"!");
+                    System.out.println(e.eName+" is still alive! Keep reaping with that special scythe of yours, "+name+"!");
                }
                break;
           }
