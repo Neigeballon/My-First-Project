@@ -8,7 +8,7 @@ public class Halberd{
           attackRoll = roll*cStrength+strBonus+attackBonus;
           System.out.println("Your total attack roll is "+attackRoll+"!");
           for(Enemy e : enemies){
-          if(cSquare == e.eSquare){
+          if(e.eCHP > 0 && cSquare == e.eSquare){
                damageDealt = Math.max(0, attackRoll-e.eDefense);
                System.out.println("You did a total of "+damageDealt+" damage to "+e.eName+"!");     
                e.eCHP = e.eCHP-damageDealt;
