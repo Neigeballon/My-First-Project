@@ -15,6 +15,7 @@ public class Trident{
                damageDealt = Math.max(0, attackRoll-e.eDefense);
                System.out.println("You did a total of "+damageDealt+" damage!");     
                e.eCHP = e.eCHP-damageDealt;
+               e.eTrident++;
                if(e.eCHP <= 0){
                     System.out.println("Triple trifecta, "+name+"! You have killed "+e.eName+"! Thine perfection!");
                }
