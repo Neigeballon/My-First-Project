@@ -30,9 +30,7 @@ public class Quest {
     public static char charWeapon4 = '\0';
     public static int battleaxe = 0;
     public static int daggers = 0;
-    public static int flail = 0;
     public static int spear = 0;
-    public static int trident = 0;
     public static int warhammer = 0;
 
     public static String chosenWeaponName = "";
