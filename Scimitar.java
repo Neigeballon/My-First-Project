@@ -1,4 +1,6 @@
-public class Mace{
+import static Quest.*;
+
+public class Scimitar{
      public static void execute(){
           for(Enemy e : enemies){
           if(choice == e.eChar){
