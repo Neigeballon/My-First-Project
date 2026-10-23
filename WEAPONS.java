@@ -24,12 +24,5 @@ public class WEAPONS{
           Mace.reset();
           Rapier.reset();
           Scimitar.reset();
-          Scythe.reset();
           Spear.reset();
-          Trident.reset();
-          Warhammer.reset();
      }
-     public static void  resetCombat(){
-          flail = 0;
-     }
-}
