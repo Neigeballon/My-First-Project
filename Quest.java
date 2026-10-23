@@ -300,7 +300,7 @@ public class Quest {
          System.out.println("J. Scythe: With this weapon, you have a 1 in 3 chance of dealing double damage, but if it does not, then you gain a -3 penalty on damage.");
          System.out.println("K. Spear: You can make an attack against an enemy that is not in your square with this weapon, except you gain a -2 penalty on defense for one turn *this effect stacks*.");
          System.out.println("L. Trident: Your attack with this weapon is made 3 times, and the best result is taken. For the next attack made against you during this combat, the attacking enemy rolls their attack twice and takes the best result.");
-         System.out.println("M. Warhammer: Deal splash damage equal to one half of the damage dealt to the target enemy to all other enemies. Deal one half of the splash damage dealt to yourself.");
+         System.out.println("M. Warhammer: Deal splash damage equal to one half of the damage dealt to the target enemy to all other enemies in the same square as you. Deal one half of the splash damage dealt to yourself.");
          while(w1Loop){
          weapon1 = scanner.next().toUpperCase().charAt(0);
          if("ABCDEFGHIJKLM".indexOf(weapon1) >= 0){
