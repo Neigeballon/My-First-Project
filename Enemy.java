@@ -12,12 +12,13 @@ public class Enemy{
      public int eMagicResistance;
      public int eSquare;
      public int eActions;
+     public int eFlail;
      public char eCharHandaxes;
      public boolean eMace;
      public boolean eRapier;
      public boolean eScimitar;
      
-     public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, char eCharHandaxes, boolean eMace, boolean eRapier, boolean eScimitar){
+     public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, int eFlail, char eCharHandaxes, boolean eMace, boolean eRapier, boolean eScimitar){
           this.eName = eName; 
           this.eChar = eChar;
           this.eMaxHP = eMaxHP;
@@ -30,6 +31,7 @@ public class Enemy{
           this.eMagicResistance = eMagicResistance;
           this.eSquare = eSquare;
           this.eActions = eActions;
+          this.eFlail = eFlail;
           this.eCharHandaxes = eCharHandaxes;
           this.eMace = eMace;
           this.eRapier = eRapier;
