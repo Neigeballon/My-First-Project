@@ -12,7 +12,7 @@ public class Flail{
                damageDealt = Math.max(0, attackRoll-e.eDefense);
                System.out.println("You did a total of "+damageDealt+" damage!");     
                e.eCHP = e.eCHP-damageDealt;
-               flail++;
+               e.eFlail++;
                if(e.eCHP <= 0){
                     System.out.println("Fantastic flailing, "+name+"! You have killed "+e.eName+"! Great job!");
                }
