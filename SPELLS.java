@@ -1,3 +1,5 @@
+import static Quest.*;
+
 public class SPELLS{
      public static void execute(){
            switch(chosenSpellName){
