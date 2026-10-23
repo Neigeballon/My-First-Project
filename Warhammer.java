@@ -13,13 +13,14 @@ public class Longsword{
                System.out.println("You did a total of "+damageDealt+" damage!");     
                e.eCHP = e.eCHP-damageDealt;
                if(e.eCHP <= 0){
-                    System.out.println("Slashing lashing , "+name+"! You have killed "+e.eName+"! Lickety-split!");
+                    System.out.println("Wonderful, "+name+"! You have killed "+e.eName+"! Wonderlust!");
                }
                else{
-                    System.out.println(e.eName+" is still alive! Keep slashing with that long longsword of yours, "+name+"!");
+                    System.out.println(e.eName+" is still alive! Keep slamming with that wartime warhammer of yours, "+name+"!");
                }
                break;
           }
           }
+          for(Enemy e : enemies){}
      }
 }
