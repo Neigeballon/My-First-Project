@@ -12,7 +12,7 @@ public class Mace{
                e.eCHP = e.eCHP-damageDealt;
                if(e.eIntelligence > 0){
                     e.eIntelligence--;
-                    e.eScimitar = true;
+                    e.eScimitar++;
                }
                defense--;
                attackBonus--;
@@ -30,9 +30,9 @@ public class Mace{
           defense++;
           attackBonus++;
           for(Enemy e : enemies){
-          if(e.eScimitar){
+          while(e.eScimitar > 0){
                e.eIntelligence++;
-               e.eScimitar = false;
+               e.eScimitar--;
           }
           }
      }
