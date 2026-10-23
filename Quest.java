@@ -300,10 +300,10 @@ public class Quest {
          System.out.println("G. Mace: The target enemy takes a -1 penalty to their Strength score for one turn, but you take a -1 penalty on damage and defense for this turn.");
          System.out.println("H. Rapier: The target enemy takes a -1 penalty to their Dexterity score for one turn, but you take a -1 penalty on damage and defense for this turn.");
          System.out.println("I. Scimitar: The target enemy takes a -1 penalty to their Intelligence score for one turn, but you take a -1 penalty on damage and defense for this turn.");
-         System.out.println("J. Scythe: With this weapon, you have a 1 in 5 chance of dealing double damage, but if it does not, then you gain a -3 penalty on damage.");
+         System.out.println("J. Scythe: With this weapon, you have a 1 in 4 chance of dealing double damage, but if it does not, then you gain a -3 penalty on damage.");
          System.out.println("K. Spear: You can make an attack against an enemy that is not in your square with this weapon, except you gain a -2 penalty on defense for one turn *this effect stacks*.");
          System.out.println("L. Trident: Your attack with this weapon is made 3 times, and the best result is taken. For the next attack made against you during this combat, the attacking enemy rolls their attack twice and takes the best result.");
-         System.out.println("M. Warhammer: Deal splash damage equal to one half of the damage dealt to the target enemy to all other enemies in melee range. Deal one half of the splash damage dealt to yourself.");
+         System.out.println("M. Warhammer: Deal splash damage equal to one half of the damage dealt to the target enemy to all other enemies. Deal one half of the splash damage dealt to yourself.");
          while(w1Loop){
          weapon1 = scanner.next().toUpperCase().charAt(0);
          if("ABCDEFGHIJKLM".indexOf(weapon1) >= 0){
