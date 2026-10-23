@@ -10,7 +10,7 @@ public class Rapier{
                damageDealt = Math.max(0, attackRoll-e.eDefense);
                System.out.println("You did a total of "+damageDealt+" damage!");     
                e.eCHP = e.eCHP-damageDealt;
-               if(e.eStrength > 0){
+               if(e.eDexterity > 0){
                     e.eDexterity--;
                     e.eRapier = true;
                }
@@ -20,7 +20,7 @@ public class Rapier{
                     System.out.println("Rumbling razing, "+name+"! You have killed "+e.eName+"! Radical!");
                }
                else{
-                    System.out.println(e.eName+" is still alive! Keep smashing with that marvelous mace of yours, "+name+"!");
+                    System.out.println(e.eName+" is still alive! Keep piercing with that razor-sharp rapier of yours, "+name+"!");
                }
                break;
           }
