@@ -1,3 +1,5 @@
+import static Quest.*;
+
 public class Scythe{
      public static void execute(){
           for(Enemy e : enemies){
@@ -8,6 +10,14 @@ public class Scythe{
                attackRoll = roll*cStrength+strBonus+attackBonus;
                System.out.println("Your total attack roll is "+attackRoll+"!");
                damageDealt = Math.max(0, attackRoll-e.eDefense);
+               if(ThreadLocalRandom.current().nextInt(1, 4) == 1){
+                    damageDealt = damageDealt*2;
+                    System.out.println("Lucky stroke! You got a critical hit on "+e.eName+"! Double damage!");
+               }
+               else{
+                    damageDealt = damageDealt-3;
+                    System.out.println("Unfortunately, you did not get a critical hit with your scythe this time, so you have a -3 penalty to damage.");
+               }
                System.out.println("You did a total of "+damageDealt+" damage!");     
                e.eCHP = e.eCHP-damageDealt;
                if(e.eCHP <= 0){
@@ -17,16 +27,6 @@ public class Scythe{
                     System.out.println(e.eName+" is still alive! Keep reaping with that special scythe of yours, "+name+"!");
                }
                break;
-          }
-          }
-     }
-     public static void reset(){
-          defense++;
-          attackBonus++;
-          for(Enemy e : enemies){
-          if(e.eMace){
-               e.eStrength++;
-               e.eMace = false;
           }
           }
      }
