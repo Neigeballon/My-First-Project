@@ -1,3 +1,5 @@
+import static Quest.*;
+
 public class Longsword{
      public static void execute(){
           for(Enemy e : enemies){
