@@ -1,4 +1,5 @@
 import java.util.*;
+import static Quest.*;
 
 public class Move{
      public static void execute(){
