@@ -17,7 +17,7 @@ public class Mace{
                defense--;
                attackBonus--;
                if(e.eCHP <= 0){
-                    System.out.println("Savvy slicing , "+name+"! You have killed "+e.eName+"! S'amazing!");
+                    System.out.println("Savvy slicing, "+name+"! You have killed "+e.eName+"! S'amazing!");
                }
                else{
                     System.out.println(e.eName+" is still alive! Keep slicing with that savvy scimitar of yours, "+name+"!");
