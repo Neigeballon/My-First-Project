@@ -17,7 +17,7 @@ public class Mace{
                defense--;
                attackBonus--;
                if(e.eCHP <= 0){
-                    System.out.println("Magnificent mashing , "+name+"! You have killed "+e.eName+"! Excellent!");
+                    System.out.println("Magnificent mashing, "+name+"! You have killed "+e.eName+"! Excellent!");
                }
                else{
                     System.out.println(e.eName+" is still alive! Keep smashing with that marvelous mace of yours, "+name+"!");
