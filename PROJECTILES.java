@@ -1,3 +1,5 @@
+import static Quest.*;
+
 public class PROJECTILES{
      public static void execute(){
           switch(chosenProjectileName){
