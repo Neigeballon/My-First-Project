@@ -12,7 +12,7 @@ public class Rapier{
                e.eCHP = e.eCHP-damageDealt;
                if(e.eDexterity > 0){
                     e.eDexterity--;
-                    e.eRapier = true;
+                    e.eRapier++;
                }
                defense--;
                attackBonus--;
@@ -30,9 +30,9 @@ public class Rapier{
           defense++;
           attackBonus++;
           for(Enemy e : enemies){
-          if(e.eRapier){
+          while(e.eRapier > 0){
                e.eDexterity++;
-               e.eRapier = false;
+               e.eRapier--;
           }
           }
      }
