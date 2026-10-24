@@ -4,8 +4,14 @@ import static Quest.*;
 public class Move{
      public static void execute(){
           Scanner scanner = new Scanner(System.in);
-          System.out.println("Which square would you like to move to? Type in the number Remember, you are in square "+cSquare+". It would be a waste of an action to move into the same square you are already in.");
-               System.out.println("A. #1.");
+          choiceMove = '\0';
+          charMove = 'A';
+          System.out.println("Which square would you like to move to? Type in the number Remember, you are in square "+cSquare+".");
+          if(cSquare != 1){
+               System.out.println(charMove+". Move to square #1");
+               charMove1 = charMove;
+               charMove++;
+          }
                System.out.println("B. #2.");
                System.out.println("C. #3.");
                System.out.println("D. #4.");
