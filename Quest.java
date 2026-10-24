@@ -21,6 +21,14 @@ public class Quest {
 
     public static char choice;//Used during the quest as a variable based on user input to decide which route to take
     public static char charChoice;
+
+    public static char choiceMove;
+    public static char charMove;
+    public static char charMove1 = '\0';
+    public static char charMove2 = '\0';
+    public static char charMove3 = '\0';
+    public static char charMove4 = '\0';
+    public static String chosenSquareName = "";
     
     public static char charSpear;
     public static char charWeapon;
@@ -33,7 +41,7 @@ public class Quest {
     public static int spear = 0;
     public static int warhammer = 0;
 
-    public static String chosenWeaponName = "";
+`   public static String chosenWeaponName = "";
     public static String armorName = "";
 
     public static String chosenSpellName = "";
@@ -117,6 +125,14 @@ public class Quest {
      String projectile3Name = "";
      String projectile4Name = "";
      char chosenProjectile = '\0';
+
+     //Moving Chosen Square Map
+     Map<Character, Integer> ChosenSquare = Map.ofEntries(
+     Map.entry(charMove1, 1),
+     Map.entry(charMove2, 2),
+     Map.entry(charMove3, 3),
+     Map.entry(charMove4, 4)
+     );
 
      //Fighter Armor Map
      Map<Character, String> Armors = Map.ofEntries(
