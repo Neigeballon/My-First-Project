@@ -14,8 +14,8 @@ public class Quest {
     public static ArrayList<Enemy> enemies = new ArrayList<>();
     public static Enemy e = null;
     
-    public static double maxHP;
-    public static double cHP;
+    public static double maxHP = 1;
+    public static double cHP = 1;
     public static int roll;
     public static double attackRoll;
     public static double damageDealt;
@@ -72,6 +72,22 @@ public class Quest {
     public static String rangedWeaponName = "";
     
     public static void main(String[] args) {
+
+        Thread thread = new Thread(() -> {
+            while(true){
+            if(cHP <= 0){
+                System.out.println("What a tragic ending, "+name+"! Your hp has dropped to zero or below! The Quest for Glory ends now!");
+                System.exit(0);
+                try {
+                    Thread.sleep(100); // Checks 10 times a second instead of millions of times a second
+                }
+                catch (InterruptedException e) {
+                    break;
+                }
+            }
+            }
+        });
+        thread.start();
 
     //Character Creation Variables
      boolean cLoop = true;//Choosing a Class
