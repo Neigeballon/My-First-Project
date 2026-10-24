@@ -9,6 +9,8 @@ public class Quest {
 
     public static String name;
 
+    public static ArrayList<Enemy> enemies = new ArrayList<>();
+
     public static int roll;
     public static double attackRoll;
     public static double damageDealt;
