@@ -1,4 +1,5 @@
-import static Quest.*;
+package quest;
+import static quest.Quest.*;
 
 public class SPELLS{
      public static void execute(){
