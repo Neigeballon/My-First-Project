@@ -92,6 +92,7 @@ else{
      System.out.println("Sorry, "+name+". You can't do that. Try again.");
 }
 }
+Enemy e = null;
 //Enemy actions cannot cause self harm to a point of dying - use an if then to take this into account
 e = enemies.get(0);
 while(e.eCHP > 0 && e.eActions > 0){
