@@ -4,6 +4,10 @@ public class Quest {
 
     public static Map<Character, Integer> ChosenSquare = new HashMap<>();
     public static Map<Character, String> ChosenWeapon = new HashMap<>();
+    public static Map<Character, String> ChosenSpell = new HashMap<>();
+    public static Map<Character, String> ChosenProjectile = new HashMap<>();
+
+    public static String name;
 
     public static int roll;
     public static double attackRoll;
@@ -185,14 +189,6 @@ public class Quest {
      Map.entry('C', "Wand of Wonder")
      );
 
-     //Wizard Chosen Spell Map
-     Map<Character, String> ChosenSpell = Map.ofEntries(
-     Map.entry('A', spell1Name),
-     Map.entry('B', spell2Name),
-     Map.entry('C', spell3Name),
-     Map.entry('D', spell4Name)
-     );
-
      //Ranger Ranged Weapon Map
      Map<Character, String> Bows = Map.ofEntries(
      Map.entry('A', "Crossbow"),
@@ -216,18 +212,10 @@ public class Quest {
      Map.entry('L', "Shielding Arrows"),
      Map.entry('M', "Frailizing Arrows")
      );
-
-     //Ranger Chosen Projectile Map
-     Map<Character, String> ChosenProjectile = Map.ofEntries(
-     Map.entry('A', projectile1Name),
-     Map.entry('B', projectile2Name),
-     Map.entry('C', projectile3Name),
-     Map.entry('D', projectile4Name)
-     );
      
      Scanner scanner = new Scanner(System.in);
      System.out.println("Hello fellow adventurer! Welcome to the quest of Finding Glory! Enter your character's name.");
-     String name = scanner.next();
+     name = scanner.next();
      scanner.nextLine();
      System.out.println("Good luck, "+name+"! May you find all the Glory! But beware, you must make the right decisions or you will fail.");
      System.out.println(name+", you must know the rules of this adventure. First of all, if I, the narrator, ask you to enter a number, do not enter any other characters. If you are given a list of choices that correspond to a letter, then just type the letter! Press Enter to continue.");
