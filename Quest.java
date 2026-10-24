@@ -53,7 +53,7 @@ public class Quest {
     public static int daggers = 0;
     public static int spear = 0;
 
-`   public static String chosenWeaponName = "";
+    public static String chosenWeaponName = "";
     public static String armorName = "";
 
     public static String chosenSpellName = "";
