@@ -19,7 +19,6 @@ public class Halberd{
                else{
                     System.out.println(e.eName+" is still alive! Keep swinging with that hearty halberd of yours, "+name+"!");
                }
-               break;
           }
           }
      }
