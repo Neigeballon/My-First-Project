@@ -3,7 +3,6 @@ import static Quest.*;
 
 public class Halberd{
      public static void execute(){
-          actions--;
           roll = ThreadLocalRandom.current().nextInt(1, 7);
           System.out.println("You rolled a "+roll+"!");
           attackRoll = roll*cStrength+strBonus+attackBonus;
