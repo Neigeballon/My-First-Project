@@ -220,11 +220,11 @@ public class Quest {
      scanner.nextLine();
      System.out.println("In this game, there is Defense. When you are attacked, your Defense score, which starts at 13, is subtracted from the enemy's success score, and the difference is how much HP you lose. This works the same way for the enemy when you attack an enemy. Press Enter to continue.");
      scanner.nextLine();
-     System.out.println("Also, there is Magic Resistance. When an attack spell is casted, the caster must make an intelligence check and then either divide it by or subtract their opponent's Magic resistance from it to determine the damage done. The operation varies based on what spell is casted. Your starting Magic Resistance is 3. Press Enter to continue.");
+     System.out.println("Also, there is Magic Resistance. When an attack spell is cast, the caster must make an intelligence check and then either divide it by or subtract their opponent's Magic Resistance from it to determine the damage done. The operation varies based on what spell is cast. Your starting Magic Resistance is 3. Press Enter to continue.");
      scanner.nextLine();
      System.out.println("When faced with a dilemma, there may be options to attack or to try to talk your way out of it or something else. If you choose to attack, you will go first in the round. If you fail to talk your way out of something, your new enemy goes first in the round. Press Enter to continue.");
      scanner.nextLine();
-     System.out.println("In combat, there are 4 squares that are locations where you and each enemy are. The squares are named 1, 2, 3, and 4. Top right = #1, bottom right = #2, bottom left = #3, top left + #4. Press enter to continue.");
+     System.out.println("In combat, there are 4 squares that are locations where you and each enemy are. The squares are named 1, 2, 3, and 4. Top right = #1, bottom right = #2, bottom left = #3, top left = #4. Press enter to continue.");
      scanner.nextLine();
      System.out.println("In each combat round, you and each enemy has a turn. In that turn, they can take 2 actions. In an action, they or you can attack, cast a spell, use a magic item, or move to a different square. Some special things take no action. Press Enter to continue.");
      scanner.nextLine();
