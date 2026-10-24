@@ -6,7 +6,6 @@ enemies.add(new Enemy("Pack", '\0', 39, 39, 5, 5, 3, 4, 20, 2, 3, 0, 0, '\0', 0,
 enemies.add(new Enemy("Vack", '\0', 56, 56, 1, 1, 5, 1, 18, 2, 2, 0, 0, '\0', 0, 0, 0, 0));
 enemies.add(new Enemy("Zack", '\0', 40, 40, 3, 2, 2, 3, 19, 2, 4, 0, 0, '\0', 0, 0, 0, 0));
 actions = 0;
-Enemy e = null;
 //Decide the enemies' ability scores and magic resistance here
 while(enemies.stream().anyMatch(e -> e.eCHP > 0)){
 choice = '\0';
