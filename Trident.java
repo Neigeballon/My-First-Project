@@ -5,7 +5,6 @@ public class Trident{
      public static void execute(){
           for(Enemy e : enemies){
           if(choice == e.eChar){
-               actions--;
                roll = Math.max(
                Math.max(ThreadLocalRandom.current().nextInt(1, 7), ThreadLocalRandom.current().nextInt(1, 7)), 
                ThreadLocalRandom.current().nextInt(1, 7)
