@@ -1,3 +1,4 @@
+import java.util.concurrent.ThreadLocalRandom;
 import Quest.*;
 
 public class Rapier{
