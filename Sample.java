@@ -51,25 +51,30 @@ else if(choice >= 'B' && choice < charSpear){
 }
 else if(choice >= charSpear && choice < charChoice){
       System.out.println("What weapon would you like to use to attack them?");
+      ChosenWeapon.clear();
       charWeapon = 'A';
       if(weapon1 != 'K'){
            System.out.println(charWeapon+". "+weapon1Name);
            charWeapon1 = charWeapon;
+           ChosenWeapon.put(charWeapon1, weapon1Name);
            charWeapon++;
       }
       if(weapon2 != 'K'){
            System.out.println(charWeapon+". "+weapon2Name);
            charWeapon2 = charWeapon;
+           ChosenWeapon.put(charWeapon2, weapon2Name);
            charWeapon++;
       }
       if(weapon3 != 'K'){
            System.out.println(charWeapon+". "+weapon3Name);
            charWeapon3 = charWeapon;
+           ChosenWeapon.put(charWeapon3, weapon3Name);
            charWeapon++;
       }
       if(weapon4 != 'K'){
            System.out.println(charWeapon+". "+weapon4Name);
            charWeapon4 = charWeapon;
+           ChosenWeapon.put(charWeapon4, weapon4Name);
            charWeapon++;
       }
       while(true){
