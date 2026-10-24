@@ -1,3 +1,5 @@
+package quest;
+
 public class Enemy{
      
      public String eName;
