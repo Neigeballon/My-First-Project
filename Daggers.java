@@ -1,5 +1,6 @@
+package quest;
+import static quest.Quest.*;
 import java.util.concurrent.ThreadLocalRandom;
-import static Quest.*;
 
 public class Daggers{
      public static void execute(){
