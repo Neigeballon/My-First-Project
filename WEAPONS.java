@@ -26,3 +26,4 @@ public class WEAPONS{
           Scimitar.reset();
           Spear.reset();
      }
+}
