@@ -12,7 +12,9 @@ public class Quest {
 
     public static ArrayList<Enemy> enemies = new ArrayList<>();
     public static Enemy e = null;
-
+    
+    public static double maxHP;
+    public static double cHP;
     public static int roll;
     public static double attackRoll;
     public static double damageDealt;
