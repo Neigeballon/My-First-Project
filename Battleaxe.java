@@ -1,3 +1,4 @@
+import java.util.*;
 import static Quest.*;
 
 public class Battleaxe{
@@ -15,7 +16,7 @@ public class Battleaxe{
                defense = defense-2;
                battleaxe++;
                if(e.eCHP <= 0){
-                    System.out.println("Congradulations, "+name+"! You have killed "+e.eName+"! Great job!");
+                    System.out.println("Congratulations, "+name+"! You have killed "+e.eName+"! Great job!");
                }
                else{
                     System.out.println(e.eName+" is still alive! Keep battling with that battleaxe of yours, "+name+"!");
