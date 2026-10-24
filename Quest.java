@@ -2,6 +2,9 @@ import java.util.*;
 
 public class Quest {
 
+    public static Map<Character, Integer> ChosenSquare = new HashMap<>();
+    public static Map<Character, String> ChosenWeapon = new HashMap<>();
+
     public static int roll;
     public static double attackRoll;
     public static double damageDealt;
@@ -156,14 +159,6 @@ public class Quest {
      Map.entry('K', "Spear"),
      Map.entry('L', "Trident"),
      Map.entry('M', "Warhammer")
-     );
-
-     //Fighter Chosen Weapon Map
-     Map<Character, String> ChosenWeapon = Map.ofEntries(
-     Map.entry(charWeapon1, weapon1Name),
-     Map.entry(charWeapon2, weapon2Name),
-     Map.entry(charWeapon3, weapon3Name),
-     Map.entry(charWeapon4, weapon4Name)
      );
 
      //Wizard Spell Map 
