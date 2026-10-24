@@ -52,7 +52,6 @@ public class Quest {
     public static int battleaxe = 0;
     public static int daggers = 0;
     public static int spear = 0;
-    public static int warhammer = 0;
 
 `   public static String chosenWeaponName = "";
     public static String armorName = "";
