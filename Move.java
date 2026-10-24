@@ -12,35 +12,38 @@ public class Move{
                charMove1 = charMove;
                charMove++;
           }
-               System.out.println("B. #2.");
-               System.out.println("C. #3.");
-               System.out.println("D. #4.");
-               choice = '\0';
-               while(true){
-               choice = scanner.next().toUpperCase().charAt(0);
-               if(choice == 'A'){
-                    cSquare = 1;
-                    System.out.println("Now you are in square #1.");
-                    break;
-               }
-               else if(choice == 'B'){
-                    cSquare = 2;
-                    System.out.println("Now you are in square #2.");
-                    break;
-               }
-               else if(choice == 'C'){
-                    cSquare = 3;
-                    System.out.println("Now you are in square #3.");
-                    break;
-               }
-               else if(choice == 'D'){
-                    cSquare = 4;
-                    System.out.println("Now you are in square #4.");
-                    break;
-               }
-               else{
+          if(cSquare != 2){
+               System.out.println(charMove+". Move to square #2");
+               charMove2 = charMove;
+               charMove++;
+          }
+          if(cSquare != 3){
+               System.out.println(charMove+". Move to square #3");
+               charMove3 = charMove;
+               charMove++;
+          }
+          if(cSquare != 4){
+               System.out.println(charMove+". Move to square #4");
+               charMove4 = charMove;
+               charMove++;
+          }
+          while(true){
+          choiceMove = scanner.next().toUpperCase().charAt(0);
+          if(choiceMove >= 'A' && choiceMove < charMove){
+               chosenSquareName = ChosenSquare.get(choiceMove);
+               System.out.println("You are now in square #"+chosenSquareName+".");
+               break;
+          }
+          else{
                System.out.println("That is not a valid square to move into, "+name+". Try again.");
-               }
-               }  
+          }
+          }
+          switch(chosenSquareName){
+               case 1 -> cSquare = 1;
+               case 2 -> cSquare = 2;
+               case 3 -> cSquare = 3;
+               case 4 -> cSquare = 4;
+               default -> System.out.println("");
+          }
      }
 }
