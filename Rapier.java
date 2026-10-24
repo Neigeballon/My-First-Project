@@ -1,5 +1,5 @@
 import java.util.concurrent.ThreadLocalRandom;
-import Quest.*;
+import static Quest.*;
 
 public class Rapier{
      public static void execute(){
