@@ -24,7 +24,7 @@ public class Warhammer{
           for(Enemy e : enemies){
           if(e.eCHP > 0 && cSquare == e.eSquare && choice != e.eChar){
                System.out.println("You have dealt a total of "+(damageDealt/2)+" splash damage to "+e.eName+"!");
-               e.eCHP = e.eCHP-damageDealt/2
+               e.eCHP = e.eCHP-damageDealt/2;
                if(e.eCHP <= 0){
                     System.out.println("Wonderful, "+name+"! You have killed "+e.eName+" because of splash damage! Wonderlust!");
                }
@@ -34,6 +34,6 @@ public class Warhammer{
           }
           }
           System.out.println("You have taken "+(damageDealt/4)+" damage due to the splash damage from your warhammer!");
-          cHP = cHP-damageDealt/4
+          cHP = cHP-damageDealt/4;
      }
 }
