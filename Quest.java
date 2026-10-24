@@ -136,14 +136,6 @@ public class Quest {
      String projectile4Name = "";
      char chosenProjectile = '\0';
 
-     //Moving Chosen Square Map
-     Map<Character, Integer> ChosenSquare = Map.ofEntries(
-     Map.entry(charMove1, 1),
-     Map.entry(charMove2, 2),
-     Map.entry(charMove3, 3),
-     Map.entry(charMove4, 4)
-     );
-
      //Fighter Armor Map
      Map<Character, String> Armors = Map.ofEntries(
      Map.entry('A', "Crocodile Leather Armor"),
