@@ -28,7 +28,7 @@ public class Quest {
     public static char charMove2 = '\0';
     public static char charMove3 = '\0';
     public static char charMove4 = '\0';
-    public static String chosenSquareName = "";
+    public static int chosenSquareName = 0;
     
     public static char charSpear;
     public static char charWeapon;
