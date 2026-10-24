@@ -1,5 +1,6 @@
+package quest;
+import static quest.Quest.*;
 import java.util.*;
-import static Quest.*;
 
 public class Move{
      public static void execute(){
