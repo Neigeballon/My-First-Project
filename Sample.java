@@ -45,6 +45,7 @@ if(choice == 'A'){
      Move.execute();
 }
 else if(choice >= 'B' && choice < charSpear){
+      actions--;
       Spear.execute();
 }
 else if(choice >= charSpear && choice < charChoice){
@@ -80,6 +81,7 @@ else if(choice >= charSpear && choice < charChoice){
       chosenWeapon = scanner.next().toUpperCase().charAt(0);
       if(chosenWeapon >= 'A' && chosenWeapon < charWeapon){
             chosenWeaponName = ChosenWeapon.get(chosenWeapon);
+            actions--;
             WEAPONS.execute();
             break;
       }
