@@ -1,6 +1,7 @@
+package quest;
+import static quest.Quest.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.*;
-import static Quest.*;
 
 public class Handaxes{
      public static void execute(){
