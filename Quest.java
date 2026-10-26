@@ -10,7 +10,7 @@ public class Quest {
     public static Map<Character, String> ChosenSpell = new HashMap<>();
     public static Map<Character, String> ChosenProjectile = new HashMap<>();
 
-    public static String name;
+    public static String name = "";
     public static char cClass = '\0';
     public static boolean saved = false;
     public static int encounter = 0;
@@ -24,16 +24,16 @@ public class Quest {
     public static double attackRoll;
     public static double damageDealt;
     public static double cStrength = 0;
-    public static int strBonus;
+    public static int strBonus = 0;
     public static double cDexterity = 0;
-    public static int dexBonus;
+    public static int dexBonus = 0;
     public static double cIntelligence = 0;
-    public static int intBonus;
+    public static int intBonus = 0;
     public static double cCharisma = 0;
-    public static int chaBonus;
-    public static int attackBonus;
+    public static int chaBonus = 0;
+    public static int attackBonus = 0;
     public static double defense = 13;
-    public static int magicResistance;
+    public static int magicResistance = 0;
     public static int cSquare;
     public static int actions;
 
@@ -49,8 +49,8 @@ public class Quest {
     public static int chosenSquareName = 0;
 
     public static String armorName = "";
-    public static int armorBonus;
-    public static int armorEnchant;
+    public static int armorBonus = 0;
+    public static int armorEnchant = 0;
     public static String weapon1Name = "";
     public static String weapon2Name = "";
     public static String weapon3Name = "";
@@ -81,7 +81,7 @@ public class Quest {
     public static boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
 
     public static String rangedWeaponName = "";
-    public static int rangedEnchant;
+    public static int rangedEnchant = 0;
     public static String projectile1Name = "";
     public static String projectile2Name = "";
     public static String projectile3Name = "";
@@ -141,6 +141,36 @@ public class Quest {
     }
 
     public static void Load(){
+        if(encounter == 1){
+            Encounter1.execute();
+        }
+        else if(encounter == 2){
+            Encounter2.execute();
+        }
+        else if(encounter == 3){
+            Encounter3.execute();
+        }
+        else if(encounter == 4){
+            Encounter4.execute();
+        }
+        else if(encounter == 5){
+            Encounter5.execute();
+        }
+        else if(encounter == 6){
+            Encounter6.execute();
+        }
+        else if(encounter == 7){
+            Encounter7.execute();
+        }
+        else if(encounter == 8){
+            Encounter8.execute();
+        }
+        else if(encounter == 9){
+            Encounter9.execute();
+        }
+        else{
+            Encounter10.execute();
+        }
         
     }
 
