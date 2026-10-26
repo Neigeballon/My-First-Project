@@ -141,6 +141,13 @@ public class Quest {
     }
 
     public static void Load(){
+        File saveFile = new File("savegame.txt");
+        try(Scanner reader = new Scanner(saveFile)){
+            if (reader.hasNextLine()) {
+                name = reader.nextLine();
+            }
+        }
+        catch(
         if(encounter == 1){
             Encounter1.execute();
         }
