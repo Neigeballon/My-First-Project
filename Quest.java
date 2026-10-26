@@ -12,8 +12,8 @@ public class Quest {
 
     public static String name;
     public static char cClass = '\0';
-    public static boolean saved;
-    public static int encounter;
+    public static boolean saved = false;
+    public static int encounter = 0;
 
     public static ArrayList<Enemy> enemies = new ArrayList<>();
     public static Enemy e = null;
@@ -92,45 +92,45 @@ public class Quest {
     public static void Save(){
         File saveFile = new File("savegame.txt");
         try (FileWriter writer = new FileWriter(saveFile)) {
-            writer.write(name
-            writer.write(cClass
-            writer.write(saved
-            writer.write(encounter
-            writer.write(maxHP
-            writer.write(cHP
-            writer.write(cStrength
-            writer.write(strBonus
-            writer.write(cDexterity
-            writer.write(dexBonus
-            writer.write(cIntelligence
-            writer.write(intBonus
-            writer.write(cCharisma
-            writer.write(chaBonus
-            writer.write(attackBonus
-            writer.write(defense
-            writer.write(magicResistance
-            writer.write(armorBonus
-            writer.write(armorEnchant
-            writer.write(armorName
-            writer.write(weapon1Name
-            writer.write(weapon2Name
-            writer.write(weapon3Name
-            writer.write(weapon4Name
-            writer.write(spell1Name
-            writer.write(spell2Name
-            writer.write(spell3Name
-            writer.write(spell4Name
-            writer.write(magicItemName
-            writer.write(askRage
-            writer.write(ask1Sacrifice
-            writer.write(ask1Sacrifice
-            writer.write(wonderWand
-            writer.write(rangedWeaponName
-            writer.write(rangedEnchant
-            writer.write(projectile1Name
-            writer.write(projectile2Name
-            writer.write(projectile3Name
-            writer.write(projectile4Name
+            writer.write(name+"\n");
+            writer.write(cClass+"\n");
+            writer.write(saved+"\n");
+            writer.write(encounter+"\n");
+            writer.write(maxHP+"\n");
+            writer.write(cHP+"\n");
+            writer.write(cStrength+"\n");
+            writer.write(strBonus+"\n");
+            writer.write(cDexterity+"\n");
+            writer.write(dexBonus+"\n");
+            writer.write(cIntelligence+"\n");
+            writer.write(intBonus+"\n");
+            writer.write(cCharisma+"\n");
+            writer.write(chaBonus+"\n");
+            writer.write(attackBonus+"\n");
+            writer.write(defense+"\n");
+            writer.write(magicResistance+"\n");
+            writer.write(armorBonus+"\n");
+            writer.write(armorEnchant+"\n");
+            writer.write(armorName+"\n");
+            writer.write(weapon1Name+"\n");
+            writer.write(weapon2Name+"\n");
+            writer.write(weapon3Name+"\n");
+            writer.write(weapon4Name+"\n");
+            writer.write(spell1Name+"\n");
+            writer.write(spell2Name+"\n");
+            writer.write(spell3Name+"\n");
+            writer.write(spell4Name+"\n");
+            writer.write(magicItemName+"\n");
+            writer.write(askRage+"\n");
+            writer.write(ask1Sacrifice+"\n");
+            writer.write(ask2Sacrifice+"\n");
+            writer.write(wonderWand+"\n");
+            writer.write(rangedWeaponName+"\n");
+            writer.write(rangedEnchant+"\n");
+            writer.write(projectile1Name+"\n");
+            writer.write(projectile2Name+"\n");
+            writer.write(projectile3Name+"\n");
+            writer.write(projectile4Name+"\n");
             
             System.out.println("Game saved!");
         } 
@@ -292,7 +292,7 @@ public class Quest {
         System.out.println("Hello fellow adventurer! Welcome to the quest of Finding Glory! Enter your character's name.");
         name = scanner.next();
         scanner.nextLine();
-        System.out.println("Good luck, " + name + "! May you find all the Glory! But beware, you must make the right decisions or you will fail.");
+        System.out.println("Good luck, " + name + "! May you find all the Glory! But beware, you must make the right decisions or you will fail. This game will automatically save after you create your character and after every encounter.");
         System.out.println(name + ", you must know the rules of this adventure. First of all, if I, the narrator, ask you to enter a number, do not enter any other characters. If you are given a list of choices that correspond to a letter, then just type the letter! Press Enter to continue.");
         scanner.nextLine();
         System.out.println("In this game, there is Defense. When you are attacked, your Defense score, which starts at 13, is subtracted from the enemy's success score, and the difference is how much HP you lose. This works the same way for the enemy when you attack an enemy. Press Enter to continue.");
@@ -679,6 +679,8 @@ public class Quest {
 
         System.out.println("Your first encounter is a fight. There's no talking your way out of this one. Press Enter to continue.");
         scanner.nextLine();
+        encounter++;
+        saved = true;
         if (cClass == 'A') {
             cSquare = 3;
             System.out.println("A montstrous Nibbit who will use his claws to attack stands in front of you. You get to go first.");
