@@ -1,6 +1,7 @@
 package quest;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.io.*;
 
 public class Quest {
 
@@ -44,6 +45,11 @@ public class Quest {
     public static char charMove4 = '\0';
     public static int chosenSquareName = 0;
 
+    public static String weapon1Name = "";
+    public static String weapon2Name = "";
+    public static String weapon3Name = "";
+    public static String weapon4Name = "";
+    public static char chosenWeapon = '\0';
     public static char charSpear;
     public static char charWeapon;
     public static char charWeapon1 = '\0';
@@ -57,8 +63,13 @@ public class Quest {
     public static String chosenWeaponName = "";
     public static String armorName = "";
 
+    public static String spell1Name = "";
+    public static  String spell2Name = "";
+    public static String spell3Name = "";
+    public static String spell4Name = "";
     public static String chosenSpellName = "";
     public static String magicItemName = "";
+    public static char chosenSpell = '\0';
     public static boolean askRage = false;//Used for Rod of Rage; before every spell cast, this boolean determines if it asks the user whether they want to rage or not.
     public static boolean doRage = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
     public static boolean ask1Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice or not.
@@ -68,6 +79,12 @@ public class Quest {
     public static boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
     public static int doWonder = 0;
 
+    public static String projectile1Name = "";
+    public static String projectile2Name = "";
+    public static String projectile3Name = "";
+    public static String projectile4Name = "";
+    public static char chosenProjectile = '\0';
+    
     public static String chosenProjectileName = "";
     public static String rangedWeaponName = "";
 
@@ -123,11 +140,6 @@ public class Quest {
         char weapon2;
         char weapon3;
         char weapon4;
-        String weapon1Name = "";
-        String weapon2Name = "";
-        String weapon3Name = "";
-        String weapon4Name = "";
-        char chosenWeapon = '\0';
 
         //Wizard only variables
         int magicDefense;
@@ -135,12 +147,7 @@ public class Quest {
         char spell2;
         char spell3;
         char spell4;
-        String spell1Name = "";
-        String spell2Name = "";
-        String spell3Name = "";
-        String spell4Name = "";
         char magicItem;
-        char chosenSpell = '\0';
 
         //Ranger only variables
         int rangedEnchant;
@@ -149,11 +156,6 @@ public class Quest {
         char projectile2;
         char projectile3;
         char projectile4;
-        String projectile1Name = "";
-        String projectile2Name = "";
-        String projectile3Name = "";
-        String projectile4Name = "";
-        char chosenProjectile = '\0';
 
         //Fighter Armor Map
         Map<Character, String> Armors = Map.ofEntries(
