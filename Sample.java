@@ -96,8 +96,10 @@ else{
 }
 //Enemy actions cannot cause self harm to a point of dying - use an if then to take this into account
 e = enemies.get(0);
-System.out.println("Your turn is over, "+name+". It is now "+e.eName+"'s turn. Press enter to continue.");
-scanner.nextLine();
+if(enemies.stream().anyMatch(e -> e.eCHP > 0)){
+    System.out.println("Your turn is over, "+name+". It is now "+e.eName+"'s turn. Press enter to continue.");
+    scanner.nextLine();
+}
 scanner.nextLine();
 while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
