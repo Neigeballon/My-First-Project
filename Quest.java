@@ -48,6 +48,7 @@ public class Quest {
     public static char charMove4 = '\0';
     public static int chosenSquareName = 0;
 
+    public static String armorName = "";
     public static int armorBonus;
     public static int armorEnchant;
     public static String weapon1Name = "";
@@ -64,10 +65,8 @@ public class Quest {
     public static int battleaxe = 0;
     public static int daggers = 0;
     public static int spear = 0;
-
     public static String chosenWeaponName = "";
-    public static String armorName = "";
-
+    
     public static int magicDefense;
     public static String spell1Name = "";
     public static  String spell2Name = "";
@@ -77,23 +76,18 @@ public class Quest {
     public static String magicItemName = "";
     public static char chosenSpell = '\0';
     public static boolean askRage = false;//Used for Rod of Rage; before every spell cast, this boolean determines if it asks the user whether they want to rage or not.
-    public static boolean doRage = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
     public static boolean ask1Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice or not.
-    public static boolean do1Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
     public static boolean ask2Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice again or not.
-    public static boolean do2Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
     public static boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
-    public static int doWonder = 0;
 
+    public static String rangedWeaponName = "";
     public static int rangedEnchant;
     public static String projectile1Name = "";
     public static String projectile2Name = "";
     public static String projectile3Name = "";
     public static String projectile4Name = "";
     public static char chosenProjectile = '\0';
-    
     public static String chosenProjectileName = "";
-    public static String rangedWeaponName = "";
 
     public static void Save(){
         File saveFile = new File("savegame.txt");
@@ -115,12 +109,28 @@ public class Quest {
             writer.write(attackBonus
             writer.write(defense
             writer.write(magicResistance
-            writer.write(
-            writer.write(
-            writer.write(
-            writer.write(
-            writer.write(
-            writer.write(
+            writer.write(armorBonus
+            writer.write(armorEnchant
+            writer.write(armorName
+            writer.write(weapon1Name
+            writer.write(weapon2Name
+            writer.write(weapon3Name
+            writer.write(weapon4Name
+            writer.write(spell1Name
+            writer.write(spell2Name
+            writer.write(spell3Name
+            writer.write(spell4Name
+            writer.write(magicItemName
+            writer.write(askRage
+            writer.write(ask1Sacrifice
+            writer.write(ask1Sacrifice
+            writer.write(wonderWand
+            writer.write(rangedWeaponName
+            writer.write(rangedEnchant
+            writer.write(projectile1Name
+            writer.write(projectile2Name
+            writer.write(projectile3Name
+            writer.write(projectile4Name
             
             System.out.println("Game saved!");
         } 
@@ -195,6 +205,10 @@ public class Quest {
         char spell3;
         char spell4;
         char magicItem;
+        boolean doRage = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
+        boolean do1Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
+        boolean do2Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
+        int doWonder = 0;
 
         //Ranger only variables
         char rangedWeapon = '\0';
@@ -414,7 +428,7 @@ public class Quest {
                 System.out.println("As a wizard, your HP is 45. You also have a special talent for magical defense; you have a static +1 bonus to Magic Resistance; no other classes have this. You have a variety of spells and magic items to choose from. Wizards also gain a +1 bonus on all Intelligence skill checks. Press Enter to continue.");
                 scanner.nextLine();
                 System.out.println("As a wizard, you have no armor; instead, Defense bonus is gained through spells and magic items. Below is a list of spells; you will be able to pick 4. For the moment, choose one.");
-                System.out.println("A. Mage's Shield: A floating shield that grants a temporary +4 Defense bonus *does not stack with itself*.");
+                System.out.println("A. Mage's Shield: A floating shield that grants a temporary +6 Defense bonus *does not stack with itself*.");
                 System.out.println("B. Minor Healing: Heal 5 HP. You cannot go beyond your maximum HP.");
                 System.out.println("C. Lions's Strength: Gain a temporary +1 bonus to your Strength score *does not stack with itself*.");
                 System.out.println("D. Bobcat's Dexterity: Gain a temporary +1 bonus to your Dexterity score *does not stack with itself*.");
