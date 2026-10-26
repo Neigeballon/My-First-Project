@@ -17,15 +17,15 @@ if(e.eCHP > 0){
      System.out.println(e.eName+" is in square #"+e.eSquare+".");
 }
 }
-while(actions > 0){
+while(actions > 0 && enemies.stream().anyMatch(e -> e.eCHP > 0)){
 choice = '\0';
 chosenWeapon = '\0';
 chosenWeaponName = "";
 charSpear = 'B';
 System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square. If you have a halberd, then whichever melee enemy you choose to attack with it will not matter; it will simply target all enemies in the same square as you.");
-System.out.println("A. Move."); 
+System.out.println("A. Move.");
 for(Enemy e : enemies){
-if(e.eCHP > 0 && e.eSquare != cSquare && (weapon1 == 'K' || weapon2 == 'K' || weapon3 == 'K' || weapon4 == 'K')){
+if(e.eCHP > 0 && e.eSquare != cSquare && (weapon1Name == "Spear" || weapon2Name == "Spear" || weapon3Name == "Spear" || weapon4Name == "Spear")){
      System.out.println(charSpear+". Attack "+e.eName+" with your spear.");
      e.eChar = charSpear;
      charSpear++;
@@ -52,25 +52,25 @@ else if(choice >= charSpear && choice < charChoice){
       System.out.println("What weapon would you like to use to attack them?");
       ChosenWeapon.clear();
       charWeapon = 'A';
-      if(weapon1 != 'K'){
+      if(weapon1Name != "Spear"){
            System.out.println(charWeapon+". "+weapon1Name);
            charWeapon1 = charWeapon;
            ChosenWeapon.put(charWeapon1, weapon1Name);
            charWeapon++;
       }
-      if(weapon2 != 'K'){
+      if(weapon2Name != "Spear"){
            System.out.println(charWeapon+". "+weapon2Name);
            charWeapon2 = charWeapon;
            ChosenWeapon.put(charWeapon2, weapon2Name);
            charWeapon++;
       }
-      if(weapon3 != 'K'){
+      if(weapon3Name != "Spear"){
            System.out.println(charWeapon+". "+weapon3Name);
            charWeapon3 = charWeapon;
            ChosenWeapon.put(charWeapon3, weapon3Name);
            charWeapon++;
       }
-      if(weapon4 != 'K'){
+      if(weapon4Name != "Spear"){
            System.out.println(charWeapon+". "+weapon4Name);
            charWeapon4 = charWeapon;
            ChosenWeapon.put(charWeapon4, weapon4Name);
@@ -96,29 +96,50 @@ else{
 }
 //Enemy actions cannot cause self harm to a point of dying - use an if then to take this into account
 e = enemies.get(0);
+System.out.println("Your turn is over, "+name+". It is now "+e.eName+"'s turn. Press enter to continue.");
+scanner.nextLine();
+scanner.nextLine();
 while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 1 logic goes here-take into account flail and trident bonus!
+e.eActions--;
+System.out.println("");
 }
 e = enemies.get(1);
+System.out.println("Their turn is over. Now it is "+e.eName+"'s turn. Press enter to continue.");
+scanner.nextLine();
 while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 2 logic goes here-take into account flail and trident bonus!
+e.eActions--;
+System.out.println("");
 }
 e = enemies.get(2);
+System.out.println("Their turn is over. Now it is "+e.eName+"'s turn. Press enter to continue.");
+scanner.nextLine();
 while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 3 logic goes here-take into account flail and trident bonus!
+e.eActions--;
+System.out.println("");
 }
 e = enemies.get(3);
+System.out.println("Their turn is over. Now it is "+e.eName+"'s turn. Press enter to continue.");
+scanner.nextLine();
 while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 4 logic goes here-take into account flail and trident bonus!
+e.eActions--;
+System.out.println("");
 }
 e = enemies.get(4);
+System.out.println("Their turn is over. Now it is "+e.eName+"'s turn. Press enter to continue.");
+scanner.nextLine();
 while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 5 logic goes here-take into account flail and trident bonus!
+e.eActions--;
+System.out.println("");a
 }
 WEAPONS.reset();
 }
