@@ -11,6 +11,7 @@ public class Quest {
     public static Map<Character, String> ChosenProjectile = new HashMap<>();
 
     public static String name;
+    public static char cClass = '\0';
     public static boolean saved;
     public static int encounter;
 
@@ -47,6 +48,8 @@ public class Quest {
     public static char charMove4 = '\0';
     public static int chosenSquareName = 0;
 
+    public static int armorBonus;
+    public static int armorEnchant;
     public static String weapon1Name = "";
     public static String weapon2Name = "";
     public static String weapon3Name = "";
@@ -65,6 +68,7 @@ public class Quest {
     public static String chosenWeaponName = "";
     public static String armorName = "";
 
+    public static int magicDefense;
     public static String spell1Name = "";
     public static  String spell2Name = "";
     public static String spell3Name = "";
@@ -81,6 +85,7 @@ public class Quest {
     public static boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
     public static int doWonder = 0;
 
+    public static int rangedEnchant;
     public static String projectile1Name = "";
     public static String projectile2Name = "";
     public static String projectile3Name = "";
@@ -89,6 +94,14 @@ public class Quest {
     
     public static String chosenProjectileName = "";
     public static String rangedWeaponName = "";
+
+    public static void Save(){
+        
+    }
+
+    public static void Load(){
+        
+    }
 
     public static void main(String[] args) {
 
@@ -107,6 +120,13 @@ public class Quest {
             }
         });
         thread.start();
+        Scanner scanner = new Scanner(System.in);
+        if(saved){
+            System.out.println("Would you like to start a new game *type anything and press enter* or resume your old game *press enter*? If you start a new game, all of your previous game's data will be deleted."); 
+            if(scanner.nextLine().isEmpty()){
+                Load();
+            }
+        }
 
         //Character Creation Variables
         boolean cLoop = true;//Choosing a Class
@@ -131,12 +151,7 @@ public class Quest {
         boolean intelligenceLoop = true;//Allocating Intelligence points
         boolean charismaLoop = true;//Allocating Charisma points
 
-        //All Classes Variables
-        char cClass = '\0';
-
         //Fighter only variables
-        int armorBonus;
-        int armorEnchant;
         char armor = '\0';
         char weapon1;
         char weapon2;
@@ -144,7 +159,6 @@ public class Quest {
         char weapon4;
 
         //Wizard only variables
-        int magicDefense;
         char spell1;
         char spell2;
         char spell3;
@@ -152,7 +166,6 @@ public class Quest {
         char magicItem;
 
         //Ranger only variables
-        int rangedEnchant;
         char rangedWeapon = '\0';
         char projectile1;
         char projectile2;
@@ -231,7 +244,6 @@ public class Quest {
                 Map.entry('M', "Frailizing Arrows")
         );
 
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Hello fellow adventurer! Welcome to the quest of Finding Glory! Enter your character's name.");
         name = scanner.next();
         scanner.nextLine();
