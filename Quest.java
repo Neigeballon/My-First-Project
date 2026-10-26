@@ -11,6 +11,8 @@ public class Quest {
     public static Map<Character, String> ChosenProjectile = new HashMap<>();
 
     public static String name;
+    public static boolean saved;
+    public static int encounter;
 
     public static ArrayList<Enemy> enemies = new ArrayList<>();
     public static Enemy e = null;
