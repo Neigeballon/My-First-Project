@@ -96,7 +96,38 @@ public class Quest {
     public static String rangedWeaponName = "";
 
     public static void Save(){
-        
+        File saveFile = new File("savegame.txt");
+        try (FileWriter writer = new FileWriter(saveFile)) {
+            writer.write(name
+            writer.write(cClass
+            writer.write(saved
+            writer.write(encounter
+            writer.write(maxHP
+            writer.write(cHP
+            writer.write(cStrength
+            writer.write(strBonus
+            writer.write(cDexterity
+            writer.write(dexBonus
+            writer.write(cIntelligence
+            writer.write(intBonus
+            writer.write(cCharisma
+            writer.write(chaBonus
+            writer.write(attackBonus
+            writer.write(defense
+            writer.write(magicResistance
+            writer.write(
+            writer.write(
+            writer.write(
+            writer.write(
+            writer.write(
+            writer.write(
+            
+            System.out.println("Game saved!");
+        } 
+        catch (IOException e) {
+            System.out.println("Save failed.");
+            e.printStackTrace();
+        }
     }
 
     public static void Load(){
