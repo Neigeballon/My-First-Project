@@ -1,7 +1,7 @@
 package quest;
 import static quest.Quest.*;
 
-public class Heal{
+public class MinorHealing{
     public static void execute(){
         if(doRage){
             cHP = Math.min(maxHP, cHP+9);
