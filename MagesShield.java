@@ -1,3 +1,4 @@
+package quest;
 import static quest.Quest.*;
 
 public class MagesShield{
