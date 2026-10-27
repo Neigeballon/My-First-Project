@@ -76,6 +76,7 @@ public class Quest {
     public static String magicItemName = "";
     public static char chosenSpell = '\0';
     public static boolean askRage = false;//Used for Rod of Rage; before every spell cast, this boolean determines if it asks the user whether they want to rage or not.
+    public static int rages = 0;
     public static boolean ask1Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice or not.
     public static boolean ask2Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice again or not.
     public static boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
