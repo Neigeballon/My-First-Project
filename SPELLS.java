@@ -12,6 +12,7 @@ public class SPELLS{
                           System.out.println("Would you like to use your Rod of Rage's power, "+name+"? If so, press enter. If not, type in anything and then press enter.");
                           if(scanner.nextLine().isEmpty()){
                                doRage = true;
+                               rages++;
                                MagesShield.execute();
                                doRage = false;
                           }
