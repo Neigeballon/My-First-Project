@@ -23,7 +23,7 @@ public class SPELLS{
                      else if(ask1Sacrifice){
                           System.out.println("Would you like to use your Staff of Sacrifice's power by losing 3 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
                           if(scanner.nextLine().isEmpty()){
-                               cHP = cHP-3;
+                               cHP = cHP-2;
                                do1Sacrifice = true;
                                MagesShield.execute();
                                do1Sacrifice = false;
