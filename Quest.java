@@ -527,7 +527,7 @@ public class Quest {
                 System.out.println("Wonderful, " + name + "! Your first choice, " + spell4Name + ", was engraved in your spellbook!");
                 System.out.println("Now it is time to choose one of 3 magic items that will imbue your spells with even more power!");
                 System.out.println("A. Rod of Rage: When you cast a spell, you can choose to go into a rage. If you do, the spell's effect is multiplied by 1.5, but the enemy's next attack deals 1.5x damage.");
-                System.out.println("B. Staff of Sacrifice: When you cast a spell, you can choose to lose 3 HP to increase the effect of certain spells: +2 for defense spells, +4 on damage spells, 0 increase on heal spells. If you choose to lose 2 extra HP, then your buff spells and debuff spells gain a +1 increase.");
+                System.out.println("B. Staff of Sacrifice: When you cast a spell, you can choose to lose 2 HP to increase the effect it: +2 for defense spells, +6 on damage spells, 0 increase on heal spells. If you choose to lose 4 HP instead, then your buff spells and debuff spells gain a +1 increase.");
                 System.out.println("C. Wand of Wonder: Your first attack spell of the combat deals 2.5x damage.");
                 while (mLoop) {
                     magicItem = scanner.next().toUpperCase().charAt(0);
