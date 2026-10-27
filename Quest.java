@@ -469,7 +469,7 @@ public class Quest {
                 scanner.nextLine();
                 System.out.println("As a wizard, you have no armor; instead, Defense bonus is gained through spells and magic items. Below is a list of spells; you will be able to pick 4. For the moment, choose one.");
                 System.out.println("A. Mage's Shield: A floating shield that grants a temporary +6 Defense bonus *does not stack with itself*.");
-                System.out.println("B. Minor Healing: Heal 5 HP. You cannot go beyond your maximum HP.");
+                System.out.println("B. Minor Healing: Heal 6 HP. You cannot go beyond your maximum HP.");
                 System.out.println("C. Lions's Strength: Gain a temporary +1 bonus to your Strength score *does not stack with itself*.");
                 System.out.println("D. Bobcat's Dexterity: Gain a temporary +1 bonus to your Dexterity score *does not stack with itself*.");
                 System.out.println("E. Dolphin's Intelligence: Gain a temporary +1 bonus to your Intelligence score *does not stack with itself*.");
