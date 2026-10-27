@@ -83,7 +83,7 @@ public class Quest {
     public static boolean ask2Sacrifice = false;//Used for Staff of Sacrifice; before every spell is cast, this boolean determines if it asks the user whether they want to sacrifice again or not.
     public static boolean do2Sacrifice = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
     public static boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
-    public static int doWonder = 0;
+    public static boolean doWonder = false;
     public static boolean magesShield = false;
 
     public static String rangedWeaponName = "";
