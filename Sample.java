@@ -10,7 +10,7 @@ actions = 0;
 while(enemies.stream().anyMatch(e -> e.eCHP > 0)){
 choice = '\0';
 actions = actions+2;
-System.out.println("You are in square #"+cSquare+".");
+System.out.println("You are in square #"+cSquare+" with "+cHP+" HP remaining.");
 for(Enemy e : enemies){
 if(e.eCHP > 0){
      e.eActions = e.eActions+2;
