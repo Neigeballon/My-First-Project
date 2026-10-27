@@ -90,8 +90,7 @@ public class Quest {
     public static String chosenProjectileName = "";
 
     public static void Save(){
-        File saveFile = new File("savegame.txt");
-        try (FileWriter writer = new FileWriter(saveFile)) {
+        try (FileWriter writer = new FileWriter("savegame.txt")) {
             writer.write(name+"\n");
             writer.write(cClass+"\n");
             writer.write(saved+"\n");
@@ -141,13 +140,16 @@ public class Quest {
     }
 
     public static void Load(){
-        File saveFile = new File("savegame.txt");
-        try(Scanner reader = new Scanner(saveFile)){
-            if(reader.hasNextLine()) {
-                name = reader.nextLine();
-            }
+        File file = new File("savegame.txt");
+        try(Scanner reader = new Scanner(file)){
+            name = reader.nextLine().trim();
         }
-        catch(
+        catch(FileNotFoundException e){
+            System.out.println("No save file was found. Begin a new Quest for Glory now!!!");
+        }
+        catch(NumberFormatException e){
+            System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
+        }
         if(encounter == 1){
             Encounter1.execute();
         }
@@ -713,11 +715,12 @@ public class Quest {
             defense = defense + cDexterity;
         }
         System.out.println("You have officially allocated your ability points, and now you are ready for your adventure! The Quest For Glory begins NOW!!!");
-
-        System.out.println("Your first encounter is a fight. There's no talking your way out of this one. Press Enter to continue.");
-        scanner.nextLine();
         encounter++;
         saved = true;
+        Save();
+        System.out.println("Your first encounter is a fight. There's no talking your way out of this one. Press Enter to continue.");
+        scanner.nextLine();
+        Encounter1.execute();
         if (cClass == 'A') {
             cSquare = 3;
             System.out.println("A montstrous Nibbit who will use his claws to attack stands in front of you. You get to go first.");
@@ -783,79 +786,7 @@ public class Quest {
                         }
                         if(weapon3Name != "Spear"){
                             System.out.println(charWeapon+". "+weapon3Name);
-                            charWeapon3 = charWeapon;
-                            ChosenWeapon.put(charWeapon3, weapon3Name);
-                            charWeapon++;
-                        }
-                        if(weapon4Name != "Spear"){
-                            System.out.println(charWeapon+". "+weapon4Name);
-                            charWeapon4 = charWeapon;
-                            ChosenWeapon.put(charWeapon4, weapon4Name);
-                            charWeapon++;
-                        }
-                        while(true){
-                            chosenWeapon = '\0';
-                            chosenWeapon = scanner.next().toUpperCase().charAt(0);
-                            if(chosenWeapon >= 'A' && chosenWeapon < charWeapon){
-                                chosenWeaponName = ChosenWeapon.get(chosenWeapon);
-                                actions--;
-                                WEAPONS.execute();
-                                break;
-                            }
-                            else{
-                                System.out.println("That is not one of your weapons, "+name+". Try again.");
-                            }
-                        }
-                    }
-                    else{
-                        System.out.println("Sorry, "+name+". You can't do that. Try again.");
-                    }
-                }
-                e = enemies.get(0);
-                if(enemies.stream().anyMatch(e -> e.eCHP > 0)){
-                    System.out.println("Your turn is over, "+name+". It is now "+e.eName+"'s turn. Press enter to continue.");
-                    scanner.nextLine();
-                }
-                scanner.nextLine();
-                while(e.eCHP > 0 && e.eActions > 0){
-                    choice = '\0';
-                    if(e.eSquare != cSquare){
-                        e.eActions--;
-                        e.eSquare = cSquare;
-                        System.out.println("The Nibbit moves into your square, square #"+cSquare+".");
-                    }
-                    else{
-                        e.eActions--;
-                        System.out.println("The Nibbit attacks you with his front claws.");
-                        if(e.eTrident > 0){
-                            roll = Math.max(ThreadLocalRandom.current().nextInt(1, 7), ThreadLocalRandom.current().nextInt(1, 7));
-                            e.eTrident--;
-                        }
-                        else{
-                            roll = ThreadLocalRandom.current().nextInt(1, 7);
-                        }
-                        System.out.println("The Nibbit rolled a "+roll+".");
-                        if(e.eFlail > 0){
-                            attackRoll = roll*(e.eStrength+1);
-                            e.eFlail--;
-                        }
-                        else{
-                            attackRoll = roll*e.eStrength;
-                        }
-                        System.out.println("The Nibbit's attack roll is "+attackRoll+".");
-                        damageDealt = Math.max(0, attackRoll-defense);
-                        System.out.println("The Nibbit dealt a total of "+damageDealt+" damage to you!");
-                        cHP = cHP-damageDealt;
-                        System.out.println("You now have "+cHP+" HP remaining.");
-                    }
-                    System.out.println("");
-                }
-                WEAPONS.reset();
-            }
-            choice = '\0';
-            chosenWeapon = '\0';
-            chosenWeaponName = "";
-            enemies.clear();
+
         }
 
 
