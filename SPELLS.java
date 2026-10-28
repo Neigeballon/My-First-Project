@@ -9,7 +9,7 @@ public class SPELLS{
            switch(chosenSpellName){
                 case "Mage's Shield" -> {
                      if(askRage){
-                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? If so, press enter. If not, type in anything and then press enter.");
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
                           if(scanner.nextLine().isEmpty()){
                                doRage = true;
                                rages++;
@@ -33,7 +33,12 @@ public class SPELLS{
                           }
                      }
                 }
-                case "Minor Healing" -> MinorHealing.execute();
+                case "Minor Healing" -> {
+                     if(doRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                     }
+                     MinorHealing.execute();
+                }
                 case "Lion's Strength" -> LionsStrength.execute();
                 case "Bobcat's Dexterity" -> BobcatsDexterity.execute();
                 case "Dolphin's Intelligence" -> DolphinsIntelligence.execute();
