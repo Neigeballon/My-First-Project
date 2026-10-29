@@ -34,12 +34,33 @@ public class SPELLS{
                      }
                 }
                 case "Minor Healing" -> {
-                     if(doRage){
+                     if(askRage){
                           System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               MinorHealing.execute();
+                               doRage = false;
+                          }
+                          else{
+                               MinorHealing.execute();
+                          }
                      }
-                     MinorHealing.execute();
                 }
-                case "Lion's Strength" -> LionsStrength.execute();
+                case "Lion's Strength" -> {
+                     if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               LionsStrength.execute();
+                               doRage = false;
+                          }
+                          else{
+                               LionsStrength.execute();
+                          }
+                     }
+                }
                 case "Bobcat's Dexterity" -> BobcatsDexterity.execute();
                 case "Dolphin's Intelligence" -> DolphinsIntelligence.execute();
                 case "Snake's Charisma" -> SnakesCharisma.execute();
