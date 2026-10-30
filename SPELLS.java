@@ -91,11 +91,11 @@ public class SPELLS{
                           if(scanner.nextLine().isEmpty()){
                                cHP = cHP-4;
                                do2Sacrifice = true;
-                               LionsStrength.execute();
+                               BobcatsDexterity.execute();
                                do2Sacrifice = false;
                           }
                           else{
-                               LionsStrength.execute();
+                               BobcatsDexterity.execute();
                           }
                      }
                 }
@@ -117,7 +117,7 @@ public class SPELLS{
                           if(scanner.nextLine().isEmpty()){
                                cHP = cHP-4;
                                do2Sacrifice = true;
-                               .execute();
+                               DolphinsIntelligence.execute();
                                do2Sacrifice = false;
                           }
                           else{
@@ -143,7 +143,7 @@ public class SPELLS{
                           if(scanner.nextLine().isEmpty()){
                                cHP = cHP-4;
                                do2Sacrifice = true;
-                               .execute();
+                               SnakesCharisma.execute();
                                do2Sacrifice = false;
                           }
                           else{
@@ -177,12 +177,162 @@ public class SPELLS{
                           }
                      }
                 }
-                case "Magic Torpedo" -> MagicTorpedo.execute();
-                case "Poison Cloud" -> PoisonCloud.execute();
-                case "Curse of Weakness" -> CurseofWeakness.execute();
-                case "Curse of Slowness" -> CurseofSlowness.execute();
-                case "Curse of Stupidity" -> CurseofStupidity.execute();
-                case "Curse of Babbling" -> CurseofBabbling.execute();
+                case "Magic Torpedo" -> {
+                     if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               MagicTorpedo.execute();
+                               doRage = false;
+                          }
+                          else{
+                               MagicTorpedo.execute();
+                          }
+                     }
+                     else if(ask1Sacrifice){
+                          System.out.println("Would you like to use your Staff of Sacrifice's power by losing 2 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               cHP = cHP-2;
+                               do1Sacrifice = true;
+                               MagicTorpedo.execute();
+                               do1Sacrifice = false;
+                          }
+                          else{
+                               MagicTorpedo.execute();
+                          }
+                     }
+                }
+                case "Poison Cloud" -> {
+                     if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               PoisonCloud.execute();
+                               doRage = false;
+                          }
+                          else{
+                               PoisonCloud.execute();
+                          }
+                     }
+                     else if(ask1Sacrifice){
+                          System.out.println("Would you like to use your Staff of Sacrifice's power by losing 2 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               cHP = cHP-2;
+                               do1Sacrifice = true;
+                               PoisonCloud.execute();
+                               do1Sacrifice = false;
+                          }
+                          else{
+                               PoisonCloud.execute();
+                          }
+                     }
+                }
+                case "Curse of Weakness" -> {
+                    if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               CurseofWeakness.execute();
+                               doRage = false;
+                          }
+                          else{
+                               CurseofWeakness.execute();
+                          }
+                     }
+                     else if(ask2Sacrifice){
+                          System.out.println("Would you like to use your Staff of Sacrifice's power by losing 4 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               cHP = cHP-4;
+                               do2Sacrifice = true;
+                               CurseofWeakness.execute();
+                               do2Sacrifice = false;
+                          }
+                          else{
+                               CurseofWeakness.execute();
+                          }
+                     } 
+                }
+                case "Curse of Slowness" -> {
+                     if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               CurseofSlowness.execute();
+                               doRage = false;
+                          }
+                          else{
+                               CurseofSlowness.execute();
+                          }
+                     }
+                     else if(ask2Sacrifice){
+                          System.out.println("Would you like to use your Staff of Sacrifice's power by losing 4 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               cHP = cHP-4;
+                               do2Sacrifice = true;
+                               CurseofSlowness.execute();
+                               do2Sacrifice = false;
+                          }
+                          else{
+                               CurseofSlowness.execute();
+                          }
+                     } 
+                }
+                case "Curse of Stupidity" -> {
+                     if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               CurseofStupidity.execute();
+                               doRage = false;
+                          }
+                          else{
+                               CurseofStupidity.execute();
+                          }
+                     }
+                     else if(ask2Sacrifice){
+                          System.out.println("Would you like to use your Staff of Sacrifice's power by losing 4 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               cHP = cHP-4;
+                               do2Sacrifice = true;
+                               CurseofStupidity.execute();
+                               do2Sacrifice = false;
+                          }
+                          else{
+                               CurseofStupidity.execute();
+                          }
+                     } 
+                }
+                case "Curse of Babbling" -> {
+                     if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               CurseofBabbling.execute();
+                               doRage = false;
+                          }
+                          else{
+                               CurseofBabbling.execute();
+                          }
+                     }
+                     else if(ask2Sacrifice){
+                          System.out.println("Would you like to use your Staff of Sacrifice's power by losing 4 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               cHP = cHP-4;
+                               do2Sacrifice = true;
+                               CurseofBabbling.execute();
+                               do2Sacrifice = false;
+                          }
+                          else{
+                               CurseofBabbling.execute();
+                          }
+                     } 
+                }
                 default -> System.out.println("");
           }
      }
