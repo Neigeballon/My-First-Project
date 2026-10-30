@@ -86,6 +86,10 @@ public class Quest {
     public static boolean wonderWand = false;//Used for Wand of Wonder, this boolean determines whether the doWonder int for attack spells is set to one at the start of combat or not.
     public static boolean doWonder = false;
     public static boolean magesShield = false;
+    public static boolean lionsStrength = false;
+    public static boolean bobcatsDexterity = false;
+    public static boolean dolphinsIntelligence = false;
+    public static boolean snakesCharisma = false;
 
     public static String rangedWeaponName = "";
     public static int rangedEnchant = 0;
