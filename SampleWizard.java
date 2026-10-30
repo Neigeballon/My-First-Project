@@ -19,7 +19,7 @@ if(e.eCHP > 0){
 }
 while(actions > 0 && enemies.stream().anyMatch(e -> e.eCHP > 0)){
 charSpell = 'B';
-System.out.println("It is time for you to take an action, "+name+"! What would you like to do?");
+System.out.println("It is time for you to take an action, "+name+"! What would you like to do? You can choose to move or cast a spell.");
 System.out.println("A. Move.");
 
 }
