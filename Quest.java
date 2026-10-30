@@ -75,6 +75,7 @@ public class Quest {
     public static String chosenSpellName = "";
     public static String magicItemName = "";
     public static char chosenSpell = '\0';
+    public static char charSpell = '\0';
     public static boolean askRage = false;//Used for Rod of Rage; before every spell cast, this boolean determines if it asks the user whether they want to rage or not.
     public static boolean doRage = false;//Based on the user's answer, this boolean determines whether the spell bonus occurs.
     public static int rages = 0;
