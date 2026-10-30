@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Encounter1{
     public static void execute(){
+        Scanner scanner = new Scanner(System.in);
         if (cClass == 'A') {
             cSquare = 3;
             System.out.println("A montstrous Nibbit who will use his claws to attack stands in front of you. You get to go first.");
