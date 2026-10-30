@@ -347,7 +347,7 @@ public class Quest {
         scanner.nextLine();
         System.out.println("In each combat round, you and each enemy has a turn. In that turn, they can take 2 actions. In an action, they or you can attack, cast a spell, use a magic item, or move to a different square. Some special things take no action. Press Enter to continue.");
         scanner.nextLine();
-        System.out.println("When attacking, a melee attack can only be made if you are in the same square as the enemy. A ranged attack can only be made from a different square than the enemy. Spell attacks' ranges can vary; for example, a fireball spell can only be made from a distance, otherwise the caster would be incinerated, and thankfully, this game doesn't let that happen - for you or the enemies. Press Enter to continue.");
+        System.out.println("When attacking, a melee attack can only be made if you are in the same square as the enemy. A ranged attack can only be made from a different square than the enemy. Press Enter to continue.");
         scanner.nextLine();
 
         while (cLoop) {
