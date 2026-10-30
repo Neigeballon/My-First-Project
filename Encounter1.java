@@ -8,7 +8,7 @@ public class Encounter1{
         Scanner scanner = new Scanner(System.in);
         if (cClass == 'A') {
             cSquare = 3;
-            System.out.println("A montstrous Nibbit who will use his claws to attack stands in front of you. You get to go first.");
+            System.out.println("A monstrous Nibbit who will use his claws to attack stands in front of you. You get to go first.");
             enemies.add(new Enemy("Nibbit", '\0', 40, 40, 5, 2, 2, 1, 16, 2, 4, 0, 0, '\0', 0, 0, 0, 0, false, false, false, false));
             actions = 0;
             //Decide the enemies' ability scores and magic resistance here
