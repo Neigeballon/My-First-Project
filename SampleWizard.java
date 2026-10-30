@@ -21,6 +21,6 @@ while(actions > 0 && enemies.stream().anyMatch(e -> e.eCHP > 0)){
 charSpell = 'B';
 System.out.println("It is time for you to take an action, "+name+"! What would you like to do? You can choose to move or cast a spell.");
 System.out.println("A. Move.");
-if((spell1Name == "Mage's Shield" && !magesShield) || (spell1Name == "Lion's Strength" && !lionsStrength) || (spell1Name == "Bobcat's Deterity" && !bobcatsDexterity)
+if((spell1Name == "Mage's Shield" && !magesShield) || (spell1Name == "Lion's Strength" && !lionsStrength) || (spell1Name == "Bobcat's Dexterity" && !bobcatsDexterity)
 System.out.println(charSpell+". "
 }
