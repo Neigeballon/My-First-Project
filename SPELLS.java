@@ -105,11 +105,11 @@ public class SPELLS{
                           if(scanner.nextLine().isEmpty()){
                                doRage = true;
                                rages++;
-                               BobcatsDexterity.execute();
+                               DolphinsIntelligence.execute();
                                doRage = false;
                           }
                           else{
-                               BobcatsDexterity.execute();
+                               DolphinsIntelligence.execute();
                           }
                      }
                      else if(ask2Sacrifice){
@@ -121,12 +121,62 @@ public class SPELLS{
                                do2Sacrifice = false;
                           }
                           else{
-                               LionsStrength.execute();
+                               DolphinsIntelligence.execute();
                           }
                      }
                 }
-                case "Snake's Charisma" -> SnakesCharisma.execute();
-                case "Fireball" -> Fireball.execute();
+                case "Snake's Charisma" -> {
+                     if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               SnakesCharisma.execute();
+                               doRage = false;
+                          }
+                          else{
+                               SnakesCharisma.execute();
+                          }
+                     }
+                     else if(ask2Sacrifice){
+                          System.out.println("Would you like to use your Staff of Sacrifice's power by losing 4 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               cHP = cHP-4;
+                               do2Sacrifice = true;
+                               .execute();
+                               do2Sacrifice = false;
+                          }
+                          else{
+                               SnakesCharisma.execute();
+                          }
+                     }
+                }
+                case "Fireball" -> {
+                     if(askRage){
+                          System.out.println("Would you like to use your Rod of Rage's power, "+name+"? Keep in mind that enemy damage done to you will increase. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               doRage = true;
+                               rages++;
+                               Fireball.execute();
+                               doRage = false;
+                          }
+                          else{
+                               Fireball.execute();
+                          }
+                     }
+                     else if(ask1Sacrifice){
+                          System.out.println("Would you like to use your Staff of Sacrifice's power by losing 2 HP, "+name+"? You currently have "+cHP+" HP. If so, press enter. If not, type in anything and then press enter.");
+                          if(scanner.nextLine().isEmpty()){
+                               cHP = cHP-2;
+                               do1Sacrifice = true;
+                               Fireball.execute();
+                               do1Sacrifice = false;
+                          }
+                          else{
+                               Fireball.execute();
+                          }
+                     }
+                }
                 case "Magic Torpedo" -> MagicTorpedo.execute();
                 case "Poison Cloud" -> PoisonCloud.execute();
                 case "Curse of Weakness" -> CurseofWeakness.execute();
