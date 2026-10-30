@@ -23,7 +23,7 @@ public class Enemy{
      public boolean curseOfWeakness;
      public boolean curseOfSlowness;
      public boolean curseOfDumbness;
-     public boolean curseofBabbling;
+     public boolean curseOfBabbling;
      
      public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, int eFlail, char eCharHandaxes, int eMace, int eRapier, int eScimitar, int eTrident, boolean curseOfWeakness, boolean curseOfSlowness, boolean curseOfDumbness, boolean curseOfBabbling){
           this.eName = eName; 
