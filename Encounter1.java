@@ -59,26 +59,22 @@ public class Encounter1{
                         charWeapon = 'A';
                         if(weapon1Name != "Spear"){
                             System.out.println(charWeapon+". "+weapon1Name);
-                            charWeapon1 = charWeapon;
-                            ChosenWeapon.put(charWeapon1, weapon1Name);
+                            ChosenWeapon.put(charWeapon, weapon1Name);
                             charWeapon++;
                         }
                         if(weapon2Name != "Spear"){
                             System.out.println(charWeapon+". "+weapon2Name);
-                            charWeapon2 = charWeapon;
-                            ChosenWeapon.put(charWeapon2, weapon2Name);
+                            ChosenWeapon.put(charWeapon, weapon2Name);
                             charWeapon++;
                         }
                         if(weapon3Name != "Spear"){
                             System.out.println(charWeapon+". "+weapon3Name);
-                            charWeapon3 = charWeapon;
-                            ChosenWeapon.put(charWeapon3, weapon3Name);
+                            ChosenWeapon.put(charWeapon, weapon3Name);
                             charWeapon++;
                         }
                         if(weapon4Name != "Spear"){
                             System.out.println(charWeapon+". "+weapon4Name);
-                            charWeapon4 = charWeapon;
-                            ChosenWeapon.put(charWeapon4, weapon4Name);
+                            ChosenWeapon.put(charWeapon, weapon4Name);
                             charWeapon++;
                         }
                         while(true){
@@ -146,10 +142,10 @@ public class Encounter1{
             enemies.clear();
         }
         else if(cClass == 'B'){
-            
+
         }
         else{
-            
+
         }
         encounter++;
         Save();
