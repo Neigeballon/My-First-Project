@@ -79,6 +79,7 @@ else if(choice >= charSpear && choice < charChoice){
             chosenWeaponName = ChosenWeapon.get(chosenWeapon);
             actions--;
             WEAPONS.execute();
+            ChosenWeapon.clear();
             break;
       }
       else{
