@@ -54,26 +54,22 @@ else if(choice >= charSpear && choice < charChoice){
       charWeapon = 'A';
       if(weapon1Name != "Spear"){
            System.out.println(charWeapon+". "+weapon1Name);
-           charWeapon1 = charWeapon;
-           ChosenWeapon.put(charWeapon1, weapon1Name);
+           ChosenWeapon.put(charWeapon, weapon1Name);
            charWeapon++;
       }
       if(weapon2Name != "Spear"){
            System.out.println(charWeapon+". "+weapon2Name);
-           charWeapon2 = charWeapon;
-           ChosenWeapon.put(charWeapon2, weapon2Name);
+           ChosenWeapon.put(charWeapon, weapon2Name);
            charWeapon++;
       }
       if(weapon3Name != "Spear"){
            System.out.println(charWeapon+". "+weapon3Name);
-           charWeapon3 = charWeapon;
-           ChosenWeapon.put(charWeapon3, weapon3Name);
+           ChosenWeapon.put(charWeapon, weapon3Name);
            charWeapon++;
       }
       if(weapon4Name != "Spear"){
            System.out.println(charWeapon+". "+weapon4Name);
-           charWeapon4 = charWeapon;
-           ChosenWeapon.put(charWeapon4, weapon4Name);
+           ChosenWeapon.put(charWeapon, weapon4Name);
            charWeapon++;
       }
       while(true){
@@ -141,7 +137,7 @@ while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 5 logic goes here-take into account flail and trident bonus!
 e.eActions--;
-System.out.println("");a
+System.out.println("");
 }
 WEAPONS.reset();
 }
