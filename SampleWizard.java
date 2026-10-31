@@ -47,6 +47,7 @@ if((spell4Name == "Mage's Shield" && !magesShield) || (spell4Name == "Minor Heal
 while(true){
 chosenSpell = '\0';
 chosenSpell = scanner.next().toUpperCase().charAt(0);
+scanner.nextLine();
 if(chosenSpell == 'A'){
     actions--;
     Move.execute();
@@ -69,7 +70,6 @@ if(enemies.stream().anyMatch(e -> e.eCHP > 0)){
     System.out.println("Your turn is over, "+name+". It is now "+e.eName+"'s turn. Press enter to continue.");
     scanner.nextLine();
 }
-scanner.nextLine();
 while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 1 logic goes here
