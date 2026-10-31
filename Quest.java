@@ -58,15 +58,11 @@ public class Quest {
     public static char chosenWeapon = '\0';
     public static char charSpear;
     public static char charWeapon;
-    public static char charWeapon1 = '\0';
-    public static char charWeapon2 = '\0';
-    public static char charWeapon3 = '\0';
-    public static char charWeapon4 = '\0';
     public static int battleaxe = 0;
     public static int daggers = 0;
     public static int spear = 0;
     public static String chosenWeaponName = "";
-    
+
     public static int magicDefense;
     public static String spell1Name = "";
     public static  String spell2Name = "";
@@ -93,6 +89,7 @@ public class Quest {
 
     public static String rangedWeaponName = "";
     public static int rangedEnchant = 0;
+    public static char charProjectile;
     public static String projectile1Name = "";
     public static String projectile2Name = "";
     public static String projectile3Name = "";
@@ -141,9 +138,9 @@ public class Quest {
             writer.write(projectile2Name+"\n");
             writer.write(projectile3Name+"\n");
             writer.write(projectile4Name+"\n");
-            
+
             System.out.println("Game saved!");
-        } 
+        }
         catch (IOException e) {
             System.out.println("Save failed.");
             e.printStackTrace();
@@ -191,29 +188,29 @@ public class Quest {
         else{
             Encounter10.execute();
         }
-        
+
     }
 
     public static void main(String[] args) {
 
         Thread thread = new Thread(() -> {
             while(true){
-            if(cHP <= 0){
-                System.out.println("What a tragic ending, "+name+"! Your hp has dropped to zero or below! The Quest for Glory ends now!");
-                System.exit(0);
-                try {
-                    Thread.sleep(100); // Checks 10 times a second instead of millions of times a second
+                if(cHP <= 0){
+                    System.out.println("What a tragic ending, "+name+"! Your hp has dropped to zero or below! The Quest for Glory ends now!");
+                    System.exit(0);
+                    try {
+                        Thread.sleep(100); // Checks 10 times a second instead of millions of times a second
+                    }
+                    catch (InterruptedException e) {
+                        break;
+                    }
                 }
-                catch (InterruptedException e) {
-                    break;
-                }
-            }
             }
         });
         thread.start();
         Scanner scanner = new Scanner(System.in);
         if(saved){
-            System.out.println("Would you like to start a new game *type anything and press enter* or resume your old game *press enter*? If you start a new game, all of your previous game's data will be deleted."); 
+            System.out.println("Would you like to start a new game *type anything and press enter* or resume your old game *press enter*? If you start a new game, all of your previous game's data will be deleted.");
             if(scanner.nextLine().isEmpty()){
                 Load();
             }
@@ -404,7 +401,7 @@ public class Quest {
                 }
                 armorName = Armors.get(armor);
                 System.out.println("That " + armorName + " is going to protect you really well, " + name + "!");
-                System.out.println("Now that you've chosen your armor, the last thing to choose during this charaacter creation phase before ability points is to choose 4 weapons to wield. For now, just choose one.");
+                System.out.println("Now that you've chosen your armor, the last thing to choose during this character creation phase before ability points is to choose 4 weapons to wield. For now, just choose one.");
                 System.out.println("A. Battleaxe: Add your strength score to the end result of an attack, but take a -2 penalty on defense for this turn *this effect stacks*.");
                 System.out.println("B. 2 Daggers: Gain a +2 bonus on defense for this turn *this effect stacks*, but deal -3 damage.");
                 System.out.println("C. Flail: Increase your strength score by one for this attack, but the enemy becomes angry and gains a +1 to whatever ability they use to attack for their next attack.");
@@ -460,7 +457,7 @@ public class Quest {
                         System.out.println("Sorry, " + name + ". You can't have that weapon.");
                     }
                 }
-                System.out.println("At last, " + name + "! You now have " + weapon4Name + " in your possesion!");
+                System.out.println("At last, " + name + "! You now have " + weapon4Name + " in your possession!");
             } else if (cClass == 'B') {
                 cLoop = false;
                 maxHP = 45;
@@ -475,7 +472,7 @@ public class Quest {
                 scanner.nextLine();
                 System.out.println("As a wizard, you have no armor; instead, Defense bonus is gained through spells and magic items. Below is a list of spells; you will be able to pick 4. For the moment, choose one.");
                 System.out.println("A. Mage's Shield: A floating shield that grants a temporary +6 Defense bonus *does not stack with itself*.");
-                System.out.println("B. Minor Healing: Heal 6 HP. You cannot go beyond your maximum HP.");
+                System.out.println("B. Minor Healing: Heal 6 HP. You cannot go beyond your maximum HP. If you are already at your max HP, you cannot cast this spell.");
                 System.out.println("C. Lions's Strength: Gain a temporary +1 bonus to your Strength score *does not stack with itself*.");
                 System.out.println("D. Bobcat's Dexterity: Gain a temporary +1 bonus to your Dexterity score *does not stack with itself*.");
                 System.out.println("E. Dolphin's Intelligence: Gain a temporary +1 bonus to your Intelligence score *does not stack with itself*.");
@@ -590,7 +587,7 @@ public class Quest {
                 System.out.println("That " + rangedWeaponName + " is sure to kill your enemies, " + name + ".");
                 System.out.println("Now for the fun. It's time to choose some projectiles that will be shooting out of your " + rangedWeaponName + "! You will be able to choose four different projectiles; you can only choose to use one per attack, though. For now, choose your first projectile.");
                 System.out.println("A. Acid Arrows: The targeted enemy takes 1 acid damage every turn *this effect DOES stack*!");
-                System.out.println("B. Electric Arrows: The targeted enemy loses one action *this effect does not stack* but the shock shocks you, giving you a -3 penalty on defensee *non-stacking*.");
+                System.out.println("B. Electric Arrows: The targeted enemy loses one action *this effect does not stack* but the shock shocks you, giving you a -3 penalty on defense *non-stacking*.");
                 System.out.println("C. Fire Arrows: Deal additional damage - this is random, it varies between 1 and 4. ");
                 System.out.println("D. Frost Arrows: The targeted enemy can only make one melee attack for 2 turns *this effect does not stack* but the freezing arrow gives you a -2 penalty on defense for one turn *non-stacking*.");
                 System.out.println("E. Iron Arrows: Gain a +2 bonus on damage for this attack.");
