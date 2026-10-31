@@ -479,7 +479,7 @@ public class Quest {
                 System.out.println("F. Snake's Charisma: Gain a temporary +1 bonus to your Charisma score *does not stack with itself*.");
                 System.out.println("G. Fireball: Make an intelligence check and deal damage to all enemies you are fighting equal to the intelligence check divided by the enemy's Magic Resistance score.");
                 System.out.println("H. Magic Torpedo: Make an intelligence check and deal damage to one enemy you are fighting equal to the intelligence check minus their Magic Resistance score.");
-                System.out.println("I. Poison Cloud: Make an intelligence check and deal damage equal to all enemies you are fighting every turn for 4 turns equal to the intelligence check divided by twice the enemy's Magic Resistance score.");
+                System.out.println("I. Poison Cloud: Make an intelligence check and deal damage equal to all enemies you are fighting every turn for 4 turns equal to the intelligence check divided by twice the enemy's Magic Resistance score *this effect stacks*.");
                 System.out.println("J. Curse of Weakness: One enemy you are fighting gains a permanent -1 penalty to their Strength score. A single enemy can only have one Curse of Weakness at a time.");
                 System.out.println("K. Curse of Slowness: One enemy you are fighting gains a permanent -1 penalty to their Dexterity score. A single enemy can only have one Curse of Slowness at a time.");
                 System.out.println("L. Curse of Stupidity: One enemy you are fighting gains a permanent -1 penalty to their Intelligence score. A single enemy can only have one Curse of Stupidity at a time.");
