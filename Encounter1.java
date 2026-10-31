@@ -45,6 +45,7 @@ public class Encounter1{
                         }
                     }
                     choice = scanner.next().toUpperCase().charAt(0);
+                    scanner.nextLine();
                     if(choice == 'A'){
                         actions--;
                         Move.execute();
@@ -80,6 +81,7 @@ public class Encounter1{
                         while(true){
                             chosenWeapon = '\0';
                             chosenWeapon = scanner.next().toUpperCase().charAt(0);
+                            scanner.nextLine();
                             if(chosenWeapon >= 'A' && chosenWeapon < charWeapon){
                                 chosenWeaponName = ChosenWeapon.get(chosenWeapon);
                                 actions--;
@@ -101,7 +103,6 @@ public class Encounter1{
                     System.out.println("Your turn is over, "+name+". It is now "+e.eName+"'s turn. Press enter to continue.");
                     scanner.nextLine();
                 }
-                scanner.nextLine();
                 while(e.eCHP > 0 && e.eActions > 0){
                     choice = '\0';
                     if(e.eSquare != cSquare){
