@@ -14,7 +14,7 @@ public class MagesShield{
         }
         defense = defense+magicDefense;
         magesShield = true;
-        System.out.println("Your Mage's Shield was successfully engaged, "+name+". Now you have a defense score of "+defense+"!");
+        System.out.println("Your Mage's Shield was successfully engaged, "+name+". You had a defense score of "+(defense-magicDefense)+", but now you have a defense score of "+defense+"!");
     }
     public static void reset(){
         defense = defense-magicDefense;
