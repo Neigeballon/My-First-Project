@@ -55,6 +55,7 @@ else if(chosenSpell >= 'A' && chosenSpell < charSpell){
     chosenSpellName = ChosenSpell.get(chosenSpell);
     actions--;
     SPELLS.execute();
+    ChosenSpell.clear();
     break;
 }
 else{
