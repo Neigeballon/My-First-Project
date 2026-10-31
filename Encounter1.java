@@ -84,6 +84,7 @@ public class Encounter1{
                                 chosenWeaponName = ChosenWeapon.get(chosenWeapon);
                                 actions--;
                                 WEAPONS.execute();
+                                ChosenWeapon.clear();
                                 break;
                             }
                             else{
