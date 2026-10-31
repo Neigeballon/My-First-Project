@@ -40,6 +40,7 @@ if(e.eCHP > 0 && e.eSquare == cSquare){
 }
 }
 choice = scanner.next().toUpperCase().charAt(0);
+scanner.nextLine();
 if(choice == 'A'){
      actions--;
      Move.execute();
@@ -75,6 +76,7 @@ else if(choice >= charSpear && choice < charChoice){
       while(true){
       chosenWeapon = '\0';
       chosenWeapon = scanner.next().toUpperCase().charAt(0);
+      scanner.nextLine();
       if(chosenWeapon >= 'A' && chosenWeapon < charWeapon){
             chosenWeaponName = ChosenWeapon.get(chosenWeapon);
             actions--;
@@ -97,7 +99,6 @@ if(enemies.stream().anyMatch(e -> e.eCHP > 0)){
     System.out.println("Your turn is over, "+name+". It is now "+e.eName+"'s turn. Press enter to continue.");
     scanner.nextLine();
 }
-scanner.nextLine();
 while(e.eCHP > 0 && e.eActions > 0){
 choice = '\0';
 //Enemy 1 logic goes here-take into account flail and trident bonus!
