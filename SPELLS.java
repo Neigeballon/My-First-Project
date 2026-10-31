@@ -5,7 +5,7 @@ import java.util.*;
 public class SPELLS{
      public static void execute(){
            Scanner scanner = new Scanner(System.in);
-           char spellChoice = '\0'
+           char spellChoice = '\0';
            switch(chosenSpellName){
                 case "Mage's Shield" -> {
                      if(askRage){
