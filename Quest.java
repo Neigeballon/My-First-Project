@@ -252,6 +252,9 @@ public class Quest {
         thread.start();
         Scanner scanner = new Scanner(System.in);
         Load();
+        if (encounter > 0) {
+            return;
+        }
         //Character Creation Variables
         boolean cLoop = true;//Choosing a Class
         boolean aLoop = true;//Choosing an Armor
