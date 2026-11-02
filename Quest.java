@@ -5,6 +5,8 @@ import java.io.*;
 
 public class Quest {
 
+    private static final File SAVE_FILE = new File(System.getProperty("user.home"), "savegame.txt")
+
     public static Map<Character, Integer> ChosenSquare = new HashMap<>();
     public static Map<Character, String> ChosenWeapon = new HashMap<>();
     public static Map<Character, String> ChosenSpell = new HashMap<>();
@@ -97,7 +99,7 @@ public class Quest {
     public static String chosenProjectileName = "";
 
     public static void Save(){
-        try (FileWriter writer = new FileWriter(System.getProperty("user.home"), "savegame.txt")) {
+        try (FileWriter writer = new FileWriter(SAVE_FILE) {
             writer.write(name+"\n");
             writer.write(cClass+"\n");
             writer.write(saved+"\n");
@@ -148,7 +150,7 @@ public class Quest {
 
     public static void Load(){
         File file = new File(System.getProperty("user.home"), "savegame.txt");
-        try(Scanner reader = new Scanner(file)){
+        try(Scanner reader = new Scanner(SAVE_FILE)){
             name = reader.nextLine().trim();
             cClass = reader.nextLine().trim().charAt(0);
             saved = Boolean.parseBoolean(reader.nextLine().trim());
