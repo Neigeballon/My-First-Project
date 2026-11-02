@@ -12,7 +12,7 @@ public class Quest {
 
     public static String name = "";
     public static char cClass = '\0';
-    public static boolean saved = false;
+    public static boolean saved;
     public static int encounter = 0;
 
     public static ArrayList<Enemy> enemies = new ArrayList<>();
@@ -255,7 +255,7 @@ public class Quest {
                 Load();
             }
         }
-
+        saved = false;
         //Character Creation Variables
         boolean cLoop = true;//Choosing a Class
         boolean aLoop = true;//Choosing an Armor
