@@ -29,7 +29,7 @@ public class Fireball {
                 attackRoll = roll*cIntelligence+intBonus+attackBonus;
                 System.out.println("Your total attack roll is "+attackRoll+"!");
                 for (Enemy e : enemies) {
-                    if (choice == e.eChar) {
+                    if (e.eCHP > 0 && choice == e.eChar) {
                         damageDealt = Math.max(0, attackRoll-e.eDefense);
                         System.out.println("You did a total of "+damageDealt+" damage to "+e.eName+"!");
                         e.eCHP = e.eCHP-damageDealt;
