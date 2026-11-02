@@ -31,8 +31,8 @@ public class Fireball {
                 for (Enemy e : enemies) {
                     if (e.eCHP > 0 && choice == e.eChar) {
                         damageDealt = Math.max(0, attackRoll-e.eDefense);
-                        System.out.println("You did a total of "+damageDealt+" damage to "+e.eName+"!");
-                        e.eCHP = e.eCHP-damageDealt;
+                        System.out.println("You did a total of "+damageDealt+" damage to "+e.eName+", "+name+"!");
+                        e.eCHP -= damageDealt;
                         if(e.eCHP <= 0){
                             System.out.println("Fireblazing inferno, "+name+"! You have killed "+e.eName+"! Great job!");
                         }
