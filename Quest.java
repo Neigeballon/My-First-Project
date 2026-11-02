@@ -5,8 +5,6 @@ import java.io.*;
 
 public class Quest {
 
-    private static final File SAVE_FILE = new File(System.getProperty("user.home"), "savegame.txt")
-
     public static Map<Character, Integer> ChosenSquare = new HashMap<>();
     public static Map<Character, String> ChosenWeapon = new HashMap<>();
     public static Map<Character, String> ChosenSpell = new HashMap<>();
@@ -99,10 +97,9 @@ public class Quest {
     public static String chosenProjectileName = "";
 
     public static void Save(){
-        try (FileWriter writer = new FileWriter(SAVE_FILE) {
+        try (FileWriter writer = new FileWriter("savegame.txt")) {
             writer.write(name+"\n");
             writer.write(cClass+"\n");
-            writer.write(saved+"\n");
             writer.write(encounter+"\n");
             writer.write(maxHP+"\n");
             writer.write(cHP+"\n");
@@ -149,11 +146,10 @@ public class Quest {
     }
 
     public static void Load(){
-        File file = new File(System.getProperty("user.home"), "savegame.txt");
-        try(Scanner reader = new Scanner(SAVE_FILE)){
+        File file = new File("savegame.txt");
+        try(Scanner reader = new Scanner(file)){
             name = reader.nextLine().trim();
             cClass = reader.nextLine().trim().charAt(0);
-            saved = Boolean.parseBoolean(reader.nextLine().trim());
             encounter = Integer.parseInt(reader.nextLine().trim());
             maxHP = Double.parseDouble(reader.nextLine().trim());
             cHP = Double.parseDouble(reader.nextLine().trim());
@@ -197,9 +193,6 @@ public class Quest {
         catch(NumberFormatException e){
             System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
         }
-        catch(NoSuchElementException e){
-            System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
-        }
         if(encounter == 1){
             Encounter1.execute();
         }
@@ -227,7 +220,7 @@ public class Quest {
         else if(encounter == 9){
             Encounter9.execute();
         }
-        else if(encounter == 10){
+        else{
             Encounter10.execute();
         }
 
@@ -239,6 +232,13 @@ public class Quest {
             while(true){
                 if(cHP <= 0){
                     System.out.println("What a tragic ending, "+name+"! Your hp has dropped to zero or below! The Quest for Glory ends now!");
+                    try (BufferedWriter writer = new BufferedWriter(new FileWriter("savegame.txt", false))) {
+                        // The file is now empty. You can either close it immediately to leave it blank,
+                        // or start writing fresh save data here.
+                    }
+                    catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     System.exit(0);
                     try {
                         Thread.sleep(100); // Checks 10 times a second instead of millions of times a second
