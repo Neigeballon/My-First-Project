@@ -7,6 +7,7 @@ public class Fireball {
     public static void execute() {
         Scanner scanner = new Scanner(System.in);
         charChoice = 'A';
+        System.out.println("Choose which square to target with your fireball. You can only target a square with at least one enemy in it.");
         for (int i = 1; i < 5; i++) {
             final int square = i;
             if (enemies.stream().anyMatch(e -> e.eCHP > 0 && e.eSquare == square)) {
