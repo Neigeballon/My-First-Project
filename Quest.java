@@ -97,7 +97,7 @@ public class Quest {
     public static String chosenProjectileName = "";
 
     public static void Save(){
-        try (FileWriter writer = new FileWriter("savegame.txt")) {
+        try (FileWriter writer = new FileWriter(System.getProperty("user.home"), "savegame.txt")) {
             writer.write(name+"\n");
             writer.write(cClass+"\n");
             writer.write(saved+"\n");
