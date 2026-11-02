@@ -65,7 +65,7 @@ public class Quest {
 
     public static int magicDefense;
     public static String spell1Name = "";
-    public static  String spell2Name = "";
+    public static String spell2Name = "";
     public static String spell3Name = "";
     public static String spell4Name = "";
     public static String chosenSpellName = "";
@@ -197,6 +197,8 @@ public class Quest {
             while(true){
                 if(cHP <= 0){
                     System.out.println("What a tragic ending, "+name+"! Your hp has dropped to zero or below! The Quest for Glory ends now!");
+                    saved = false;
+                    encounter = 0;
                     System.exit(0);
                     try {
                         Thread.sleep(100); // Checks 10 times a second instead of millions of times a second
