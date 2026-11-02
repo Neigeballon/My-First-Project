@@ -41,6 +41,7 @@ public class Fireball {
                         }
                     }
                 }
+                break;
             }
             else {
                 System.out.println("That is not a valid target, "+name+". Try again.");
