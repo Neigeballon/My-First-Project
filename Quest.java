@@ -151,6 +151,44 @@ public class Quest {
         File file = new File("savegame.txt");
         try(Scanner reader = new Scanner(file)){
             name = reader.nextLine().trim();
+            cClass = reader.nextLine().trim().charAt(0);
+            saved = Boolean.parseBoolean(reader.nextLine().trim());
+            encounter = Integer.parseInt(reader.nextLine().trim());
+            maxHP = Double.parseDouble(reader.nextLine().trim());
+            cHP = Double.parseDouble(reader.nextLine().trim());
+            cStrength = Double.parseDouble(reader.nextLine().trim());
+            strBonus = Integer.parseInt(reader.nextLine().trim());
+            cDexterity = Double.parseDouble(reader.nextLine().trim());
+            dexBonus = Integer.parseInt(reader.nextLine().trim());
+            cIntelligence = Double.parseDouble(reader.nextLine().trim());
+            intBonus = Integer.parseInt(reader.nextLine().trim());
+            cCharisma = Double.parseDouble(reader.nextLine().trim());
+            chaBonus = Integer.parseInt(reader.nextLine().trim());
+            attackBonus = Integer.parseInt(reader.nextLine().trim());
+            defense = Double.parseDouble(reader.nextLine().trim());
+            magicResistance = Integer.parseInt(reader.nextLine().trim());
+            armorBonus = Integer.parseInt(reader.nextLine().trim());
+            armorEnchant = Integer.parseInt(reader.nextLine().trim());
+            armorName = reader.nextLine().trim();
+            weapon1Name = reader.nextLine().trim();
+            weapon2Name = reader.nextLine().trim();
+            weapon3Name = reader.nextLine().trim();
+            weapon4Name = reader.nextLine().trim();
+            spell1Name = reader.nextLine().trim();
+            spell2Name = reader.nextLine().trim();
+            spell3Name = reader.nextLine().trim();
+            spell4Name = reader.nextLine().trim();
+            magicItemName = reader.nextLine().trim();
+            askRage = Boolean.parseBoolean(reader.nextLine().trim());
+            ask1Sacrifice = Boolean.parseBoolean(reader.nextLine().trim());
+            ask2Sacrifice = Boolean.parseBoolean(reader.nextLine().trim());
+            wonderWand = Boolean.parseBoolean(reader.nextLine().trim());
+            rangedWeaponName = reader.nextLine().trim();
+            rangedEnchant = Integer.parseInt(reader.nextLine().trim());
+            projectile1Name = reader.nextLine().trim();
+            projectile2Name = reader.nextLine().trim();
+            projectile3Name = reader.nextLine().trim();
+            projectile4Name = reader.nextLine().trim();
         }
         catch(FileNotFoundException e){
             System.out.println("No save file was found. Begin a new Quest for Glory now!!!");
