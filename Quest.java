@@ -147,7 +147,7 @@ public class Quest {
     }
 
     public static void Load(){
-        File file = new File("savegame.txt");
+        File file = new File(System.getProperty("user.home"), "savegame.txt");
         try(Scanner reader = new Scanner(file)){
             name = reader.nextLine().trim();
             cClass = reader.nextLine().trim().charAt(0);
@@ -195,6 +195,9 @@ public class Quest {
         catch(NumberFormatException e){
             System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
         }
+        catch(NoSuchElementException e){
+            System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
+        }
         if(encounter == 1){
             Encounter1.execute();
         }
@@ -222,7 +225,7 @@ public class Quest {
         else if(encounter == 9){
             Encounter9.execute();
         }
-        else{
+        else if(encounter == 10){
             Encounter10.execute();
         }
 
