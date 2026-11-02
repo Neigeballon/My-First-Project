@@ -12,7 +12,6 @@ public class Quest {
 
     public static String name = "";
     public static char cClass = '\0';
-    public static boolean saved;
     public static int encounter = 0;
 
     public static ArrayList<Enemy> enemies = new ArrayList<>();
@@ -235,8 +234,6 @@ public class Quest {
             while(true){
                 if(cHP <= 0){
                     System.out.println("What a tragic ending, "+name+"! Your hp has dropped to zero or below! The Quest for Glory ends now!");
-                    saved = false;
-                    encounter = 0;
                     System.exit(0);
                     try {
                         Thread.sleep(100); // Checks 10 times a second instead of millions of times a second
@@ -249,13 +246,7 @@ public class Quest {
         });
         thread.start();
         Scanner scanner = new Scanner(System.in);
-        if(saved){
-            System.out.println("Would you like to start a new game *type anything and press enter* or resume your old game *press enter*? If you start a new game, all of your previous game's data will be deleted.");
-            if(scanner.nextLine().isEmpty()){
-                Load();
-            }
-        }
-        saved = false;
+        Load();
         //Character Creation Variables
         boolean cLoop = true;//Choosing a Class
         boolean aLoop = true;//Choosing an Armor
@@ -760,7 +751,6 @@ public class Quest {
         }
         System.out.println("You have officially allocated your ability points, and now you are ready for your adventure! The Quest For Glory begins NOW!!!");
         encounter++;
-        saved = true;
         Save();
         System.out.println("Your first encounter is a fight. There's no talking your way out of this one. Press Enter to continue.");
         scanner.nextLine();
