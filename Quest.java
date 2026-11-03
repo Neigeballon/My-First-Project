@@ -193,6 +193,9 @@ public class Quest {
         catch(NumberFormatException e){
             System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
         }
+        catch(StringIndexOutOfBoundsException e){
+            return;
+        }
         if(encounter == 1){
             Encounter1.execute();
         }
@@ -220,7 +223,7 @@ public class Quest {
         else if(encounter == 9){
             Encounter9.execute();
         }
-        else{
+        else if(encounter == 10){
             Encounter10.execute();
         }
 
@@ -252,9 +255,7 @@ public class Quest {
         thread.start();
         Scanner scanner = new Scanner(System.in);
         Load();
-        if (encounter > 0) {
-            return;
-        }
+
         //Character Creation Variables
         boolean cLoop = true;//Choosing a Class
         boolean aLoop = true;//Choosing an Armor
