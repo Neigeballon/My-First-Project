@@ -6,6 +6,9 @@ enemies.add(new Enemy("Pack", '\0', 39, 39, 5, 5, 3, 4, 20, 2, 3, 0, 0, '\0', 0,
 enemies.add(new Enemy("Vack", '\0', 56, 56, 1, 1, 5, 1, 18, 2, 2, 0, 0, '\0', 0, 0, 0, 0, false, false, false, false));
 enemies.add(new Enemy("Zack", '\0', 40, 40, 3, 2, 2, 3, 19, 2, 4, 0, 0, '\0', 0, 0, 0, 0, false, false, false, false));
 actions = 0;
+if(wonderWand) {
+    doWonder++;
+}
 //Decide the enemies' ability scores and magic resistance here
 while(enemies.stream().anyMatch(e -> e.eCHP > 0)){
 choice = '\0';
@@ -24,24 +27,24 @@ chosenSpellName = "";
 charSpell = 'B';
 System.out.println("It is time for you to take an action, "+name+"! What would you like to do? You can choose to move or cast a spell.");
 System.out.println("A. Move.");
-if((spell1Name == "Mage's Shield" && !magesShield) || (spell1Name == "Minor Healing" && cHP == maxHP) || (spell1Name == "Lion's Strength" && !lionsStrength) || (spell1Name == "Bobcat's Dexterity" && !bobcatsDexterity) || (spell1Name == "Dolphin's Intelligence" && !dolphinsIntelligence) || (spell1Name == "Snake's Charisma" && !snakesCharisma) || (spell1Name == "Curse of Weakness" && enemies.stream().anyMatch(e -> e.eCurseOfWeakness)) || (spell1Name == "Curse of Slowness" && enemies.stream().anyMatch(e -> e.eCurseOfSlowness)) || (spell1Name == "Curse of Dumbness" && enemies.stream().anyMatch(e -> e.eCurseOfDumbness)) || (spell1Name == "Curse of Babbling" && enemies.stream().anyMatch(e -> e.eCurseOfBabbling))){
+if((spell1Name.equals("Mage's Shield") && !magesShield) || (spell1Name.equals("Minor Healing") && cHP == maxHP) || (spell1Name.equals("Lion's Strength") && !lionsStrength) || (spell1Name.equals("Bobcat's Dexterity") && !bobcatsDexterity) || (spell1Name.equals("Dolphin's Intelligence") && !dolphinsIntelligence) || (spell1Name.equals("Snake's Charisma") && !snakesCharisma) || (spell1Name.equals("Curse of Weakness") && enemies.stream().anyMatch(e -> e.eCurseOfWeakness)) || (spell1Name.equals("Curse of Slowness") && enemies.stream().anyMatch(e -> e.eCurseOfSlowness)) || (spell1Name.equals("Curse of Dumbness") && enemies.stream().anyMatch(e -> e.eCurseOfDumbness)) || (spell1Name.equals("Curse of Babbling") && enemies.stream().anyMatch(e -> e.eCurseOfBabbling))){
     System.out.println(charSpell+". Cast "+spell1Name+".");
     ChosenSpell.put(charSpell, spell1Name);
     charSpell++;
 }
-if((spell2Name == "Mage's Shield" && !magesShield) || (spell2Name == "Minor Healing" && cHP == maxHP) || (spell2Name == "Lion's Strength" && !lionsStrength) || (spell2Name == "Bobcat's Dexterity" && !bobcatsDexterity) || (spell2Name == "Dolphin's Intelligence" && !dolphinsIntelligence) || (spell2Name == "Snake's Charisma" && !snakesCharisma) || (spell2Name == "Curse of Weakness" && enemies.stream().anyMatch(e -> e.eCurseOfWeakness)) || (spell2Name == "Curse of Slowness" && enemies.stream().anyMatch(e -> e.eCurseOfSlowness)) || (spell2Name == "Curse of Dumbness" && enemies.stream().anyMatch(e -> e.eCurseOfDumbness)) || (spell2Name == "Curse of Babbling" && enemies.stream().anyMatch(e -> e.eCurseOfBabbling))){
+if((spell2Name.equals("Mage's Shield") && !magesShield) || (spell2Name.equals("Minor Healing") && cHP == maxHP) || (spell2Name.equals("Lion's Strength") && !lionsStrength) || (spell2Name.equals("Bobcat's Dexterity") && !bobcatsDexterity) || (spell2Name.equals("Dolphin's Intelligence") && !dolphinsIntelligence) || (spell2Name.equals("Snake's Charisma") && !snakesCharisma) || (spell2Name.equals("Curse of Weakness") && enemies.stream().anyMatch(e -> e.eCurseOfWeakness)) || (spell2Name.equals("Curse of Slowness") && enemies.stream().anyMatch(e -> e.eCurseOfSlowness)) || (spell2Name.equals("Curse of Dumbness") && enemies.stream().anyMatch(e -> e.eCurseOfDumbness)) || (spell2Name.equals("Curse of Babbling") && enemies.stream().anyMatch(e -> e.eCurseOfBabbling))){
     System.out.println(charSpell+". Cast "+spell2Name+".");
-    ChosenSpell.put(charSpell, spell1Name);
+    ChosenSpell.put(charSpell, spell2Name);
     charSpell++;
 }
-if((spell3Name == "Mage's Shield" && !magesShield) || (spell3Name == "Minor Healing" && cHP == maxHP) || (spell3Name == "Lion's Strength" && !lionsStrength) || (spell3Name == "Bobcat's Dexterity" && !bobcatsDexterity) || (spell3Name == "Dolphin's Intelligence" && !dolphinsIntelligence) || (spell3Name == "Snake's Charisma" && !snakesCharisma) || (spell3Name == "Curse of Weakness" && enemies.stream().anyMatch(e -> e.eCurseOfWeakness)) || (spell3Name == "Curse of Slowness" && enemies.stream().anyMatch(e -> e.eCurseOfSlowness)) || (spell3Name == "Curse of Dumbness" && enemies.stream().anyMatch(e -> e.eCurseOfDumbness)) || (spell3Name == "Curse of Babbling" && enemies.stream().anyMatch(e -> e.eCurseOfBabbling))){
+if((spell3Name.equals("Mage's Shield") && !magesShield) || (spell3Name.equals("Minor Healing") && cHP == maxHP) || (spell3Name.equals("Lion's Strength") && !lionsStrength) || (spell3Name.equals("Bobcat's Dexterity") && !bobcatsDexterity) || (spell3Name.equals("Dolphin's Intelligence") && !dolphinsIntelligence) || (spell3Name.equals("Snake's Charisma") && !snakesCharisma) || (spell3Name.equals("Curse of Weakness") && enemies.stream().anyMatch(e -> e.eCurseOfWeakness)) || (spell3Name.equals("Curse of Slowness") && enemies.stream().anyMatch(e -> e.eCurseOfSlowness)) || (spell3Name.equals("Curse of Dumbness") && enemies.stream().anyMatch(e -> e.eCurseOfDumbness)) || (spell3Name.equals("Curse of Babbling") && enemies.stream().anyMatch(e -> e.eCurseOfBabbling))){
     System.out.println(charSpell+". Cast "+spell3Name+".");
-    ChosenSpell.put(charSpell, spell1Name);
+    ChosenSpell.put(charSpell, spell3Name);
     charSpell++;
 }
-if((spell4Name == "Mage's Shield" && !magesShield) || (spell4Name == "Minor Healing" && cHP == maxHP) || (spell4Name == "Lion's Strength" && !lionsStrength) || (spell4Name == "Bobcat's Dexterity" && !bobcatsDexterity) || (spell4Name == "Dolphin's Intelligence" && !dolphinsIntelligence) || (spell4Name == "Snake's Charisma" && !snakesCharisma) || (spell4Name == "Curse of Weakness" && enemies.stream().anyMatch(e -> e.eCurseOfWeakness)) || (spell4Name == "Curse of Slowness" && enemies.stream().anyMatch(e -> e.eCurseOfSlowness)) || (spell4Name == "Curse of Dumbness" && enemies.stream().anyMatch(e -> e.eCurseOfDumbness)) || (spell4Name == "Curse of Babbling" && enemies.stream().anyMatch(e -> e.eCurseOfBabbling))){
+if((spell4Name.equals("Mage's Shield") && !magesShield) || (spell4Name.equals("Minor Healing") && cHP == maxHP) || (spell4Name.equals("Lion's Strength") && !lionsStrength) || (spell4Name.equals("Bobcat's Dexterity") && !bobcatsDexterity) || (spell4Name.equals("Dolphin's Intelligence") && !dolphinsIntelligence) || (spell4Name.equals("Snake's Charisma") && !snakesCharisma) || (spell4Name.equals("Curse of Weakness") && enemies.stream().anyMatch(e -> e.eCurseOfWeakness)) || (spell4Name.equals("Curse of Slowness") && enemies.stream().anyMatch(e -> e.eCurseOfSlowness)) || (spell4Name.equals("Curse of Dumbness") && enemies.stream().anyMatch(e -> e.eCurseOfDumbness)) || (spell4Name.equals("Curse of Babbling") && enemies.stream().anyMatch(e -> e.eCurseOfBabbling))){
     System.out.println(charSpell+". Cast "+spell1Name+".");
-    ChosenSpell.put(charSpell, spell1Name);
+    ChosenSpell.put(charSpell, spell4Name);
     charSpell++;
 }
 while(true){
@@ -117,4 +120,5 @@ SPELLS.reset();
 choice = '\0';
 chosenSpell = '\0';
 chosenSpellName = "";
+doWonder = 0;
 enemies.clear();
