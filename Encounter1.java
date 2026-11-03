@@ -30,7 +30,7 @@ public class Encounter1{
                     System.out.println("What would you like to do? If you have the spear, you can attack an enemy not in your square. If you have a halberd, then whichever melee enemy you choose to attack with it will not matter; it will simply target all enemies in the same square as you.");
                     System.out.println("A. Move.");
                     for(Enemy e : enemies){
-                        if(e.eCHP > 0 && e.eSquare != cSquare && (weapon1Name == "Spear" || weapon2Name == "Spear" || weapon3Name == "Spear" || weapon4Name == "Spear")){
+                        if(e.eCHP > 0 && e.eSquare != cSquare && (weapon1Name.equals("Spear") || weapon2Name.equals("Spear") || weapon3Name.equals("Spear") || weapon4Name.equals("Spear"))){
                             System.out.println(charSpear+". Attack "+e.eName+" with your spear.");
                             e.eChar = charSpear;
                             charSpear++;
@@ -58,22 +58,22 @@ public class Encounter1{
                         System.out.println("What weapon would you like to use to attack them?");
                         ChosenWeapon.clear();
                         charWeapon = 'A';
-                        if(weapon1Name != "Spear"){
+                        if(!weapon1Name.equals("Spear")){
                             System.out.println(charWeapon+". "+weapon1Name);
                             ChosenWeapon.put(charWeapon, weapon1Name);
                             charWeapon++;
                         }
-                        if(weapon2Name != "Spear"){
+                        if(!weapon2Name.equals("Spear")){
                             System.out.println(charWeapon+". "+weapon2Name);
                             ChosenWeapon.put(charWeapon, weapon2Name);
                             charWeapon++;
                         }
-                        if(weapon3Name != "Spear"){
+                        if(!weapon3Name.equals("Spear")){
                             System.out.println(charWeapon+". "+weapon3Name);
                             ChosenWeapon.put(charWeapon, weapon3Name);
                             charWeapon++;
                         }
-                        if(weapon4Name != "Spear"){
+                        if(!weapon4Name.equals("Spear")){
                             System.out.println(charWeapon+". "+weapon4Name);
                             ChosenWeapon.put(charWeapon, weapon4Name);
                             charWeapon++;
