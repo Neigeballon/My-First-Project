@@ -129,6 +129,7 @@ public class Encounter1{
                             attackRoll = roll*e.eStrength;
                         }
                         System.out.println("The Nibbit's attack roll is "+attackRoll+".");
+                        System.out.println("Your defense is "+defense+".");
                         damageDealt = Math.max(0, attackRoll-defense);
                         System.out.println("The Nibbit dealt a total of "+damageDealt+" damage to you!");
                         cHP = cHP-damageDealt;
