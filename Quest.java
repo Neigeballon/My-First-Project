@@ -194,37 +194,10 @@ public class Quest {
             System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
         }
         catch(StringIndexOutOfBoundsException e){
-            return;
+            System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
         }
-        if(encounter == 1){
-            Encounter1.execute();
-        }
-        else if(encounter == 2){
-            Encounter2.execute();
-        }
-        else if(encounter == 3){
-            Encounter3.execute();
-        }
-        else if(encounter == 4){
-            Encounter4.execute();
-        }
-        else if(encounter == 5){
-            Encounter5.execute();
-        }
-        else if(encounter == 6){
-            Encounter6.execute();
-        }
-        else if(encounter == 7){
-            Encounter7.execute();
-        }
-        else if(encounter == 8){
-            Encounter8.execute();
-        }
-        else if(encounter == 9){
-            Encounter9.execute();
-        }
-        else if(encounter == 10){
-            Encounter10.execute();
+        catch(NoSuchElementException e) {
+            System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
         }
 
     }
@@ -255,7 +228,20 @@ public class Quest {
         thread.start();
         Scanner scanner = new Scanner(System.in);
         Load();
+        if (encounter > 0) {
+            System.out.println("Resuming your Quest for Glory, " + name + "!");
 
+            if (encounter == 1) { Encounter1.execute(); }
+            else if (encounter == 2) { Encounter2.execute(); }
+            else if (encounter == 3) { Encounter3.execute(); }
+            else if (encounter == 4) { Encounter4.execute(); }
+            else if (encounter == 5) { Encounter5.execute(); }
+            else if (encounter == 6) { Encounter6.execute(); }
+            else if (encounter == 7) { Encounter7.execute(); }
+            else if (encounter == 8) { Encounter8.execute(); }
+            else if (encounter == 9) { Encounter9.execute(); }
+            else { Encounter10.execute(); }
+        }
         //Character Creation Variables
         boolean cLoop = true;//Choosing a Class
         boolean aLoop = true;//Choosing an Armor
