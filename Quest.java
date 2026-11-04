@@ -59,6 +59,9 @@ public class Quest {
     public static char charWeapon;
     public static int battleaxe = 0;
     public static int daggers = 0;
+    public static int mace = 0;
+    public static int rapier = 0;
+    public static int scimitar = 0;
     public static int spear = 0;
     public static String chosenWeaponName = "";
 
@@ -190,13 +193,7 @@ public class Quest {
         catch(FileNotFoundException e){
             System.out.println("No save file was found. Begin a new Quest for Glory now!!!");
         }
-        catch(NumberFormatException e){
-            System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
-        }
-        catch(StringIndexOutOfBoundsException e){
-            System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
-        }
-        catch(NoSuchElementException e) {
+        catch(NumberFormatException | StringIndexOutOfBoundsException | NoSuchElementException e){
             System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
         }
 
@@ -216,12 +213,6 @@ public class Quest {
                         e.printStackTrace();
                     }
                     System.exit(0);
-                    try {
-                        Thread.sleep(100); // Checks 10 times a second instead of millions of times a second
-                    }
-                    catch (InterruptedException e) {
-                        break;
-                    }
                 }
             }
         });
@@ -408,18 +399,18 @@ public class Quest {
                         aLoop = false;
                         armorBonus = 3;
                         armorEnchant = 5;
-                        defense = defense + armorBonus;
+                        defense += armorBonus;
                     } else if (armor == 'B') {
                         aLoop = false;
                         armorBonus = 5;
                         armorEnchant = 3;
-                        defense = defense + armorBonus;
+                        defense += armorBonus;
                         dexBonus = -1;
                     } else if (armor == 'C') {
                         aLoop = false;
                         armorBonus = 7;
                         armorEnchant = 1;
-                        defense = defense + armorBonus;
+                        defense += armorBonus;
                         dexBonus = -2;
                     } else {
                         System.out.println("That is not a valid armor, " + name + ". Try again.");
@@ -681,57 +672,84 @@ public class Quest {
 
             System.out.println("How many points would you like in Strength?");
             while (strengthLoop) {
-                cStrength = scanner.nextDouble();
-                if (cStrength <= 10) {
-                    if (cStrength < 0) {
-                        System.out.println("You cannot have a negative number of points in Strength, " + name + ". Try again.");
+                try {
+                    cStrength = scanner.nextDouble();
+                    scanner.nextLine();
+                    if (cStrength <= 10) {
+                        if (cStrength < 0) {
+                            System.out.println("You cannot have a negative number of points in Strength, " + name + ". Try again.");
+                        } else {
+                            strengthLoop = false;
+                        }
                     } else {
-                        strengthLoop = false;
+                        System.out.println("You cannot have that many points in Strength, " + name + ". Your total amount of ability points cannot exceed 10. Try again.");
                     }
-                } else {
-                    System.out.println("You cannot have that many points in Strength, " + name + ". Your total amount of ability points cannot exceed 10. Try again.");
+                }
+                catch (InputMismatchException e) {
+                    System.out.println("Invalid character. Try again.");
+                    scanner.nextLine();
                 }
             }
             System.out.println("How many points would you like in Dexterity? If you are a ranger, your dexterity score determines your defense bonus.");
             while (dexterityLoop) {
-                cDexterity = scanner.nextDouble();
-                if (cDexterity <= 10 - cStrength) {
-                    if (cDexterity < 0) {
-                        System.out.println("You cannot have a negative number of points in Dexterity, " + name + ". Try again.");
+                try {
+                    cDexterity = scanner.nextDouble();
+                    scanner.nextLine();
+                    if (cDexterity <= 10 - cStrength) {
+                        if (cDexterity < 0) {
+                            System.out.println("You cannot have a negative number of points in Dexterity, " + name + ". Try again.");
+                        } else {
+                            dexterityLoop = false;
+                        }
                     } else {
-                        dexterityLoop = false;
+                        System.out.println("You cannot have that many points in Dexterity, " + name + ". Your total amount of ability points cannot exceed 10. Try again.");
                     }
-                } else {
-                    System.out.println("You cannot have that many points in Dexterity, " + name + ". Your total amount of ability points cannot exceed 10. Try again.");
+                }
+                catch (InputMismatchException e) {
+                    System.out.println("Invalid character. Try again.");
+                    scanner.nextLine();
                 }
             }
             System.out.println("How many points would you like in Intelligence?");
             while (intelligenceLoop) {
-                cIntelligence = scanner.nextDouble();
-                if (cIntelligence <= 10 - cStrength - cDexterity) {
-                    if (cIntelligence < 0) {
-                        System.out.println("You cannot have a negative number of points in Intelligence, " + name + ". Try again.");
+                try {
+                    cIntelligence = scanner.nextDouble();
+                    scanner.nextLine();
+                    if (cIntelligence <= 10 - cStrength - cDexterity) {
+                        if (cIntelligence < 0) {
+                            System.out.println("You cannot have a negative number of points in Intelligence, " + name + ". Try again.");
+                        } else {
+                            intelligenceLoop = false;
+                        }
                     } else {
-                        intelligenceLoop = false;
+                        System.out.println("You cannot have that many points in Intelligence, " + name + ". Your total amount of ability points cannot exceed 10. Try again.");
                     }
-                } else {
-                    System.out.println("You cannot have that many points in Intelligence, " + name + ". Your total amount of ability points cannot exceed 10. Try again.");
+                }
+                catch (InputMismatchException e) {
+                    System.out.println("Invalid character. Try again.");
+                    scanner.nextLine();
                 }
             }
             System.out.println("How many points would you like in Charisma?");
             while (charismaLoop) {
-                cCharisma = scanner.nextDouble();
-                if (cCharisma <= 10 - cStrength - cDexterity - cIntelligence) {
-                    if (cCharisma < 0) {
-                        System.out.println("You cannot have a negative number of points in Charisma, " + name + ". Try again.");
+                try {
+                    cCharisma = scanner.nextDouble();
+                    scanner.nextLine();
+                    if (cCharisma <= 10 - cStrength - cDexterity - cIntelligence) {
+                        if (cCharisma < 0) {
+                            System.out.println("You cannot have a negative number of points in Charisma, " + name + ". Try again.");
+                        } else {
+                            charismaLoop = false;
+                        }
                     } else {
-                        charismaLoop = false;
+                        System.out.println("You cannot have that many points in Charisma, " + name + ". Your total amount of ability points cannot exceed 10. Try again.");
                     }
-                } else {
-                    System.out.println("You cannot have that many points in Charisma, " + name + ". Your total amount of ability points cannot exceed 10. Try again.");
+                }
+                catch (InputMismatchException e) {
+                    System.out.println("Invalid character. Try again.");
+                    scanner.nextLine();
                 }
             }
-            scanner.nextLine();
             if (cStrength + cDexterity + cIntelligence + cCharisma < 10) {
                 System.out.println("You didn't allocate " + (10 - cStrength - cDexterity - cIntelligence - cCharisma) + " points! Oh well, maybe you were looking for a challenge, or maybe you were bad at math. If you want to reallocate your points, type in any character and then Enter. If you do not, simply press Enter.");
                 if (scanner.nextLine().isEmpty()) {
@@ -742,7 +760,7 @@ public class Quest {
             }
         }
         if (cClass == 'C') {
-            defense = defense + cDexterity;
+            defense += cDexterity;
         }
         System.out.println("You have officially allocated your ability points, and now you are ready for your adventure! The Quest For Glory begins NOW!!!");
         encounter++;
