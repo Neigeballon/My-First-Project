@@ -34,10 +34,8 @@ public class Mace{
         defense += mace;
         attackBonus += mace;
         for(Enemy e : enemies){
-            while(e.eMace > 0){
-                e.eStrength++;
-                e.eMace--;
-            }
+            e.eStrength += e.eMace;
+            e.eMace = 0;
         }
     }
 }
