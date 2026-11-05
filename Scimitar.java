@@ -34,10 +34,8 @@ public class Scimitar{
         defense += scimitar;
         attackBonus += scimitar;
         for(Enemy e : enemies){
-            while(e.eScimitar > 0){
-                e.eIntelligence++;
-                e.eScimitar--;
-            }
+            e.eIntelligence += e.eScimitar;
+            e.eScimitar = 0;
         }
     }
 }
