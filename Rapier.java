@@ -34,10 +34,8 @@ public class Rapier{
         defense += rapier;
         attackBonus += rapier;
         for(Enemy e : enemies){
-            while(e.eRapier > 0){
-                e.eDexterity++;
-                e.eRapier--;
-            }
+            e.eDexterity += e.eRapier;
+            e.eRapier = 0;
         }
     }
 }
