@@ -99,6 +99,19 @@ public class Quest {
     public static char chosenProjectile = '\0';
     public static String chosenProjectileName = "";
 
+    //GRAPHICS
+
+    public static String[][] battlemap1 = {
+        {"rock", "rock", "grass", "grass", "grass", "grass", "rock", "rock"}
+        {"rock", "wheat", "wheat", "grass", "grass", "cacti", "cacti", "rock"}
+        {"oaks", "wheat", "wheat", "grass", "grass", "cacti", "cacti", "weeds"}
+        {"oaks", "oaks", "grass", "pines", "pines", "grass", "weeds", "weeds"}
+        {"oaks", "oaks", "grass", "pines", "pines", "grass", "weeds", "weeds"}
+        {"oaks", "water", "water", "jungle", "jungle", "garden", "garden", "weeds"}
+        {"rock", "water", "water", "jungle", "jungle", "garden", "garden", "weeds"}
+        {"rock", "rock", "jungle", "jungle", "jungle", "jungle", "rock", "rock"}
+    };
+
     public static void Save(){
         try (FileWriter writer = new FileWriter("savegame.txt")) {
             writer.write(name+"\n");
