@@ -46,6 +46,8 @@ public class Travel {
             else {
                 System.out.println("That key you pressed leads you nowhere, "+name+". Try again.");
             }
+
+            Encounter.execute();
         }
     }
 }
