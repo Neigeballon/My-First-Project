@@ -7,6 +7,7 @@ public class MagicTorpedo {
     public static void execute() {
         Scanner scanner = new Scanner(System.in);
         charChoice = 'A';
+        choice = '\0';
         System.out.println("Choose an enemy to target with your Magic Torpedo!");
         for (Enemy e : enemies) {
             if (e.eCHP > 0) {
