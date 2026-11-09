@@ -12,10 +12,59 @@ public class Quest {
 
     public static String name = "";
     public static char cClass = '\0';
-    public static int encounter = 0;
 
     public static ArrayList<Enemy> enemies = new ArrayList<>();
     public static Enemy e = null;
+
+    public static boolean t1 = false;
+    public static boolean t2 = false;
+    public static boolean t3 = false;
+    public static boolean t4 = false;
+    public static boolean t5 = false;
+    public static boolean t6 = false;
+    public static boolean t7 = false;
+    public static boolean t8 = false;
+    public static boolean t9 = false;
+    public static boolean t10 = false;
+    public static boolean t11 = false;
+    public static boolean t12 = false;
+    public static boolean t13 = false;
+    public static boolean t14 = false;
+    public static boolean t15 = false;
+    public static boolean t16 = false;
+    public static boolean t17 = false;
+    public static boolean t18 = false;
+    public static boolean t19 = false;
+    public static boolean t20 = false;
+    public static boolean t21 = false;
+    public static boolean t22 = false;
+    public static boolean t23 = false;
+    public static boolean t24 = false;
+    public static boolean t25 = false;
+    public static boolean t26 = false;
+    public static boolean t27 = false;
+    public static boolean t28 = false;
+    public static boolean t29 = false;
+    public static boolean t30 = false;
+    public static boolean t31 = false;
+    public static boolean t32 = false;
+    public static boolean t33 = false;
+    public static boolean t34 = false;
+    public static boolean t35 = false;
+    public static boolean t36 = false;
+    public static boolean t37 = false;
+    public static boolean t38 = false;
+    public static boolean t39 = false;
+    public static boolean t40 = false;
+    public static boolean t41 = false;
+    public static boolean t42 = false;
+    public static boolean t43 = false;
+    public static boolean t44 = false;
+    public static boolean t45 = false;
+    public static boolean t46 = false;
+    public static boolean t47 = false;
+    public static boolean t48 = false;
+    public static boolean t49 = false;
 
     public static double maxHP = 1;
     public static volatile double cHP = 1;
@@ -99,24 +148,115 @@ public class Quest {
     public static char chosenProjectile = '\0';
     public static String chosenProjectileName = "";
 
-    //GRAPHICS
+    public enum Terrain {
+        GRASS(1, "Grass", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        WHEAT(2, "Wheat", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        ROCK(3, "Rock", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        WATER_RIVER(4, "Water River", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        WATER_RIVER_BOAT(5, "Water River Boat", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        WATER_LAKE(6, "Water Lake", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        WATER_LAKE_BOAT(7, "Water Lake Boat", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        JUNGLE_FOREST(8, "Jungle Forest", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        JUNGLE_TEMPLE(9, "Jungle Temple", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        FOREST_OAK(10, "Forest Oak", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        FOREST_DARK(11, "Forest Dark", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        FOREST_DAPPLED(12, "Forest Dappled", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        FOREST_ANCIENT(13, "Forest Ancient", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        SAVANNA(14, "Savanna", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        DESERT_CACTI(15, "Desert Cacti", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        DESERT_SANDPIT(16, "Desert Sandpit", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        DESERT_TEMPLE(17, "Desert Temple", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        OVERGROWTH(18, "Overgrowth", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        FLOWERS_BEES(19, "Flowers Bees", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        FLOWERS_BUTTERFLIES(20, "Flowers Butterflies", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        SNOWY_PLAINS(21, "Snowy Plains", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        SNOWY_FOREST(22, "Snowy Forest", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        UNDERGROUND_CRYSTALS(23, "Underground Crystals", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        UNDERGROUND_DARK(24, "Underground Dark", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        UNDERGROUND_DEEP_DARK(25, "Underground Deep Dark", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        GEYSER_WATER(26, "Geyser Water", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        GEYSER_TOXIC(27, "Geyser Toxic", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        VILLAGE(28, "Village", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        ICE_SPIKES(29, "Ice Spikes", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        ICE_IGLOOS(30, "Ice Igloos", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        VOLCANO(31, "Volcano", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        CHASM_WATER(32, "Chasm Water", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        CHASM_LAVA(33, "Chasm Lava", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        RAVINE_STONE(34, "Ravine Stone", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        RAVINE_MINERALS(35, "Ravine Minerals", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        FOSSILS(36, "Fossils", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        MINESHAFT(37, "Mineshaft", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        FORTRESS(38, "Fortress", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        STRONGHOLD(39, "Stronghold", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        BASTION(40, "Bastion", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        AIRSHIP(41, "Airship", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        MESA(42, "Mesa", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        BADLANDS(43, "Badlands", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        OCEAN(44, "Ocean", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        OCEAN_MONUMENT(45, "Ocean Monument", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        OCEAN_CHASM(46, "Ocean Chasm", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        OCEAN_RAVINE(47, "Ocean Ravine", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        ASCENSION(48, "Ascension", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+        GLORY(49, "Glory", 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
-    public static String[][] battlemap1 = {
-        {"rock", "rock", "grass", "grass", "grass", "grass", "rock", "rock"}
-        {"rock", "wheat", "wheat", "grass", "grass", "cacti", "cacti", "rock"}
-        {"oaks", "wheat", "wheat", "grass", "grass", "cacti", "cacti", "weeds"}
-        {"oaks", "oaks", "grass", "pines", "pines", "grass", "weeds", "weeds"}
-        {"oaks", "oaks", "grass", "pines", "pines", "grass", "weeds", "weeds"}
-        {"oaks", "water", "water", "jungle", "jungle", "garden", "garden", "weeds"}
-        {"rock", "water", "water", "jungle", "jungle", "garden", "garden", "weeds"}
-        {"rock", "rock", "jungle", "jungle", "jungle", "jungle", "rock", "rock"}
+        public final int encounterNumber;
+        public final String encounterName;
+        public final int moveSquares;
+        public final int meleePenalty;
+        public final int meleeBonus;
+        public final int magicPenalty;
+        public final int magicBonus;
+        public final int rangedPenalty;
+        public final int rangedBonus;
+        public final int sPenalty;
+        public final int sBonus;
+        public final int dPenalty;
+        public final int dBonus;
+        public final int iPenalty;
+        public final int iBonus;
+        public final int cPenalty;
+        public final int cBonus;
+
+        Terrain (int encounterNumber, String encounterName, int moveSquares, int meleePenalty, int meleeBonus, int magicPenalty, int magicBonus, int rangedPenalty, int rangedBonus, int sPenalty, int sBonus, int dPenalty, int dBonus, int iPenalty, int iBonus, int cPenalty, int cBonus) {
+            this.encounterNumber = encounterNumber;
+            this.encounterName = encounterName;
+            this.moveSquares = moveSquares;
+            this.meleePenalty = meleePenalty;
+            this.meleeBonus = meleeBonus;
+            this.magicPenalty = magicPenalty;
+            this.magicBonus = magicBonus;
+            this.rangedPenalty = rangedPenalty;
+            this.rangedBonus = rangedBonus;
+            this.sPenalty = sPenalty;
+            this.sBonus = sBonus;
+            this.dPenalty = dPenalty;
+            this.dBonus = dBonus;
+            this.iPenalty = iPenalty;
+            this.iBonus = iBonus;
+            this.cPenalty = cPenalty;
+            this.cBonus = cBonus;
+        }
+    }
+
+    public static Terrain[][] terrains = {
+            {Terrain.GRASS, Terrain.WHEAT, Terrain.WATER_RIVER_BOAT, Terrain.WATER_LAKE, Terrain.WATER_LAKE_BOAT, Terrain.JUNGLE_FOREST, Terrain.JUNGLE_TEMPLE},
+            {Terrain.ROCK, Terrain.WATER_RIVER, Terrain.FOREST_OAK, Terrain.FOREST_DARK, Terrain.FOREST_DAPPLED, Terrain.FOREST_ANCIENT, Terrain.SAVANNA},
+            {Terrain.DESERT_CACTI, Terrain.DESERT_SANDPIT, Terrain.DESERT_TEMPLE, Terrain.OVERGROWTH, Terrain.FLOWERS_BEES, Terrain.FLOWERS_BUTTERFLIES, Terrain.SNOWY_PLAINS},
+            {Terrain.SNOWY_FOREST, Terrain.UNDERGROUND_CRYSTALS, Terrain.UNDERGROUND_DARK, Terrain.UNDERGROUND_DEEP_DARK, Terrain.GEYSER_WATER, Terrain.GEYSER_TOXIC, Terrain.VILLAGE},
+            {Terrain.ICE_SPIKES, Terrain.ICE_IGLOOS, Terrain.VOLCANO, Terrain.CHASM_WATER, Terrain.CHASM_LAVA, Terrain.RAVINE_STONE, Terrain.RAVINE_MINERALS},
+            {Terrain.FOSSILS, Terrain.MINESHAFT, Terrain.FORTRESS, Terrain.STRONGHOLD, Terrain.BASTION, Terrain.AIRSHIP, Terrain.MESA},
+            {Terrain.BADLANDS, Terrain.OCEAN, Terrain.OCEAN_MONUMENT, Terrain.OCEAN_CHASM, Terrain.OCEAN_RAVINE, Terrain.ASCENSION, Terrain.GLORY}
     };
+
+    public static int row = 0;
+    public static int column = 0;
+    public static int encounter = 0;
+    public static Terrain t = null;
 
     public static void Save(){
         try (FileWriter writer = new FileWriter("savegame.txt")) {
             writer.write(name+"\n");
             writer.write(cClass+"\n");
-            writer.write(encounter+"\n");
             writer.write(maxHP+"\n");
             writer.write(cHP+"\n");
             writer.write(cStrength+"\n");
@@ -152,6 +292,57 @@ public class Quest {
             writer.write(projectile2Name+"\n");
             writer.write(projectile3Name+"\n");
             writer.write(projectile4Name+"\n");
+            writer.write(t1+"\n");
+            writer.write(t2+"\n");
+            writer.write(t3+"\n");
+            writer.write(t4+"\n");
+            writer.write(t5+"\n");
+            writer.write(t6+"\n");
+            writer.write(t7+"\n");
+            writer.write(t8+"\n");
+            writer.write(t9+"\n");
+            writer.write(t10+"\n");
+            writer.write(t11+"\n");
+            writer.write(t12+"\n");
+            writer.write(t13+"\n");
+            writer.write(t14+"\n");
+            writer.write(t15+"\n");
+            writer.write(t16+"\n");
+            writer.write(t17+"\n");
+            writer.write(t18+"\n");
+            writer.write(t19+"\n");
+            writer.write(t20+"\n");
+            writer.write(t21+"\n");
+            writer.write(t22+"\n");
+            writer.write(t23+"\n");
+            writer.write(t24+"\n");
+            writer.write(t25+"\n");
+            writer.write(t26+"\n");
+            writer.write(t27+"\n");
+            writer.write(t28+"\n");
+            writer.write(t29+"\n");
+            writer.write(t30+"\n");
+            writer.write(t31+"\n");
+            writer.write(t32+"\n");
+            writer.write(t33+"\n");
+            writer.write(t34+"\n");
+            writer.write(t35+"\n");
+            writer.write(t36+"\n");
+            writer.write(t37+"\n");
+            writer.write(t38+"\n");
+            writer.write(t39+"\n");
+            writer.write(t40+"\n");
+            writer.write(t41+"\n");
+            writer.write(t42+"\n");
+            writer.write(t43+"\n");
+            writer.write(t44+"\n");
+            writer.write(t45+"\n");
+            writer.write(t46+"\n");
+            writer.write(t47+"\n");
+            writer.write(t48+"\n");
+            writer.write(t49+"\n");
+            writer.write(row+"\0");
+            writer.write(column+"\0");
 
             System.out.println("Game saved!");
         }
@@ -166,7 +357,6 @@ public class Quest {
         try(Scanner reader = new Scanner(file)){
             name = reader.nextLine().trim();
             cClass = reader.nextLine().trim().charAt(0);
-            encounter = Integer.parseInt(reader.nextLine().trim());
             maxHP = Double.parseDouble(reader.nextLine().trim());
             cHP = Double.parseDouble(reader.nextLine().trim());
             cStrength = Double.parseDouble(reader.nextLine().trim());
@@ -202,6 +392,57 @@ public class Quest {
             projectile2Name = reader.nextLine().trim();
             projectile3Name = reader.nextLine().trim();
             projectile4Name = reader.nextLine().trim();
+            t1 = Boolean.parseBoolean(reader.nextLine().trim());
+            t2 = Boolean.parseBoolean(reader.nextLine().trim());
+            t3 = Boolean.parseBoolean(reader.nextLine().trim());
+            t4 = Boolean.parseBoolean(reader.nextLine().trim());
+            t5 = Boolean.parseBoolean(reader.nextLine().trim());
+            t6 = Boolean.parseBoolean(reader.nextLine().trim());
+            t7 = Boolean.parseBoolean(reader.nextLine().trim());
+            t8 = Boolean.parseBoolean(reader.nextLine().trim());
+            t9 = Boolean.parseBoolean(reader.nextLine().trim());
+            t10 = Boolean.parseBoolean(reader.nextLine().trim());
+            t11 = Boolean.parseBoolean(reader.nextLine().trim());
+            t12 = Boolean.parseBoolean(reader.nextLine().trim());
+            t13 = Boolean.parseBoolean(reader.nextLine().trim());
+            t14 = Boolean.parseBoolean(reader.nextLine().trim());
+            t15 = Boolean.parseBoolean(reader.nextLine().trim());
+            t16 = Boolean.parseBoolean(reader.nextLine().trim());
+            t17 = Boolean.parseBoolean(reader.nextLine().trim());
+            t18 = Boolean.parseBoolean(reader.nextLine().trim());
+            t19 = Boolean.parseBoolean(reader.nextLine().trim());
+            t20 = Boolean.parseBoolean(reader.nextLine().trim());
+            t21 = Boolean.parseBoolean(reader.nextLine().trim());
+            t22 = Boolean.parseBoolean(reader.nextLine().trim());
+            t23 = Boolean.parseBoolean(reader.nextLine().trim());
+            t24 = Boolean.parseBoolean(reader.nextLine().trim());
+            t25 = Boolean.parseBoolean(reader.nextLine().trim());
+            t26 = Boolean.parseBoolean(reader.nextLine().trim());
+            t27 = Boolean.parseBoolean(reader.nextLine().trim());
+            t28 = Boolean.parseBoolean(reader.nextLine().trim());
+            t29 = Boolean.parseBoolean(reader.nextLine().trim());
+            t30 = Boolean.parseBoolean(reader.nextLine().trim());
+            t31 = Boolean.parseBoolean(reader.nextLine().trim());
+            t32 = Boolean.parseBoolean(reader.nextLine().trim());
+            t33 = Boolean.parseBoolean(reader.nextLine().trim());
+            t34 = Boolean.parseBoolean(reader.nextLine().trim());
+            t35 = Boolean.parseBoolean(reader.nextLine().trim());
+            t36 = Boolean.parseBoolean(reader.nextLine().trim());
+            t37 = Boolean.parseBoolean(reader.nextLine().trim());
+            t38 = Boolean.parseBoolean(reader.nextLine().trim());
+            t39 = Boolean.parseBoolean(reader.nextLine().trim());
+            t40 = Boolean.parseBoolean(reader.nextLine().trim());
+            t41 = Boolean.parseBoolean(reader.nextLine().trim());
+            t42 = Boolean.parseBoolean(reader.nextLine().trim());
+            t43 = Boolean.parseBoolean(reader.nextLine().trim());
+            t44 = Boolean.parseBoolean(reader.nextLine().trim());
+            t45 = Boolean.parseBoolean(reader.nextLine().trim());
+            t46 = Boolean.parseBoolean(reader.nextLine().trim());
+            t47 = Boolean.parseBoolean(reader.nextLine().trim());
+            t48 = Boolean.parseBoolean(reader.nextLine().trim());
+            t49 = Boolean.parseBoolean(reader.nextLine().trim());
+            row = Integer.parseInt(reader.nextLine().trim());
+            column = Integer.parseInt(reader.nextLine().trim());
         }
         catch(FileNotFoundException e){
             System.out.println("No save file was found. Begin a new Quest for Glory now!!!");
@@ -209,7 +450,6 @@ public class Quest {
         catch(NumberFormatException | StringIndexOutOfBoundsException | NoSuchElementException e){
             System.out.println("Sorry, your save file was corrupted. Start a new Quest for Glory now!!!");
         }
-
     }
 
     public static void main(String[] args) {
@@ -232,20 +472,8 @@ public class Quest {
         thread.start();
         Scanner scanner = new Scanner(System.in);
         Load();
-        if (encounter > 0) {
-            System.out.println("Resuming your Quest for Glory, " + name + "!");
+        Encounter.execute();
 
-            if (encounter == 1) { Encounter1.execute(); }
-            else if (encounter == 2) { Encounter2.execute(); }
-            else if (encounter == 3) { Encounter3.execute(); }
-            else if (encounter == 4) { Encounter4.execute(); }
-            else if (encounter == 5) { Encounter5.execute(); }
-            else if (encounter == 6) { Encounter6.execute(); }
-            else if (encounter == 7) { Encounter7.execute(); }
-            else if (encounter == 8) { Encounter8.execute(); }
-            else if (encounter == 9) { Encounter9.execute(); }
-            else { Encounter10.execute(); }
-        }
         //Character Creation Variables
         boolean cLoop = true;//Choosing a Class
         boolean aLoop = true;//Choosing an Armor
@@ -776,7 +1004,6 @@ public class Quest {
             defense += cDexterity;
         }
         System.out.println("You have officially allocated your ability points, and now you are ready for your adventure! The Quest For Glory begins NOW!!!");
-        encounter++;
         Save();
         System.out.println("Your first encounter is a fight. There's no talking your way out of this one. Press Enter to continue.");
         scanner.nextLine();
