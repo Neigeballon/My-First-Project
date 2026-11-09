@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Encounter1{
     public static void execute(){
+        Terrain t = terrains[row][column];
         Scanner scanner = new Scanner(System.in);
         if (cClass == 'A') {
             cSquare = 3;
@@ -150,7 +151,6 @@ public class Encounter1{
         else{
 
         }
-        encounter++;
         Save();
         Encounter2.execute();
     }
