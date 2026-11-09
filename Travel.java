@@ -27,7 +27,7 @@ public class Travel {
             else if (choice == 'A') {
                 System.out.println("You cannot move off of the map, "+name+". Try again.");
             }
-            else if (choice == 'S' && row != 7 && !(column  == 7 && row == 6)) {
+            else if (choice == 'S' && row != 6 && !(column  == 6 && row == 5)) {
                 row += 1;
                 t = terrains[row][column];
                 break;
@@ -35,7 +35,7 @@ public class Travel {
             else if (choice == 'S') {
                 System.out.println("Sorry, "+name+". You can't move off of the map or into the GLORY until you enter the ASCENSION.");
             }
-            else if (choice == 'D' && column != 7 && !(row == 7 && column == 6)) {
+            else if (choice == 'D' && column != 6 && !(row == 6 && column == 5)) {
                 column += 1;
                 t = terrains[row][column];
                 break;
