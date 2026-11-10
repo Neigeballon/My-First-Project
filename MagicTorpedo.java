@@ -25,6 +25,9 @@ public class MagicTorpedo {
                         roll = ThreadLocalRandom.current().nextInt(1, 7);
                         System.out.println("You rolled a "+roll+"!");
                         attackRoll = roll*cIntelligence+intBonus+attackBonus;
+                        if (cSquare != e.eSquare) {
+                            attackRoll += rangedModifier;
+                        }
                         System.out.println("Your total attack roll is "+attackRoll+"!");
                         damageDealt = Math.max(0, e.eDefense-attackRoll);
                         System.out.println("You did a total of "+damageDealt+" damage to "+e.eName+", "+name+"!");
@@ -34,6 +37,9 @@ public class MagicTorpedo {
                         }
                         else{
                             System.out.println(e.eName+" is still alive! Keep torpedoing with that "+magicItemName+" of yours, "+name+"!");
+                        }
+                        if (cSquare != e.eSquare) {
+                            attackRoll -= rangedModifier;
                         }
                     }
                 }
