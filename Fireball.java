@@ -30,6 +30,9 @@ public class Fireball {
                 System.out.println("Your total attack roll is "+attackRoll+"!");
                 for (Enemy e : enemies) {
                     if (e.eCHP > 0 && choice == e.eChar) {
+                        if (cSquare != e.eSquare) {
+                            attackRoll += rangedModifier;
+                        }
                         damageDealt = Math.max(0, attackRoll-e.eDefense);
                         System.out.println("You did a total of "+damageDealt+" damage to "+e.eName+", "+name+"!");
                         e.eCHP -= damageDealt;
@@ -38,6 +41,9 @@ public class Fireball {
                         }
                         else{
                             System.out.println(e.eName+" is still alive! Keep fireballing with that "+magicItemName+" of yours, "+name+"!");
+                        }
+                        if (cSquare != e.eSquare) {
+                            attackRoll -= rangedModifier;
                         }
                     }
                 }
