@@ -4,8 +4,18 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Encounter1{
+    private static TileType[][] battlemap = {
+            {TileType.NORMAL_PROTECTIVE, TileType.LOW_PROTECTIVE, TileType.NORMAL, TileType.HIGH_EXPOSING_FOOD},
+            {TileType.NORMAL_EXPOSING, TileType.LOW_EXPOSING, TileType.HIGH_OBSTRUCTIVE, TileType.NORMAL},
+            {TileType.NORMAL, TileType.LOW_EXPOSING, TileType.HIGH_OBSTRUCTIVE, TileType.NORMAL},
+            {TileType.NORMAL_OBSTRUCTIVE, TileType.LOW_PROTECTIVE, TileType.NORMAL, TileType.HIGH_EXPOSING_FOOD}
+    };
+    private static TileType aa = null;
     public static void execute(){
         t = terrains[row][column];
+        Terrains.execute();
+        tileRow = 0;
+        tileColumn = 0;
         Scanner scanner = new Scanner(System.in);
         if (cClass == 'A') {
             cSquare = 3;
@@ -14,6 +24,8 @@ public class Encounter1{
             actions = 0;
             //Decide the enemies' ability scores and magic resistance here
             while(enemies.stream().anyMatch(e -> e.eCHP > 0)){
+                aa = battlemap[tileRow][tileColumn];
+                initialize();
                 choice = '\0';
                 actions = actions+2;
                 System.out.println("You are in square #"+cSquare+" with "+cHP+" HP remaining.");
@@ -49,7 +61,10 @@ public class Encounter1{
                     scanner.nextLine();
                     if(choice == 'A'){
                         actions--;
+                        reset();
                         Move.execute();
+                        aa = battlemap[tileRow][tileColumn];
+                        initialize();
                     }
                     else if(choice >= 'B' && choice < charSpear){
                         actions--;
@@ -138,6 +153,7 @@ public class Encounter1{
                     }
                     System.out.println("");
                 }
+                reset();
                 WEAPONS.reset();
             }
             choice = '\0';
@@ -152,6 +168,22 @@ public class Encounter1{
 
         }
         Save();
-        Encounter2.execute();
+        Travel.execute();
+    }
+
+    private static void initialize() {
+        attackBonus += aa.groundModifier;
+        defense += aa.exposureModifier;
+        if (aa.obstructive) {
+            rangedModifier -= 2;
+        }
+    }
+
+    private static void reset() {
+        attackBonus -= aa.groundModifier;
+        defense -= aa.exposureModifier;
+        if (aa.obstructive) {
+            rangedModifier += 2;
+        }
     }
 }
