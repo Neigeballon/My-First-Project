@@ -15,7 +15,7 @@ public class AcidArrows {
         damageDealt = Math.max(0, attackRoll-e.eDefense);
         System.out.println("You did a total of "+damageDealt+" damage!");     
         e.eCHP = e.eCHP-damageDealt;
-        e.ePoisons.add(new Poison(999, 1));
+        e.eAcidStacks++;//Make sure to include acid damage at the start of the enemy's turn!!!
         if(e.eCHP <= 0){
           System.out.println("Archaic Acid, "+name+"! You have killed "+e.eName+"! Amazing!");
         }
