@@ -1,3 +1,9 @@
+package quest;
+
+import static quest.Quest.*;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class AcidArrows {
   public static void execute() {
     for(Enemy e : enemies){
