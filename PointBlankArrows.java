@@ -4,7 +4,7 @@ import static quest.Quest.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class AcidArrows {
+public class PointBlankArrows {
   public static void execute() {
     for(Enemy e : enemies){
       if(e.eCHP >= 0 && choice == e.eChar){
@@ -15,6 +15,8 @@ public class AcidArrows {
         damageDealt = Math.max(0, attackRoll-e.eDefense);
         System.out.println("You did a total of "+damageDealt+" damage!");     
         e.eCHP = e.eCHP-damageDealt;
+        defense -= 2;
+        pointBlankArrows++;
         if(e.eCHP <= 0){
           System.out.println("Point-Blank Wipe, "+name+"! You have killed "+e.eName+"! Precise!");
         }
@@ -23,6 +25,13 @@ public class AcidArrows {
         }
         break;
       }
+    }
+  }
+
+  public static void reset() {
+    while (pointBlankArrows > 0) {
+      defense += 2;
+      pointBlankArrows--;
     }
   }
 }
