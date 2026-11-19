@@ -454,6 +454,15 @@ public class Quest {
 
     public static void main(String[] args) {
 
+    SwingUtilities.invokeLater(() -> {
+      JFrame frame = new JFrame("Quest For Glory Map");
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.setSize(800, 600);
+      frame.add(new MapPanel());
+      frame.setLocationRelativeTo(null); // Center on screen
+      frame.setVisible(true);
+    });
+
         Thread thread = new Thread(() -> {
             while(true){
                 if(cHP <= 0){
