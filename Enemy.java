@@ -24,8 +24,9 @@ public class Enemy{
     public boolean eCurseOfSlowness;
     public boolean eCurseOfDumbness;
     public boolean eCurseOfBabbling;
+    public Image eImage;
 
-    public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, int eFlail, char eCharHandaxes, int eMace, int eRapier, int eScimitar, int eTrident, boolean eCurseOfWeakness, boolean eCurseOfSlowness, boolean eCurseOfDumbness, boolean eCurseOfBabbling){
+    public Enemy(String eName, char eChar, double eMaxHP, double eCHP, double eStrength, double eDexterity, double eIntelligence, double eCharisma, int eDefense, int eMagicResistance, int eSquare, int eActions, int eFlail, char eCharHandaxes, int eMace, int eRapier, int eScimitar, int eTrident, boolean eCurseOfWeakness, boolean eCurseOfSlowness, boolean eCurseOfDumbness, boolean eCurseOfBabbling, Image eImage){
         this.eName = eName;
         this.eChar = eChar;
         this.eMaxHP = eMaxHP;
@@ -48,5 +49,6 @@ public class Enemy{
         this.eCurseOfSlowness = eCurseOfSlowness;
         this.eCurseOfDumbness = eCurseOfDumbness;
         this.eCurseOfBabbling = eCurseOfBabbling;
+        this.eImage = new ImageIcon();
     }
 }
