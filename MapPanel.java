@@ -5,6 +5,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class MapPanel extends JPanel {
+
+  private final Image characterImage = new ImageIcon("character.png").getImage();
   
   @Override
   protected void paintComponent(Graphics g) {
@@ -12,8 +14,6 @@ public class MapPanel extends JPanel {
 
     Graphics2D g2d = (Graphics2D) g;
     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-    Image characterImage = new ImageIcon("character.png").getImage();
 
     g2d.drawImage(characterImage, 0, 0, 0.25*getWidth(), 0.25*getHeight(), this);
   }
