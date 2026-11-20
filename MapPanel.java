@@ -6,14 +6,12 @@ import javax.swing.*;
 
 public class MapPanel extends JPanel {
 
-  private Image worldImage;
+  private Image worldImage = new ImageIcon("world.png").getImage();
+  private Image characterImage = new ImageIcon(cClass+".png").getImage();
   private Image terrainImage;
-  private Image characterImage;
 
   public void loadImage() {
-    worldImage = new ImageIcon("world.png").getImage();
     terrainImage = new ImageIcon(t.encounterName+".png").getImage();
-    characterImage = new ImageIcon("character.png").getImage();
     repaint();
   }
   
