@@ -52,6 +52,6 @@ public class Enemy{
         this.eCurseOfSlowness = eCurseOfSlowness;
         this.eCurseOfDumbness = eCurseOfDumbness;
         this.eCurseOfBabbling = eCurseOfBabbling;
-        this.eImage = new ImageIcon();
+        this.eImage = eImage;
     }
 }
