@@ -5,9 +5,13 @@ import java.awt.*;
 import javax.swing.*;
 
 public class MapPanel extends JPanel {
-  
-  private Image characterImage = new ImageIcon("character.png").getImage();
-  private Image terrainImage = new ImageIcon(t.encounterName+".png").getImage();
+
+  public static void loadImage() {
+    Image worldImage = new ImageIcon("world.png").getImage();
+    Image terrainImage = new ImageIcon(t.encounterName+".png").getImage();
+    Image characterImage = new ImageIcon("character.png").getImage();
+    repaint();
+  }
   
   @Override
   protected void paintComponent(Graphics g) {
