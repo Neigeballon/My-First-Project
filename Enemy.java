@@ -1,5 +1,8 @@
 package quest;
 
+import java.awt.*;
+import javax.swing.*;
+
 public class Enemy{
 
     public String eName;
