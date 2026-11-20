@@ -20,7 +20,7 @@ public class MapPanel extends JPanel {
     Graphics2D g2d = (Graphics2D) g;
     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-    g2d.drawImage(characterImage, 0, 0, (int)(0.25*getWidth()), (int)(0.25*getHeight()), this);
+    g2d.drawImage(characterImage, (int)(tileColumn*0.25*getWidth()), (int)(tileRow*0.25*getHeight()), (int)(0.25*getWidth()), (int)(0.25*getHeight()), this);
 
     for (Enemy e : enemies) {
       g2d.drawImage(e.eImage, (int)(e.eColumn*0.25*getWidth()), (int)(e.eRow*0.25*getHeight()), (int)(0.25*getWidth()), (int)(0.25*getHeight()), this);
