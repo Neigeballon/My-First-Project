@@ -2,6 +2,8 @@ package quest;
 import static quest.Quest.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.awt.*;
+import javax.swing.*;
 
 public class Encounter1{
     private static TileType[][] battlemap = {
