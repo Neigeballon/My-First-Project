@@ -11,7 +11,7 @@ public class MapPanel extends JPanel {
   private Image terrainImage;
 
   public void loadImage() {
-    terrainImage = new ImageIcon(t.encounterName+".png").getImage();
+    terrainImage = new ImageIcon(t.path).getImage();
     repaint();
   }
   
